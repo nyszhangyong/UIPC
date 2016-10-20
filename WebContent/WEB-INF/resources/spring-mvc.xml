@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+    <!-- 配置处理器映射器 -->
+    <!-- 采用spring-webmvc-4.2.5.RELEASE.jar中的默认配置DispatcherServlet.properties -->
+    <!-- 配置处理器适配器 -->
+    <!-- 采用spring-webmvc-4.2.5.RELEASE.jar中的默认配置DispatcherServlet.properties -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8" />
+            </bean>
+            <ref bean="mappingJackson2HttpMessageConverter" />
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!-- 用于解析注解@RequestBody -->
+    <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+
+    <!-- 配置handler -->
+    <!-- 自动扫描且只扫描@Controller -->
+    <context:component-scan base-package="com.steelb2b" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+    
+    <!-- 拦截器 -->
+    <!-- 跨站 HTTP请求(Cross-site HTTP request) -->
+    <mvc:cors>
+        <mvc:mapping path="/**" />
+    </mvc:cors>
+    <mvc:interceptors>
+        <!-- 多个拦截器,顺序执行 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/sysLog/**"/>
+            <mvc:mapping path="/sysMenu/**"/>
+            <mvc:mapping path="/sysRole/**"/>
+            <mvc:mapping path="/sysUser/**"/>
+            <bean class="com.steelb2b.interceptor.AdminAuthInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.steelb2b.interceptor.RequestInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/api/**"/>
+            <bean class="com.steelb2b.interceptor.CostTimeInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>    
+    <!-- 一般实现拦截器主要是为了权限管理，主要是拦截一些url请求，所以不对静态资源进行拦截。-->
+    <!-- 此处要过滤掉静态资源js、css、图片等静态资源文件 -->
+    <mvc:default-servlet-handler />
+    
+    <!-- 配置MultipartResolver 用于文件上传 使用spring的CommosMultipartResolver -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <!--1024*10240即200k-->  
+        <property name="maxUploadSize" value="10485760"/>  
+        <!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常-->  
+        <property name="resolveLazily" value="true"/>    
+    </bean>
+</beans>
