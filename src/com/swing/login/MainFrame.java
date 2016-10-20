@@ -7,61 +7,66 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
+import com.swing.base.BaseInfo;
+
+
 public class MainFrame  extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JSplitPane mainJSplitPane;
 	public static TabbedPane tabbedPane;
     public MainFrame() {
-        //³õÊ¼»¯´°¿ÚÄÚ×é¼ş
+        //åˆå§‹åŒ–çª—å£å†…ç»„ä»¶
         initComponent();
-    	//»ñÈ¡ÏÔÊ¾Æ÷ÆÁÄ»µÄ·Ö±æÂÊÀıÈç£º1366*768£¬Ò²¾ÍÊÇÏÔÊ¾Æ÷ÆÁÄ»µÄ¿í¡¢¸ß£¨°üº¬ÈÎÎñÀ¸µÄ¸ß¶È£©
+    	//è·å–æ˜¾ç¤ºå™¨å±å¹•çš„åˆ†è¾¨ç‡ä¾‹å¦‚ï¼š1366*768ï¼Œä¹Ÿå°±æ˜¯æ˜¾ç¤ºå™¨å±å¹•çš„å®½ã€é«˜ï¼ˆåŒ…å«ä»»åŠ¡æ çš„é«˜åº¦ï¼‰
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	//»ñÈ¡windows×ÀÃæ¾àÀëÏÔÊ¾Æ÷ÉÏÏÂ×óÓÒËÄ¸ö±ßµÄ¾àÀë
-    	//Çë×¢Òâ£¬×ÀÃæµÄ¸ÅÄîÖ¸µÄÊÇ¿ÉÒÔ·ÅÖÃ¿ì½İ·½Ê½Í¼±íµÄ×ÀÃæ
-    	//×ÀÃæÊÇ²»°üº¬ÈÎÎñÀ¸µÄ£¬ÈÎÎñÀ¸Ö»ÊÇ×ÀÃæÏÂ·½µÄÒ»¸ö¹¤¾ßÌõ
-    	//Òò´Ë´Ë´¦·µ»ØµÄÖµ£ºÒ»°ã¾àÀëÉÏÏÂ×óÓÒµÄ¾àÀëÊÇ0¡¢40¡¢0¡¢0
+    	//è·å–windowsæ¡Œé¢è·ç¦»æ˜¾ç¤ºå™¨ä¸Šä¸‹å·¦å³å››ä¸ªè¾¹çš„è·ç¦»
+    	//è¯·æ³¨æ„ï¼Œæ¡Œé¢çš„æ¦‚å¿µæŒ‡çš„æ˜¯å¯ä»¥æ”¾ç½®å¿«æ·æ–¹å¼å›¾è¡¨çš„æ¡Œé¢
+    	//æ¡Œé¢æ˜¯ä¸åŒ…å«ä»»åŠ¡æ çš„ï¼Œä»»åŠ¡æ åªæ˜¯æ¡Œé¢ä¸‹æ–¹çš„ä¸€ä¸ªå·¥å…·æ¡
+    	//å› æ­¤æ­¤å¤„è¿”å›çš„å€¼ï¼šä¸€èˆ¬è·ç¦»ä¸Šä¸‹å·¦å³çš„è·ç¦»æ˜¯0ã€40ã€0ã€0
         Insets screenInsets = Toolkit.getDefaultToolkit().getScreenInsets(this.getGraphicsConfiguration());  
-        //ÉèÖÃ´°¿Ú±êÌâ
-        this.setTitle("¹ÜÀíĞÅÏ¢ÏµÍ³");
-        //ÉèÖÃ´°¿ÚµÄ¿í¡¢¸ß£¬·Ö±ğµÈÓÚÆÁÄ»µÄ¿í¡¢¸ßµÈÓÚÆÁÄ»¸ß¶È¼õÈ¥ÈÎÎñÀ¸¸ß¶È£¬³¤¶Èµ¥Î»ÊÇÏñËØ
+        //è®¾ç½®çª—å£æ ‡é¢˜
+        this.setTitle("ç®¡ç†ä¿¡æ¯ç³»ç»Ÿ");
+        //è®¾ç½®çª—å£çš„å®½ã€é«˜ï¼Œåˆ†åˆ«ç­‰äºå±å¹•çš„å®½ã€é«˜ç­‰äºå±å¹•é«˜åº¦å‡å»ä»»åŠ¡æ é«˜åº¦ï¼Œé•¿åº¦å•ä½æ˜¯åƒç´ 
         //this.setSize(screenSize.width,screenSize.height-screenInsets.bottom);  
-        //ÉèÖÃ×ÖÌå
+        //è®¾ç½®å­—ä½“
         this.setFont(new Font("Helvetica", Font.PLAIN, 14));  
-        //ÉèÖÃ´°¿Ú¹Ø±Õ°´Å¥£¬µ¥»÷Ê±Ö´ĞĞµÄ²Ù×÷(¹Ø±Õ¡¢Òş²ØµÈ)
+        //è®¾ç½®çª—å£å…³é—­æŒ‰é’®ï¼Œå•å‡»æ—¶æ‰§è¡Œçš„æ“ä½œ(å…³é—­ã€éšè—ç­‰)
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //ÉèÖÃ´°¿ÚÏà¶ÔÓÚ¸¸ÀàJFrameµÄÏà¶ÔÎ»ÖÃ
-        //¾àÀëJFrame×ó±ß¡¢ÉÏ±ß¾àÀë¡¢×Ô¼ºµÄ¿íºÍÏÔÊ¾Æ÷ÏàµÈ£¬¸ßµÈÓÚÆÁÄ»¸ß¶È¼õÈ¥ÈÎÎñÀ¸¸ß¶È
+        //è®¾ç½®çª—å£ç›¸å¯¹äºçˆ¶ç±»JFrameçš„ç›¸å¯¹ä½ç½®
+        //è·ç¦»JFrameå·¦è¾¹ã€ä¸Šè¾¹è·ç¦»ã€è‡ªå·±çš„å®½å’Œæ˜¾ç¤ºå™¨ç›¸ç­‰ï¼Œé«˜ç­‰äºå±å¹•é«˜åº¦å‡å»ä»»åŠ¡æ é«˜åº¦
         this.setBounds(0, 0,screenSize.width,screenSize.height-screenInsets.bottom);
-        //ÉèÖÃ´°¿ÚµÄ±êÌâÍ¼±ê
-        this.setIconImage(new ImageIcon("./src/com/ea/login/view/images/prodlogo.gif").getImage());
-        //ÉèÖÃ´°¿ÚÊÇ·ñ¿ÉÒÔµ÷Õû´óĞ¡£¬²ÎÊıÎª²¼¶ûÖµ
+        //è®¾ç½®çª—å£çš„æ ‡é¢˜å›¾æ ‡
+        URL prodlogoUrl=LoginFrame.class.getClassLoader().getResource(BaseInfo.imagesPath+"prodlogo.gif");
+        this.setIconImage(new ImageIcon(prodlogoUrl).getImage());
+        //è®¾ç½®çª—å£æ˜¯å¦å¯ä»¥è°ƒæ•´å¤§å°ï¼Œå‚æ•°ä¸ºå¸ƒå°”å€¼
         this.setResizable(true);
-        //ÉèÖÃ´°¿ÚÊÇ·ñ¿É¼û£¨´ËÓï¾ä±ØĞëÓĞ£¬·ñÔò¿´²»µ½½çÃæ£¬Ê§È¥ÁË´´½¨½çÃæµÄÒâÒå£©
+        //è®¾ç½®çª—å£æ˜¯å¦å¯è§ï¼ˆæ­¤è¯­å¥å¿…é¡»æœ‰ï¼Œå¦åˆ™çœ‹ä¸åˆ°ç•Œé¢ï¼Œå¤±å»äº†åˆ›å»ºç•Œé¢çš„æ„ä¹‰ï¼‰
         this.setVisible(true);
 
     }
 
     public void initComponent() {
     	
-    	//´´½¨Ò»¸ö×óÓÒ·Ö¸îÃæ°å
+    	//åˆ›å»ºä¸€ä¸ªå·¦å³åˆ†å‰²é¢æ¿
         mainJSplitPane = new JSplitPane();
-        //ÉèÖÃ·Ö¸îÏß¿í¶È
+        //è®¾ç½®åˆ†å‰²çº¿å®½åº¦
         mainJSplitPane.setDividerSize(2);
-        //ÉèÖÃmainJSplitPaneµÄ·Ö¸ôÏßÎ»ÖÃ
+        //è®¾ç½®mainJSplitPaneçš„åˆ†éš”çº¿ä½ç½®
         mainJSplitPane.setDividerLocation(200);
-        //ÉèÖÃ±³¾°É«
+        //è®¾ç½®èƒŒæ™¯è‰²
         mainJSplitPane.setBackground(Color.LIGHT_GRAY);
-        //ÍÏÒ··Ö¸ôÏßÊ±£¬´°¿ÚÄÚµÄ×é¼şÊÇ·ñ»á¶¯Ì¬¸Ä±ä´óĞ¡
+        //æ‹–æ›³åˆ†éš”çº¿æ—¶ï¼Œçª—å£å†…çš„ç»„ä»¶æ˜¯å¦ä¼šåŠ¨æ€æ”¹å˜å¤§å°
         mainJSplitPane.setContinuousLayout(true);
-        //ÉèÖÃmainJSplitPane´óĞ¡£¬×Ô¶¯ÉèÖÃ´óĞ¡
+        //è®¾ç½®mainJSplitPaneå¤§å°ï¼Œè‡ªåŠ¨è®¾ç½®å¤§å°
         mainJSplitPane.setPreferredSize(getPreferredSize());
-        //ÉèÖÃ·Ö¸îÏßÎªË®Æ½·Ö¸îÏß
+        //è®¾ç½®åˆ†å‰²çº¿ä¸ºæ°´å¹³åˆ†å‰²çº¿
         mainJSplitPane.setOrientation (JSplitPane.HORIZONTAL_SPLIT); 
         LeftNavigationJPanel leftNavigationJPanel=new LeftNavigationJPanel();
         mainJSplitPane.setLeftComponent(leftNavigationJPanel.startCreateLeftNavigationJPanel());
@@ -76,7 +81,7 @@ public class MainFrame  extends JFrame {
     	JPanel southJPanel=new JPanel();
     	southJPanel.setBackground(Color.LIGHT_GRAY);
     	
-        //ÉèÖÃ²¼¾Ö¹ÜÀíÆ÷
+        //è®¾ç½®å¸ƒå±€ç®¡ç†å™¨
         BorderLayout borderLayout=new BorderLayout(2,2);
         Container container=getContentPane();
     	container.setLayout(borderLayout);

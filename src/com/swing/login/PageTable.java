@@ -30,8 +30,8 @@ public class PageTable extends JPanel {
         JPanel pagingButtonJPanel = new JPanel();
         add(pagingButtonJPanel, BorderLayout.NORTH);
         
-        //Ê×Ò³°´Å¥
-        firstPageButton = new JButton("Ê×Ò³");
+        //é¦–é¡µæŒ‰é’®
+        firstPageButton = new JButton("é¦–é¡µ");
         firstPageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	firstPageActionListener(e);
@@ -39,8 +39,8 @@ public class PageTable extends JPanel {
         });
         pagingButtonJPanel.add(firstPageButton);
         
-        //ÉÏÒ»Ò³°´Å¥
-        latePageButton = new JButton("ÉÏÒ»Ò³");
+        //ä¸Šä¸€é¡µæŒ‰é’®
+        latePageButton = new JButton("ä¸Šä¸€é¡µ");
         latePageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	latePageActionListener(e);
@@ -48,8 +48,8 @@ public class PageTable extends JPanel {
         });
         pagingButtonJPanel.add(latePageButton);
         
-        //ÏÂÒ»Ò³°´Å¥
-        nextPageButton = new JButton("ÏÂÒ»Ò³");
+        //ä¸‹ä¸€é¡µæŒ‰é’®
+        nextPageButton = new JButton("ä¸‹ä¸€é¡µ");
         nextPageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 nextPageActionListener(e);
@@ -57,8 +57,8 @@ public class PageTable extends JPanel {
         });
         pagingButtonJPanel.add(nextPageButton);
         
-        //Ä©Ò³°´Å¥
-        lastPageButton = new JButton("Ä©Ò³");
+        //æœ«é¡µæŒ‰é’®
+        lastPageButton = new JButton("æœ«é¡µ");
         lastPageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	lastPageActionListener(e);
@@ -66,22 +66,22 @@ public class PageTable extends JPanel {
         });
         pagingButtonJPanel.add(lastPageButton);
         
-        //´ø¹ö¶¯ÌõµÄ±í¸ñ
+        //å¸¦æ»šåŠ¨æ¡çš„è¡¨æ ¼
         table = new JTable();
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(table);
         add(scrollPane, BorderLayout.CENTER);
         
-    	//Ìî³ä±í¸ñÄÚÈİ
+    	//å¡«å……è¡¨æ ¼å†…å®¹
         defaultTableModel = (DefaultTableModel) table.getModel();
-        defaultTableModel.setColumnIdentifiers(new Object[] { "ĞÕÃû", "ĞÔ±ğ", "ÄêÁä", "ÉúÈÕ", "Ñ§Àú", "ÕÕÆ¬" });
+        defaultTableModel.setColumnIdentifiers(new Object[] { "å§“å", "æ€§åˆ«", "å¹´é¾„", "ç”Ÿæ—¥", "å­¦å†", "ç…§ç‰‡" });
         for (int i = 0; i < 23; i++) {
-            defaultTableModel.addRow(new Object[] { "ÕÅÈı", "ÄĞ", "22", "1992Äê01ÔÂ20ÈÕ", "´óÑ§±¾¿Æ", "ÎŞ" });
+            defaultTableModel.addRow(new Object[] { "å¼ ä¸‰", "ç”·", "22", "1992å¹´01æœˆ20æ—¥", "å¤§å­¦æœ¬ç§‘", "æ— " });
         }
         maxPageNumber = (int) Math.ceil(defaultTableModel.getRowCount() / pageSize);
         table.setModel(defaultTableModel);
         
-        //ÉèÖÃËÄ¸ö°´Å¥Ä¬ÈÏÊÇ·ñ¿ÉÒÔµã»÷µÄ×´Ì¬
+        //è®¾ç½®å››ä¸ªæŒ‰é’®é»˜è®¤æ˜¯å¦å¯ä»¥ç‚¹å‡»çš„çŠ¶æ€
         firstPageButton.setEnabled(false);
         latePageButton.setEnabled(false);
         nextPageButton.setEnabled(true);
@@ -90,16 +90,16 @@ public class PageTable extends JPanel {
     
 
 
-    //Ê×Ò³ÊÂ¼ş
+    //é¦–é¡µäº‹ä»¶
     protected void firstPageActionListener(ActionEvent e) {
-    	//³õÊ¼Ò³
+    	//åˆå§‹é¡µ
         currentPageNumber = 1;
-        //µÃµ½¼¯ºÏ
+        //å¾—åˆ°é›†åˆ
         Vector<?> dataVector = defaultTableModel.getDataVector();
-        //Ä£ĞÍ
+        //æ¨¡å‹
         DefaultTableModel newModel = new DefaultTableModel();
         
-        newModel.setColumnIdentifiers(new Object[] { "ĞòºÅ", "Ëæ»úÊı" });
+        newModel.setColumnIdentifiers(new Object[] { "åºå·", "éšæœºæ•°" });
         for (int i = 0; i < pageSize; i++) {
             newModel.addRow((Vector<?>) dataVector.elementAt(i));
         }
@@ -110,12 +110,12 @@ public class PageTable extends JPanel {
         lastPageButton.setEnabled(true);
     }
 
-    //ÉÏÒ»Ò³ÊÂ¼ş
+    //ä¸Šä¸€é¡µäº‹ä»¶
     protected void latePageActionListener(ActionEvent e) {
         currentPageNumber--;
         Vector<?> dataVector = defaultTableModel.getDataVector();
         DefaultTableModel newModel = new DefaultTableModel();
-        newModel.setColumnIdentifiers(new Object[] { "ĞòºÅ", "Ëæ»úÊı" });
+        newModel.setColumnIdentifiers(new Object[] { "åºå·", "éšæœºæ•°" });
         for (int i = 0; i < pageSize; i++) {
             newModel.addRow((Vector<?>) dataVector.elementAt((int) (pageSize * (currentPageNumber - 1) + i)));
         }
@@ -128,12 +128,12 @@ public class PageTable extends JPanel {
         lastPageButton.setEnabled(true);
     }
 
-    //ÏÂÒ»Ò³
+    //ä¸‹ä¸€é¡µ
     protected void nextPageActionListener(ActionEvent e) {
         currentPageNumber++;
         Vector<?> dataVector = defaultTableModel.getDataVector();
         DefaultTableModel newModel = new DefaultTableModel();
-        newModel.setColumnIdentifiers(new Object[] { "ĞòºÅ", "Æ½·½Êı" });
+        newModel.setColumnIdentifiers(new Object[] { "åºå·", "å¹³æ–¹æ•°" });
         if (currentPageNumber == maxPageNumber) {
             int lastPageSize = (int) (defaultTableModel.getRowCount() - pageSize * (maxPageNumber - 1));
             for (int i = 0; i < lastPageSize; i++) {
@@ -151,12 +151,12 @@ public class PageTable extends JPanel {
         latePageButton.setEnabled(true);
     }
     
-    //Ä©Ò³
+    //æœ«é¡µ
     protected void lastPageActionListener(ActionEvent e) {
         currentPageNumber = maxPageNumber;
         Vector<?> dataVector = defaultTableModel.getDataVector();
         DefaultTableModel newModel = new DefaultTableModel();
-        newModel.setColumnIdentifiers(new Object[] { "ĞòºÅ", "Æ½·½Êı" });
+        newModel.setColumnIdentifiers(new Object[] { "åºå·", "å¹³æ–¹æ•°" });
         int lastPageSize = (int) (defaultTableModel.getRowCount() - pageSize * (maxPageNumber - 1));
         
         if (lastPageSize == 5) {

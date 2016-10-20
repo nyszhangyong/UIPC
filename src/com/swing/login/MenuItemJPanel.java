@@ -21,14 +21,14 @@ public class MenuItemJPanel  extends JPanel implements TreeSelectionListener,Mou
 	}
 
 	@Override
-	//´¦ÀíTreeSelectionEventÊÂ¼ş
+	//å¤„ç†TreeSelectionEventäº‹ä»¶
 	public void valueChanged(TreeSelectionEvent treeSelectionEvent)
 	{
 //		JTree tree = (JTree)treeSelectionEvent.getSource();
-//		//»ñÈ¡Ä¿Ç°Ñ¡È¡µÄ½Úµã
+//		//è·å–ç›®å‰é€‰å–çš„èŠ‚ç‚¹
 //		DefaultMutableTreeNode selectionNode =(DefaultMutableTreeNode)tree.getLastSelectedPathComponent();
-//		JOptionPane.showMessageDialog(null, selectionNode.toString(), "ÌáÊ¾ÏûÏ¢",JOptionPane.WARNING_MESSAGE); 
-//		MainFrame.tabbedPane.addTab(selectionNode.toString(), null, new JLabel("²âÊÔÒ»"));
+//		JOptionPane.showMessageDialog(null, selectionNode.toString(), "æç¤ºæ¶ˆæ¯",JOptionPane.WARNING_MESSAGE); 
+//		MainFrame.tabbedPane.addTab(selectionNode.toString(), null, new JLabel("æµ‹è¯•ä¸€"));
 	}
 
 	@Override
@@ -36,9 +36,9 @@ public class MenuItemJPanel  extends JPanel implements TreeSelectionListener,Mou
 		if(mouseEvent.getClickCount() == 2){
 			JTree tree = (JTree)mouseEvent.getSource();			
 			DefaultMutableTreeNode selectionNode =(DefaultMutableTreeNode)tree.getLastSelectedPathComponent();
-			//Ë«»÷µÄÊ÷½ÚµãµÄÃû³Æ
+			//åŒå‡»çš„æ ‘èŠ‚ç‚¹çš„åç§°
 			String treeNodeName=selectionNode.toString();
-			//Ñ­»·ÅĞ¶Ïµ±Ç°TABÈİÆ÷ÖĞ£¬ÏÖÔÚÓĞÃ»ÓĞÃû×ÖÏàÍ¬µÄTABÒ³
+			//å¾ªç¯åˆ¤æ–­å½“å‰TABå®¹å™¨ä¸­ï¼Œç°åœ¨æœ‰æ²¡æœ‰åå­—ç›¸åŒçš„TABé¡µ
 			int size=MainFrame.tabbedPane.getTabCount();
 			boolean isHasTab=false;
 			for(int i=0;i<size;i++){
@@ -49,9 +49,9 @@ public class MenuItemJPanel  extends JPanel implements TreeSelectionListener,Mou
 			}
 			
 			if(isHasTab){
-				//ÓĞÍ¬ÃûµÄ³ÌĞò£¬ÔòÖ±½Ó¶¨Î»µ½¸ÃTABÒ³
+				//æœ‰åŒåçš„ç¨‹åºï¼Œåˆ™ç›´æ¥å®šä½åˆ°è¯¥TABé¡µ
 			}else{
-				//Ã»ÓĞÍ¬ÃûµÄ£¬ÔòÔÚTABÒ³ÖĞĞÂÔöTABÒ³
+				//æ²¡æœ‰åŒåçš„ï¼Œåˆ™åœ¨TABé¡µä¸­æ–°å¢TABé¡µ
 				//JOptionPane.showMessageDialog(null,"doubleClicked!");
 				PageTable frame = new PageTable();
                 frame.setVisible(true);

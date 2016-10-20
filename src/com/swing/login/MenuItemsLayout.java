@@ -7,14 +7,14 @@ import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.io.Serializable;
 
-/**²Ëµ¥ÏîÃæ°å²¼¾Ö¹ÜÀíÆ÷*/
+/**èœå•é¡¹é¢æ¿å¸ƒå±€ç®¡ç†å™¨*/
 public class MenuItemsLayout implements LayoutManager,Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	int verticalGap = 0;//´¹Ö±¼ä¾à
+	int verticalGap = 0;//å‚ç›´é—´è·
 
-    int horizontalGap = 0;//Ë®Æ½¼ä¾à
+    int horizontalGap = 0;//æ°´å¹³é—´è·
 
     public MenuItemsLayout() {
     }
@@ -24,69 +24,69 @@ public class MenuItemsLayout implements LayoutManager,Serializable {
         this.verticalGap = verticalGap;
     }
 
-    /**ÉèÖÃtouchBarMenuItemsJPanel°üº¬µÄN¸ö²Ëµ¥ÏîµÄÎ»ÖÃ*/
+    /**è®¾ç½®touchBarMenuItemsJPanelåŒ…å«çš„Nä¸ªèœå•é¡¹çš„ä½ç½®*/
     public void layoutContainer(Container touchBarMenuItemsJPanel) {
-    	//Í¬²½ËøµÄÄ¿µÄÊÇ£ºµ±¼ÆËãtouchBarMenuItemsJPanelÖĞ²Ëµ¥ÏîµÄ²¼¾ÖÎ»ÖÃÃ»ÓĞÍê³ÉÊ±£¬²»ÔÊĞí¿ªÊ¼ĞÂµÄ²¼¾Ö
+    	//åŒæ­¥é”çš„ç›®çš„æ˜¯ï¼šå½“è®¡ç®—touchBarMenuItemsJPanelä¸­èœå•é¡¹çš„å¸ƒå±€ä½ç½®æ²¡æœ‰å®Œæˆæ—¶ï¼Œä¸å…è®¸å¼€å§‹æ–°çš„å¸ƒå±€
         synchronized (touchBarMenuItemsJPanel.getTreeLock()) {
-        	//·µ»ØtouchBarMenuItemsJPanel¾àÀëTouchBarJPanelËÄ±ßµÄ¾àÀë
-        	//´Ë´¦Ò»°ãÇé¿öÏÂ£º¾àÀë¸¸ÈİÆ÷ÉÏÏÂ×óÓÒ¾ùÎª0
+        	//è¿”å›touchBarMenuItemsJPanelè·ç¦»TouchBarJPanelå››è¾¹çš„è·ç¦»
+        	//æ­¤å¤„ä¸€èˆ¬æƒ…å†µä¸‹ï¼šè·ç¦»çˆ¶å®¹å™¨ä¸Šä¸‹å·¦å³å‡ä¸º0
             Insets insets = touchBarMenuItemsJPanel.getInsets();
-            //µÃµ½touchBarMenuItemsJPanel°üº¬µÄ²Ëµ¥ÏîÊıÁ¿
+            //å¾—åˆ°touchBarMenuItemsJPanelåŒ…å«çš„èœå•é¡¹æ•°é‡
             int componentCount = touchBarMenuItemsJPanel.getComponentCount();
             if (componentCount == 0) {
                 return;
             }
             int y = insets.top + verticalGap;
             for (int i = 0; i < componentCount; i++) {
-                //²Ëµ¥ÏîµÄ¿í¶ÈµÈÓÚ£ºtouchBarMenuItemsJPanelÃæ°åµÄ¿í¶È
-            	//¼õÈ¥touchBarMenuItemsJPanel¾àÀëTouchBarJPanel×óÓÒÁ½±ßµÄ¾àÀë
-            	//ÔÙ¼õÈ¥×óÓÒÁ½±ßÔ¤¶¨µÄ¼äÏ¶
+                //èœå•é¡¹çš„å®½åº¦ç­‰äºï¼štouchBarMenuItemsJPanelé¢æ¿çš„å®½åº¦
+            	//å‡å»touchBarMenuItemsJPanelè·ç¦»TouchBarJPanelå·¦å³ä¸¤è¾¹çš„è·ç¦»
+            	//å†å‡å»å·¦å³ä¸¤è¾¹é¢„å®šçš„é—´éš™
                 int width=touchBarMenuItemsJPanel.getWidth() - insets.left - insets.right - 2* horizontalGap;
                 int height = touchBarMenuItemsJPanel.getComponent(i).getPreferredSize().height;
                 
-                //²Ëµ¥ÏîµÄx×ø±êÎ»ÖÃµÈÓÚ£ºtouchBarMenuItemsJPanel¾àÀëTouchBarJPanel×ó±ßµÄ¾àÀë+Ô¤¶¨µÄË®Æ½¼äÏ¶
+                //èœå•é¡¹çš„xåæ ‡ä½ç½®ç­‰äºï¼štouchBarMenuItemsJPanelè·ç¦»TouchBarJPanelå·¦è¾¹çš„è·ç¦»+é¢„å®šçš„æ°´å¹³é—´éš™
                 int x=insets.left + horizontalGap;
                 touchBarMenuItemsJPanel.getComponent(i).setBounds(x,y,width, height);
                 
-                //²Ëµ¥ÏîµÄy×ø±êÎ»ÖÃµÈÓÚ£ºÑ­»·µ½µÄN¸ö²Ëµ¥ÏîµÄ´ÓÉÏµ½ÏÂÀÛ¼ÆµÄ¸ß¶È£¬¼ÓÉÏÔ¤¶¨µÄ´¹Ö±¼äÏ¶
+                //èœå•é¡¹çš„yåæ ‡ä½ç½®ç­‰äºï¼šå¾ªç¯åˆ°çš„Nä¸ªèœå•é¡¹çš„ä»ä¸Šåˆ°ä¸‹ç´¯è®¡çš„é«˜åº¦ï¼ŒåŠ ä¸Šé¢„å®šçš„å‚ç›´é—´éš™
                 y += height + verticalGap;
             }
         }
     }
     
-    /**ÉèÖÃtouchBarMenuItemsJPanelµÄ×îÓÅ´óĞ¡*/
+    /**è®¾ç½®touchBarMenuItemsJPanelçš„æœ€ä¼˜å¤§å°*/
     public Dimension preferredLayoutSize(Container touchBarMenuItemsJPanel) {
-    	//Í¬²½ËøµÄÄ¿µÄÊÇ£ºµ±¼ÆËãtouchBarMenuItemsJPanelÖĞ²Ëµ¥ÏîµÄ´óĞ¡Ã»ÓĞÍê³ÉÊ±£¬²»ÔÊĞí¿ªÊ¼ĞÂµÄ¼ÆËã
+    	//åŒæ­¥é”çš„ç›®çš„æ˜¯ï¼šå½“è®¡ç®—touchBarMenuItemsJPanelä¸­èœå•é¡¹çš„å¤§å°æ²¡æœ‰å®Œæˆæ—¶ï¼Œä¸å…è®¸å¼€å§‹æ–°çš„è®¡ç®—
         synchronized (touchBarMenuItemsJPanel.getTreeLock()) {
-        	//·µ»ØtouchBarMenuItemsJPanel¾àÀëTouchBarJPanelËÄ±ßµÄ¾àÀë
-        	//´Ë´¦Ò»°ãÇé¿öÏÂ£º¾àÀë¸¸ÈİÆ÷ÉÏÏÂ×óÓÒ¾ùÎª0
+        	//è¿”å›touchBarMenuItemsJPanelè·ç¦»TouchBarJPanelå››è¾¹çš„è·ç¦»
+        	//æ­¤å¤„ä¸€èˆ¬æƒ…å†µä¸‹ï¼šè·ç¦»çˆ¶å®¹å™¨ä¸Šä¸‹å·¦å³å‡ä¸º0
             Insets insets = touchBarMenuItemsJPanel.getInsets();
-            //µÃµ½touchBarMenuItemsJPanel°üº¬µÄ²Ëµ¥ÏîÊıÁ¿
+            //å¾—åˆ°touchBarMenuItemsJPanelåŒ…å«çš„èœå•é¡¹æ•°é‡
             int componentCount = touchBarMenuItemsJPanel.getComponentCount();
             int width = 0;
             int height = 0;
             for (int i = 0; i < componentCount; i++) {
                 Component component = touchBarMenuItemsJPanel.getComponent(i);
                 Dimension dimension = component.getPreferredSize();
-                //Ñ­»·¼ÆËã³öËùÓĞMenuItemsÀÛ¼ÆµÄ¿í¡¢¸ß
+                //å¾ªç¯è®¡ç®—å‡ºæ‰€æœ‰MenuItemsç´¯è®¡çš„å®½ã€é«˜
                 if (width < dimension.width) {
                 	width = dimension.width;
                 }
                 height += dimension.height + verticalGap;
             }
-            //ÒÔÏÂ¼ÆËãÄ¿µÄÊÇ³äÂúTouchBarJPanelµÄÕû¸ö´°¿Ú
-            //touchBarMenuItemsJPanel¿í¶ÈµÈÓÚ£ºtouchBarMenuItemsJPanel¾àÀëTouchBarJPanel×óÓÒÁ½±ßµÄ¾àÀë
-            //¼ÓÉÏ¸Õ²Å¼ÆËã³öµÄ²Ëµ¥ÏîµÄ³ß´ç£¬ÔÙ³ËÒÔ×óÓÒÁ½±ßÔ¤¶¨µÄ¼äÏ¶
+            //ä»¥ä¸‹è®¡ç®—ç›®çš„æ˜¯å……æ»¡TouchBarJPanelçš„æ•´ä¸ªçª—å£
+            //touchBarMenuItemsJPanelå®½åº¦ç­‰äºï¼štouchBarMenuItemsJPanelè·ç¦»TouchBarJPanelå·¦å³ä¸¤è¾¹çš„è·ç¦»
+            //åŠ ä¸Šåˆšæ‰è®¡ç®—å‡ºçš„èœå•é¡¹çš„å°ºå¯¸ï¼Œå†ä¹˜ä»¥å·¦å³ä¸¤è¾¹é¢„å®šçš„é—´éš™
             int widthTemp=insets.left + insets.right + width + 2 * horizontalGap;
-            //touchBarMenuItemsJPanel¸ß¶ÈµÈÓÚ£ºtouchBarMenuItemsJPanel¾àÀëTouchBarJPanelÉÏÏÂÁ½±ßµÄ¾àÀë
-            //¼ÓÉÏ¸Õ²Å¼ÆËã³öµÄ²Ëµ¥ÏîµÄ³ß´ç£¬ÔÙ³ËÒÔÉÏÏÂÁ½±ßÔ¤¶¨µÄ¼äÏ¶
+            //touchBarMenuItemsJPanelé«˜åº¦ç­‰äºï¼štouchBarMenuItemsJPanelè·ç¦»TouchBarJPanelä¸Šä¸‹ä¸¤è¾¹çš„è·ç¦»
+            //åŠ ä¸Šåˆšæ‰è®¡ç®—å‡ºçš„èœå•é¡¹çš„å°ºå¯¸ï¼Œå†ä¹˜ä»¥ä¸Šä¸‹ä¸¤è¾¹é¢„å®šçš„é—´éš™
             int heightTemp=insets.top + insets.bottom + height + 2 * verticalGap;
             
             return new Dimension(widthTemp,heightTemp);
         }
     }
     
-    /**ÉèÖÃtouchBarMenuItemsJPanelµÄ×îĞ¡´óĞ¡*/
+    /**è®¾ç½®touchBarMenuItemsJPanelçš„æœ€å°å¤§å°*/
     public Dimension minimumLayoutSize(Container parentContainer) {
         return preferredLayoutSize(parentContainer);
     }

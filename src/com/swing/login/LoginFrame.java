@@ -8,7 +8,6 @@ import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,47 +36,47 @@ public class LoginFrame extends JFrame {
     private int backgroundImageHeight;
     
     public LoginFrame() {
-    	//¼ÓÔØ±³¾°Í¼Æ¬    	
+    	//åŠ è½½èƒŒæ™¯å›¾ç‰‡
     	URL backgroundUrl=LoginFrame.class.getClassLoader().getResource(BaseInfo.imagesPath+"background.gif");
         backgroundImageIcon = new ImageIcon(backgroundUrl);
-        //»ñÈ¡±³¾°Í¼Æ¬¿í¶ÈÏñËØ
+        //è·å–èƒŒæ™¯å›¾ç‰‡å®½åº¦åƒç´ 
         backgroundImageWidth=backgroundImageIcon.getIconWidth();
-        //»ñÈ¡±³¾°Í¼Æ¬¸ß¶ÈÏñËØ
+        //è·å–èƒŒæ™¯å›¾ç‰‡é«˜åº¦åƒç´ 
         backgroundImageHeight=backgroundImageIcon.getIconHeight();
-        //ÉèÖÃ´°¿Ú±êÌâ
-        this.setTitle("ÏµÍ³µÇÂ¼");
-        //ÉèÖÃ´°¿ÚµÄ¿í¡¢¸ß£¬·Ö±ğµÈÓÚ±³¾°Í¼Æ¬µÄ¿í¡¢¸ß£¬³¤¶Èµ¥Î»ÊÇÏñËØ
+        //è®¾ç½®çª—å£æ ‡é¢˜
+        this.setTitle("ç³»ç»Ÿç™»å½•");
+        //è®¾ç½®çª—å£çš„å®½ã€é«˜ï¼Œåˆ†åˆ«ç­‰äºèƒŒæ™¯å›¾ç‰‡çš„å®½ã€é«˜ï¼Œé•¿åº¦å•ä½æ˜¯åƒç´ 
         this.setSize(backgroundImageWidth,backgroundImageHeight);       
-        //³õÊ¼»¯´°¿ÚÄÚ×é¼ş
+        //åˆå§‹åŒ–çª—å£å†…ç»„ä»¶
         initComponent();
-        //ÉèÖÃ´°¿Ú¹Ø±Õ°´Å¥£¬µ¥»÷Ê±Ö´ĞĞµÄ²Ù×÷(¹Ø±Õ¡¢Òş²ØµÈ)
+        //è®¾ç½®çª—å£å…³é—­æŒ‰é’®ï¼Œå•å‡»æ—¶æ‰§è¡Œçš„æ“ä½œ(å…³é—­ã€éšè—ç­‰)
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //ÉèÖÃ´°¿ÚÄÚÈİ²¼¾Ö·½Ê½Îª¾ø¶Ô¶¨Î»£¨´Ë´¦²»Ö¸¶¨ÈÎºÎ²¼¾Ö¹ÜÀíÆ÷£¬¼´¾ø¶Ô¶¨Î»£©
+        //è®¾ç½®çª—å£å†…å®¹å¸ƒå±€æ–¹å¼ä¸ºç»å¯¹å®šä½ï¼ˆæ­¤å¤„ä¸æŒ‡å®šä»»ä½•å¸ƒå±€ç®¡ç†å™¨ï¼Œå³ç»å¯¹å®šä½ï¼‰
         this.setLayout(null);
-        //ÉèÖÃ´°¿ÚÏà¶ÔÓÚ¸¸ÀàJFrameµÄÏà¶ÔÎ»ÖÃ£¨¾àÀëJFrame×ó±ß¡¢ÉÏ±ß¡¢×Ô¼ºµÄ¿í¸ßµÈÎ»ÖÃ£©
+        //è®¾ç½®çª—å£ç›¸å¯¹äºçˆ¶ç±»JFrameçš„ç›¸å¯¹ä½ç½®ï¼ˆè·ç¦»JFrameå·¦è¾¹ã€ä¸Šè¾¹ã€è‡ªå·±çš„å®½é«˜ç­‰ä½ç½®ï¼‰
         this.setBounds(0, 0,backgroundImageWidth,backgroundImageHeight);
-        //ÉèÖÃ´°¿ÚµÄ±êÌâÍ¼±ê
+        //è®¾ç½®çª—å£çš„æ ‡é¢˜å›¾æ ‡
         URL prodlogoUrl=LoginFrame.class.getClassLoader().getResource(BaseInfo.imagesPath+"prodlogo.gif");
         this.setIconImage(new ImageIcon(prodlogoUrl).getImage());
-        //ÉèÖÃ´°¿ÚÊÇ·ñ¿ÉÒÔµ÷Õû´óĞ¡£¬²ÎÊıÎª²¼¶ûÖµ
+        //è®¾ç½®çª—å£æ˜¯å¦å¯ä»¥è°ƒæ•´å¤§å°ï¼Œå‚æ•°ä¸ºå¸ƒå°”å€¼
         this.setResizable(false);
-        //ÉèÖÃ´°¿ÚÏà¶ÔÓÚµçÄÔÏÔÊ¾Æ÷ÆÁÄ»×óÉÏ½ÇµÄÏà¶ÔÎ»ÖÃ£¨null¼´ÊÇÎ»ÓÚÆÁÄ»ÖĞÑë£©
+        //è®¾ç½®çª—å£ç›¸å¯¹äºç”µè„‘æ˜¾ç¤ºå™¨å±å¹•å·¦ä¸Šè§’çš„ç›¸å¯¹ä½ç½®ï¼ˆnullå³æ˜¯ä½äºå±å¹•ä¸­å¤®ï¼‰
         this.setLocationRelativeTo(null);
-        //ÉèÖÃ´°¿ÚÊÇ·ñ¿É¼û£¨´ËÓï¾ä±ØĞëÓĞ£¬·ñÔò¿´²»µ½½çÃæ£¬Ê§È¥ÁË´´½¨½çÃæµÄÒâÒå£©
+        //è®¾ç½®çª—å£æ˜¯å¦å¯è§ï¼ˆæ­¤è¯­å¥å¿…é¡»æœ‰ï¼Œå¦åˆ™çœ‹ä¸åˆ°ç•Œé¢ï¼Œå¤±å»äº†åˆ›å»ºç•Œé¢çš„æ„ä¹‰ï¼‰
         this.setVisible(true);
     }
  
     public void initComponent() {
-        //ÉèÖÃcompanyNameJLabelµÄ¿í¡¢¸ß¡¢ÒÔ¼°¾àÀëÓÒ±ß¿òµÄ¼äÏ¶´óĞ¡
+        //è®¾ç½®companyNameJLabelçš„å®½ã€é«˜ã€ä»¥åŠè·ç¦»å³è¾¹æ¡†çš„é—´éš™å¤§å°
         int companyNameJLabelWidth=260;
         int companyNameJLabelHeight=20;       
         int companyNameJLabelGap=28;
         int companyNameJLabelX=this.getWidth()-companyNameJLabelWidth-companyNameJLabelGap;
         companyNameJLabel = new JLabel();
-        companyNameJLabel.setText("±±¾©Ó¢¿Ë¿Æ¼¼ÓĞÏŞ¹«Ë¾ ¹ÜÀíĞÅÏ¢ÏµÍ³");
+        companyNameJLabel.setText("åŒ—äº¬è‹±å…‹ç§‘æŠ€æœ‰é™å…¬å¸ ç®¡ç†ä¿¡æ¯ç³»ç»Ÿ");
         companyNameJLabel.setBounds(companyNameJLabelX, 26, companyNameJLabelWidth, companyNameJLabelHeight);
  
-        //ÉèÖÃcompanyNameJLabelµÄ¿í¡¢¸ß¡¢ÒÔ¼°¾àÀëÓÒ±ß¿òµÄ¼äÏ¶´óĞ¡
+        //è®¾ç½®companyNameJLabelçš„å®½ã€é«˜ã€ä»¥åŠè·ç¦»å³è¾¹æ¡†çš„é—´éš™å¤§å°
         int userJLabelWidth=70;
         int userJLabelHeight=20;
         int userJTextFieldWidth=150;
@@ -85,33 +84,33 @@ public class LoginFrame extends JFrame {
         int rightGap=30;
         int userJLlabelX=this.getWidth()-userJLabelWidth-userJTextFieldWidth;
         int userJTextFieldX=this.getWidth()-userJTextFieldWidth-rightGap;
-        userJLabel = new JLabel("ÓÃ»§£º");
+        userJLabel = new JLabel("ç”¨æˆ·ï¼š");
         userJLabel.setBounds(userJLlabelX, 100, userJLabelWidth, userJLabelHeight);        
         userJTextField = new JTextField();
         userJTextField.setText(this.getWidth()+"  "+this.getHeight());
         userJTextField.setBounds(userJTextFieldX, 100, userJTextFieldWidth, userJTextFieldHeight);
 
-        //ÉèÖÃcompanyNameJLabelµÄ¿í¡¢¸ß¡¢ÒÔ¼°¾àÀëÓÒ±ß¿òµÄ¼äÏ¶´óĞ¡
+        //è®¾ç½®companyNameJLabelçš„å®½ã€é«˜ã€ä»¥åŠè·ç¦»å³è¾¹æ¡†çš„é—´éš™å¤§å°
         int passwordJLabelWidth=70;
         int passwordJLabelHeight=20;
         int passwordJPasswordFieldWidth=150;
         int passwordJPasswordFieldHeight=20;
         int passwordJLabelX=this.getWidth()-passwordJLabelWidth-passwordJPasswordFieldWidth;
         int passwordJPasswordFieldX=this.getWidth()-passwordJPasswordFieldWidth-rightGap;
-        passwordJLabel = new JLabel("ÃÜÂë£º");
+        passwordJLabel = new JLabel("å¯†ç ï¼š");
         passwordJLabel.setBounds(passwordJLabelX, 130, passwordJLabelWidth, passwordJLabelHeight);
         passwordJPasswordField = new JPasswordField();
         passwordJPasswordField.setText("password");
         passwordJPasswordField.setBounds(passwordJPasswordFieldX, 130, passwordJPasswordFieldWidth, passwordJPasswordFieldHeight);
         
-        //ÉèÖÃloginJButton¡¢logoutJButtonµÄ¿í¡¢¸ß¡¢ÒÔ¼°loginJButton¾àÀëÓÒ±ß¿òµÄ¼äÏ¶´óĞ¡
+        //è®¾ç½®loginJButtonã€logoutJButtonçš„å®½ã€é«˜ã€ä»¥åŠloginJButtonè·ç¦»å³è¾¹æ¡†çš„é—´éš™å¤§å°
         int loginJButtonWidth=65;
         int loginJButtonHeight=20;   
         int logoutJButtonWidth=65;
         int logoutJButtonHeight=20;  
         int loginJButtonGap=46;
         int loginJButtonX=this.getWidth()-loginJButtonWidth-logoutJButtonWidth-loginJButtonGap;
-        loginJButton = new JButton("µÇÂ¼");
+        loginJButton = new JButton("ç™»å½•");
         loginJButton.setBounds(loginJButtonX, 170, loginJButtonWidth, loginJButtonHeight);
 		loginJButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
@@ -119,10 +118,10 @@ public class LoginFrame extends JFrame {
 			}
 		});
 		
-        //ÉèÖÃlogoutJButton¾àÀëÓÒ±ß¿òµÄ¼äÏ¶´óĞ¡
+        //è®¾ç½®logoutJButtonè·ç¦»å³è¾¹æ¡†çš„é—´éš™å¤§å°
 		int logoutJButtonGap=28;
         int logoutJButtonX=this.getWidth()-logoutJButtonWidth-logoutJButtonGap;
-        logoutJButton = new JButton("ÍË³ö");
+        logoutJButton = new JButton("é€€å‡º");
         logoutJButton.setBounds(logoutJButtonX, 170, logoutJButtonWidth, logoutJButtonHeight);
 		logoutJButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
@@ -130,21 +129,21 @@ public class LoginFrame extends JFrame {
 			}
 		});
 
-		//°Ñ±³¾°Í¼Æ¬·ÅÖÃµ½´°¿ÚµÄµÚ¶ş²ãJlayerPane
+		//æŠŠèƒŒæ™¯å›¾ç‰‡æ”¾ç½®åˆ°çª—å£çš„ç¬¬äºŒå±‚JlayerPane
 		JLabel backgroundJLabel = new JLabel();
         backgroundJLabel.setIcon(backgroundImageIcon);
         backgroundJLabel.setBounds(-2, -2, backgroundImageWidth,backgroundImageHeight);
         getLayeredPane().add(backgroundJLabel,new Integer(Integer.MIN_VALUE)); 
-        //JLabel¡¢JButtonµÈÀàĞÍµÄ×é¼ş¶¼¼ÓÔØµ½µÚ¶ş²ãJlayerPaneÉÏÃæ
+        //JLabelã€JButtonç­‰ç±»å‹çš„ç»„ä»¶éƒ½åŠ è½½åˆ°ç¬¬äºŒå±‚JlayerPaneä¸Šé¢
         backgroundJLabel.add(companyNameJLabel);
         backgroundJLabel.add(userJLabel);
         backgroundJLabel.add(passwordJLabel);
         backgroundJLabel.add(loginJButton);
         backgroundJLabel.add(logoutJButton);
         
-        //°ÑJTextField¡¢JPasswordField·ÅÖÃµ½´°¿ÚµÄµÚÈı²ãContentPan
+        //æŠŠJTextFieldã€JPasswordFieldæ”¾ç½®åˆ°çª—å£çš„ç¬¬ä¸‰å±‚ContentPan
     	JPanel  loginFrameContainer = (JPanel) this.getContentPane();
-    	//°ÑµÚÈı²ãÉèÖÃÎªÍ¸Ã÷²ã£¬Ê¹µÃ¿ÉÒÔ¿´µ½µÚ¶ş²ãÉÏµÄĞÅÏ¢
+    	//æŠŠç¬¬ä¸‰å±‚è®¾ç½®ä¸ºé€æ˜å±‚ï¼Œä½¿å¾—å¯ä»¥çœ‹åˆ°ç¬¬äºŒå±‚ä¸Šçš„ä¿¡æ¯
         loginFrameContainer.setOpaque(false);
         
         loginFrameContainer.add(userJTextField);
@@ -156,15 +155,15 @@ public class LoginFrame extends JFrame {
 		String userName = userJTextField.getText();
 		String password = new String(passwordJPasswordField.getPassword());
 		if (StringUtil.isEmpty(userName)) {
-			JOptionPane.showMessageDialog(null, "ÓÃ»§±ØĞëÌîĞ´£¡");
+			JOptionPane.showMessageDialog(null, "ç”¨æˆ·å¿…é¡»å¡«å†™ï¼");
 			return;
 		}
 		if (StringUtil.isEmpty(password)) {
-			JOptionPane.showMessageDialog(null, "ÃÜÂë±ØĞëÌîĞ´");
+			JOptionPane.showMessageDialog(null, "å¯†ç å¿…é¡»å¡«å†™");
 			return;
 		}
 		User user = new User(userName, password);
-		//accessServerByHttpURLConnection(user);
+		accessServerByHttpURLConnection(user);
 
 		this.dispose();
 		new MainFrame();
@@ -174,26 +173,26 @@ public class LoginFrame extends JFrame {
 		try {
 			URL url = new URL("http://127.0.0.1:8080/easerver/myServlet");
 			HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-			//Ê¹ÓÃHttpURLConnectionÁ¬½Ó½øĞĞÊäÈë
+			//ä½¿ç”¨HttpURLConnectionè¿æ¥è¿›è¡Œè¾“å…¥
 			httpURLConnection.setDoInput(true);
-			//Ê¹ÓÃHttpURLConnectionÁ¬½Ó½øĞĞÊä³ö
+			//ä½¿ç”¨HttpURLConnectionè¿æ¥è¿›è¡Œè¾“å‡º
 			httpURLConnection.setDoOutput(true);
-			//ÉèÖÃHttpURLConnectionµÄÁ¬½Ó³¬Ê±Ê±¼ä
+			//è®¾ç½®HttpURLConnectionçš„è¿æ¥è¶…æ—¶æ—¶é—´
 			//httpURLConnection.setConnectTimeout(5 * 1000);
-			//ÉèÖÃHttpURLConnectionµÄ¶ÁÈ¡³¬Ê±Ê±¼ä
+			//è®¾ç½®HttpURLConnectionçš„è¯»å–è¶…æ—¶æ—¶é—´
 			//httpURLConnection.setReadTimeout(10 * 1000);
-		    //ÉèÖÃHttpURLConnectionµÄÇëÇó·½Ê½ÎªPOST
+		    //è®¾ç½®HttpURLConnectionçš„è¯·æ±‚æ–¹å¼ä¸ºPOST
 			httpURLConnection.setRequestMethod("POST");
-			//´´½¨HttpURLConnectionÁ¬½ÓµÄ¶ÔÏóÊä³öÁ÷
+			//åˆ›å»ºHttpURLConnectionè¿æ¥çš„å¯¹è±¡è¾“å‡ºæµ
 			ObjectOutputStream objectOutputStream =new ObjectOutputStream(httpURLConnection.getOutputStream());
-			//¶ÔÏóÊä³öÁ÷¿ªÊ¼Ïòtomcat·şÎñ¶ËµÄservlet·¢ËÍÊı¾İÁ÷
+			//å¯¹è±¡è¾“å‡ºæµå¼€å§‹å‘tomcatæœåŠ¡ç«¯çš„servletå‘é€æ•°æ®æµ
 			objectOutputStream.writeObject(user);
-			//´´½¨HttpURLConnectionÁ¬½ÓµÄ¶ÔÏóÊäÈëÁ÷
+			//åˆ›å»ºHttpURLConnectionè¿æ¥çš„å¯¹è±¡è¾“å…¥æµ
 			ObjectInputStream objectInputStream = new ObjectInputStream(httpURLConnection.getInputStream());
-			//¶ÔÏóÊäÈëÁ÷¿ªÊ¼¿ªÊ¼¶ÁÈ¡·µ»ØµÄÊı¾İ
+			//å¯¹è±¡è¾“å…¥æµå¼€å§‹å¼€å§‹è¯»å–è¿”å›çš„æ•°æ®
 	        User user1 = (User) objectInputStream.readObject();
-	        System.out.println("¿Í»§¶ËµÃµ½·µ»ØÃÜÂëÊÇ£º" + user1.getUserName());
-	        System.out.println("¿Í»§¶ËµÃµ½·µ»ØÓÃ»§ÃûÊÇ£º "+ user1.getPassword());
+	        System.out.println("å®¢æˆ·ç«¯å¾—åˆ°è¿”å›å¯†ç æ˜¯ï¼š" + user1.getUserName());
+	        System.out.println("å®¢æˆ·ç«¯å¾—åˆ°è¿”å›ç”¨æˆ·åæ˜¯ï¼š "+ user1.getPassword());
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

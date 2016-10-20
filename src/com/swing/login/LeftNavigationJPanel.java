@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -22,44 +21,44 @@ public class LeftNavigationJPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	//µ¼º½À¸±±²¿Ãæ°å
+	//å¯¼èˆªæ åŒ—éƒ¨é¢æ¿
 	private JPanel navigationJPanel_North;
 	
-	//µ¼º½À¸ÖĞ²¿Ãæ°å-¹ö¶¯ÌõÈİÆ÷
+	//å¯¼èˆªæ ä¸­éƒ¨é¢æ¿-æ»šåŠ¨æ¡å®¹å™¨
 	private JScrollPane navigationJScrollPane_Center;
 	
-	//µ¼º½À¸ÄÏ²¿Ãæ°å-ÆÕÍ¨ÈİÆ÷
+	//å¯¼èˆªæ å—éƒ¨é¢æ¿-æ™®é€šå®¹å™¨
 	private MenuItemJPanel menuItemJPanel_Center;
 	
-	//µ¼º½À¸ÄÏ²¿Ãæ°å
+	//å¯¼èˆªæ å—éƒ¨é¢æ¿
 	private JPanel navigationJPanel_South;
 	
-    //¼¤»îµÄÅöÅöÌõ°´Å¥
+    //æ¿€æ´»çš„ç¢°ç¢°æ¡æŒ‰é’®
     private JButton activeTouchBarJButton;
         
-    //·ÅÖÃËùÓĞÅöÅöÌõ°´Å¥µÄList
+    //æ”¾ç½®æ‰€æœ‰ç¢°ç¢°æ¡æŒ‰é’®çš„List
     private ArrayList<JButton> allTouchBarJButtonArrayList;
     
-	//·ÅÖÃËùÓĞÅöÅöÌõ°´Å¥×´Ì¬µÄÊı×é£¨Õ¹¿ª¡¢ÊÕËõ£©
+	//æ”¾ç½®æ‰€æœ‰ç¢°ç¢°æ¡æŒ‰é’®çŠ¶æ€çš„æ•°ç»„ï¼ˆå±•å¼€ã€æ”¶ç¼©ï¼‰
     private int[] touchBarJButtonStatusIntArray;
     
-    //ÅöÅöÌõ²Ëµ¥ÏîÊ÷
+    //ç¢°ç¢°æ¡èœå•é¡¹æ ‘
     private JTree[] touchBarJTreeArray;
 	
-    //¹¹Ôì·½·¨
+    //æ„é€ æ–¹æ³•
 	public LeftNavigationJPanel() {
 		
 		this.setLayout(new BorderLayout());
 		
 		allTouchBarJButtonArrayList = new ArrayList<JButton>();
 		
-		//µ¼º½À¸±±²¿Ãæ°å
+		//å¯¼èˆªæ åŒ—éƒ¨é¢æ¿
 		navigationJPanel_North=new JPanel();
 		navigationJPanel_North.setLayout(new MenuItemsLayout());
 		//navigationJPanel_North.setBorder(BorderFactory.createLineBorder(Color.green, 3));
         this.add(navigationJPanel_North, BorderLayout.NORTH);
         
-        //µ¼º½À¸ÖĞ²¿Ãæ°å
+        //å¯¼èˆªæ ä¸­éƒ¨é¢æ¿
 		navigationJScrollPane_Center=new JScrollPane();
 		menuItemJPanel_Center=new MenuItemJPanel();		
 		menuItemJPanel_Center.setLayout(new MenuItemsLayout());
@@ -67,70 +66,70 @@ public class LeftNavigationJPanel extends JPanel {
 		navigationJScrollPane_Center = new JScrollPane(menuItemJPanel_Center);
         this.add(navigationJScrollPane_Center, BorderLayout.CENTER);
         
-        //µ¼º½À¸ÄÏ²¿Ãæ°å
+        //å¯¼èˆªæ å—éƒ¨é¢æ¿
 		navigationJPanel_South=new JPanel();		
 		navigationJPanel_South.setLayout(new MenuItemsLayout());
 		//navigationJPanel_South.setBorder(BorderFactory.createLineBorder(Color.BLUE, 3));
         this.add(navigationJPanel_South, BorderLayout.SOUTH);
 	}
     
-    //¿ªÊ¼´´½¨µ¼º½Ä¿Â¼Ê÷
+    //å¼€å§‹åˆ›å»ºå¯¼èˆªç›®å½•æ ‘
     public LeftNavigationJPanel startCreateLeftNavigationJPanel() {
     	LeftNavigationJPanel leftNavigationJPanel=new LeftNavigationJPanel();
-    	//ÉèÖÃÅöÅöÌõÊıÄ¿Îª2¸ö
+    	//è®¾ç½®ç¢°ç¢°æ¡æ•°ç›®ä¸º2ä¸ª
     	int touchBarCount=2;
-        //ÊµÀı»¯ÅöÅöÌõÕ¹¿ª¡¢ÊÕËõ×´Ì¬Êı×é
+        //å®ä¾‹åŒ–ç¢°ç¢°æ¡å±•å¼€ã€æ”¶ç¼©çŠ¶æ€æ•°ç»„
     	leftNavigationJPanel.setTouchBarJButtonStatusIntArray(touchBarCount);
-    	//ÊµÀı»¯ÅöÅöÌõ²Ëµ¥ÏîÊı×é
+    	//å®ä¾‹åŒ–ç¢°ç¢°æ¡èœå•é¡¹æ•°ç»„
     	leftNavigationJPanel.setTouchBarJTreeArray(touchBarCount);
     	
         for (int i = 0; i < touchBarCount; i++) {
-        	//ÎªÃ¿Ò»¸öÅöÅöÌõ°´Å¥£ºÃüÃû
+        	//ä¸ºæ¯ä¸€ä¸ªç¢°ç¢°æ¡æŒ‰é’®ï¼šå‘½å
         	leftNavigationJPanel.addTouchBarJButton(i,"TouchBarJButton" + i);
-        	//ÎªÃ¿Ò»¸öÅöÅöÌõ°´Å¥£ºÌî³ä²Ëµ¥ÏîÊ÷
+        	//ä¸ºæ¯ä¸€ä¸ªç¢°ç¢°æ¡æŒ‰é’®ï¼šå¡«å……èœå•é¡¹æ ‘
         	leftNavigationJPanel.setTouchBarJButtonJTree(i,leftNavigationJPanel.getTree());
-        	//ÎªÃ¿Ò»¸öÅöÅöÌõ°´Å¥£º¸³ÓèÄ¬ÈÏÊÕËõ×´Ì¬£¨0´ú±íÊÕËõ£©
+        	//ä¸ºæ¯ä¸€ä¸ªç¢°ç¢°æ¡æŒ‰é’®ï¼šèµ‹äºˆé»˜è®¤æ”¶ç¼©çŠ¶æ€ï¼ˆ0ä»£è¡¨æ”¶ç¼©ï¼‰
         	leftNavigationJPanel.setTouchBarJButtonStatus(i,0);
         }
         
-        //Õ¹¿ªÖ¸¶¨ÅöÅöÌõ°´Å¥(Ä¬ÈÏÕ¹¿ªµÚÒ»¸ö²Ëµ¥Ïî)
+        //å±•å¼€æŒ‡å®šç¢°ç¢°æ¡æŒ‰é’®(é»˜è®¤å±•å¼€ç¬¬ä¸€ä¸ªèœå•é¡¹)
         leftNavigationJPanel.expandTouchBarJPanel(leftNavigationJPanel.allTouchBarJButtonArrayList.get(0));
         return leftNavigationJPanel;
     }
     
-    /**ÉèÖÃ£ºÊµÀı»¯ÅöÅöÌõÕ¹¿ª¡¢ÊÕËõ×´Ì¬Êı×é*/
+    /**è®¾ç½®ï¼šå®ä¾‹åŒ–ç¢°ç¢°æ¡å±•å¼€ã€æ”¶ç¼©çŠ¶æ€æ•°ç»„*/
 	public void setTouchBarJButtonStatusIntArray(int touchBarJButtonStatusIntArray) {
 		this.touchBarJButtonStatusIntArray = new int[touchBarJButtonStatusIntArray];
 	}
 
-    /**ÉèÖÃ£ºÖ¸¶¨ÅöÅöÌõµÄ×´Ì¬,0=ÊÕËõ 1=Õ¹¿ª*/
+    /**è®¾ç½®ï¼šæŒ‡å®šç¢°ç¢°æ¡çš„çŠ¶æ€,0=æ”¶ç¼© 1=å±•å¼€*/
 	public void setTouchBarJButtonStatus(int i,int status) {
 		this.touchBarJButtonStatusIntArray[i] = status;
 	}
 	
-    /**ÉèÖÃ£ºÊµÀı»¯ÅöÅöÌõ²Ëµ¥ÏîÊı×é*/
+    /**è®¾ç½®ï¼šå®ä¾‹åŒ–ç¢°ç¢°æ¡èœå•é¡¹æ•°ç»„*/
 	public void setTouchBarJTreeArray(int touchBarJTreeArray) {
 		this.touchBarJTreeArray = new JTree[touchBarJTreeArray];
 	}
 	
-    /**ÉèÖÃ£ºÖ¸¶¨ÅöÅöÌõ²Ëµ¥ÏîÊ÷*/
+    /**è®¾ç½®ï¼šæŒ‡å®šç¢°ç¢°æ¡èœå•é¡¹æ ‘*/
 	public void setTouchBarJButtonJTree(int i,JTree jTree) {
 		this.touchBarJTreeArray[i] = jTree;
 	}
 
-    /**Ôö¼Ó£ºĞÂÔöÒ»¸öÅöÅöÌõ£¨Ö¸¶¨Ë÷Òı¡¢Ãû³Æ£© */
+    /**å¢åŠ ï¼šæ–°å¢ä¸€ä¸ªç¢°ç¢°æ¡ï¼ˆæŒ‡å®šç´¢å¼•ã€åç§°ï¼‰ */
     public void addTouchBarJButton(int index, String name) {
     	addTouchBarJButton(index, name, UIManager.getColor("Desktop.background"));
     }
     
-    /**Ôö¼Ó£ºĞÂÔöÒ»¸öÅöÅöÌõ£¨Ö¸¶¨Ë÷Òı¡¢Ãû³Æ¡¢±³¾°É«£© */
+    /**å¢åŠ ï¼šæ–°å¢ä¸€ä¸ªç¢°ç¢°æ¡ï¼ˆæŒ‡å®šç´¢å¼•ã€åç§°ã€èƒŒæ™¯è‰²ï¼‰ */
     public void addTouchBarJButton(int index, String name, Color backgroundColor) {
         JButton touchBarJButton= addTouchBarJButton(navigationJPanel_North, index, name, backgroundColor);
         touchBarJButton.addActionListener(jButtonActionListener);
         this.allTouchBarJButtonArrayList.add(index, touchBarJButton);
     }
     
-    /**Ôö¼Ó£ºĞÂÔöÒ»¸öÅöÅöÌõ°´Å¥£¨Ö¸¶¨Ë÷Òı¡¢Ãû³Æ¡¢±³¾°É«£© */
+    /**å¢åŠ ï¼šæ–°å¢ä¸€ä¸ªç¢°ç¢°æ¡æŒ‰é’®ï¼ˆæŒ‡å®šç´¢å¼•ã€åç§°ã€èƒŒæ™¯è‰²ï¼‰ */
     private JButton addTouchBarJButton(JPanel jPanel, int index, String name,Color bg) {
     	JButton touchBarJButton = new JButton(name);
         jPanel.add(touchBarJButton);
@@ -138,104 +137,104 @@ public class LeftNavigationJPanel extends JPanel {
     }
     
     
-    /**Ôö¼Ó£ºÍùÖ¸¶¨ÅöÅöÌõÖĞ²åÈëÖ¸¶¨²Ëµ¥Ïî£¨Ö¸¶¨ÅöÅöÌõµÄË÷ÒıºÅ£¬²Ëµ¥ÏîµÄË÷ÒıºÅ×Ô¶¯¼ÆËãµ±Ç°ÅöÅöÌõÖĞµÄ²Ëµ¥ÏîÊıÁ¿¼Ó1£©*/
+    /**å¢åŠ ï¼šå¾€æŒ‡å®šç¢°ç¢°æ¡ä¸­æ’å…¥æŒ‡å®šèœå•é¡¹ï¼ˆæŒ‡å®šç¢°ç¢°æ¡çš„ç´¢å¼•å·ï¼Œèœå•é¡¹çš„ç´¢å¼•å·è‡ªåŠ¨è®¡ç®—å½“å‰ç¢°ç¢°æ¡ä¸­çš„èœå•é¡¹æ•°é‡åŠ 1ï¼‰*/
     public void addMenuItemToMenuItemJPanelCenter(Component menuItem) {
     	menuItemJPanel_Center.add(menuItem);
     }
     
-    /**²éÑ¯£ºµÃµ½ËùÓĞÅöÅöÌõ°´Å¥ÊıÁ¿*/
+    /**æŸ¥è¯¢ï¼šå¾—åˆ°æ‰€æœ‰ç¢°ç¢°æ¡æŒ‰é’®æ•°é‡*/
     public int getAllTouchBarJButtonCount() {
         return allTouchBarJButtonArrayList.size();
     }
     
-    /**¼àÌı£º¼àÌı°´Å¥µã»÷ÊÂ¼ş*/
+    /**ç›‘å¬ï¼šç›‘å¬æŒ‰é’®ç‚¹å‡»äº‹ä»¶*/
     transient ActionListener jButtonActionListener = new ActionListener() {
-        //transient¹Ø¼ü×ÖÖ»ÄÜĞŞÊÎ±äÁ¿,¶ø²»ÄÜĞŞÊÎ·½·¨ºÍÀà,±»transient¹Ø¼ü×ÖĞŞÊÎµÄ±äÁ¿²»ÔÙÄÜ±»ĞòÁĞ»¯
+        //transientå…³é”®å­—åªèƒ½ä¿®é¥°å˜é‡,è€Œä¸èƒ½ä¿®é¥°æ–¹æ³•å’Œç±»,è¢«transientå…³é”®å­—ä¿®é¥°çš„å˜é‡ä¸å†èƒ½è¢«åºåˆ—åŒ–
         public void actionPerformed(ActionEvent actionEvent) {
             JButton currentClickTouchBarJButton = (JButton) actionEvent.getSource();
             expandTouchBarJPanel(currentClickTouchBarJButton);
         }
     };
     
-    /**Õ¹¿ª£ºÕ¹¿ªÖ¸¶¨ÅöÅöÌõ */
+    /**å±•å¼€ï¼šå±•å¼€æŒ‡å®šç¢°ç¢°æ¡ */
     protected void expandTouchBarJPanel(JButton currentClickTouchBarJButton) {
-        //JOptionPane.showMessageDialog(null,currentClickTouchBarJButton.getText(), "ÌáÊ¾ÏûÏ¢",JOptionPane.WARNING_MESSAGE); 
-    	//Ö¸¶¨ÅöÅöÌõÎ»ÓÚËùÓĞÅöÅöÌõArrayListÖĞµÄµÚ¼¸¸ö
+        //JOptionPane.showMessageDialog(null,currentClickTouchBarJButton.getText(), "æç¤ºæ¶ˆæ¯",JOptionPane.WARNING_MESSAGE); 
+    	//æŒ‡å®šç¢°ç¢°æ¡ä½äºæ‰€æœ‰ç¢°ç¢°æ¡ArrayListä¸­çš„ç¬¬å‡ ä¸ª
         int num = 0;
-        //Çå¿Õ±±¡¢ÖĞ¡¢ÄÏÈı²¿·ÖµÄÃæ°åÈİÆ÷ÄÚÈİ
+        //æ¸…ç©ºåŒ—ã€ä¸­ã€å—ä¸‰éƒ¨åˆ†çš„é¢æ¿å®¹å™¨å†…å®¹
         navigationJPanel_North.removeAll();
         menuItemJPanel_Center.removeAll();
         navigationJPanel_South.removeAll();
     	
-        //ÊÇ·ñÕÒµ½ÁËÒªÕ¹¿ªµÄºÏ²¢ÅöÅöÌõ£¿Ä¬ÈÏÃ»ÓĞÕÒµ½
+        //æ˜¯å¦æ‰¾åˆ°äº†è¦å±•å¼€çš„åˆå¹¶ç¢°ç¢°æ¡ï¼Ÿé»˜è®¤æ²¡æœ‰æ‰¾åˆ°
         boolean hasAddCenter = false;
-        //±éÀúËùÓĞµÄÅöÅöÌõ
+        //éå†æ‰€æœ‰çš„ç¢°ç¢°æ¡
         for (int i = 0; i < allTouchBarJButtonArrayList.size(); i++) {
             Component component = (Component) allTouchBarJButtonArrayList.get(i);
-            //±éÀúµ½ºÏ²¢ÅöÅöÌõµÄÊ±ºò£¬Ö¤Ã÷¸ÃÅöÅöÌõ²»ÊÇÔÚ±±±ß¾ÍÊÇÔÚÄÏ±ßÈİÆ÷
-            //ÒòÎªÖ»ÓĞ±±²¿¡¢ÄÏ²¿Ãæ°åÊÇ×¨ÃÅ´æ´¢ºÏ²¢ÅöÅöÌõµÄ
-            //ÖĞ¼äÈİÆ÷ÊÇ×¨ÃÅ´æ´¢Õ¹¿ªÃæ°åµÄ
-            //´Ë´¦µÄif¡¢elseÓï¾äÅĞ¶Ï´¦ÀíµÄÄ¿µÄÖ»ÓĞÒ»¸ö£º
-            //ÄÇ¾ÍÊÇÈ·¶¨ËùÓĞÅöÅöÌõ°´Å¥½ÓÏÂÀ´ÊÇÒª·Åµ½±±²¿¡¢»¹ÊÇÄÏ²¿£¬»¹ÓĞËûÃÇµÄ×´Ì¬ÊÇ´ò¿ª£¿
-            //»¹ÊÇÊÕËõ£¬´Ë´¦µÄÅĞ¶Ï²¢²»»á¾ö¶¨ÖĞ¼äÈİÆ÷·ÅµÄÄÚÈİ
+            //éå†åˆ°åˆå¹¶ç¢°ç¢°æ¡çš„æ—¶å€™ï¼Œè¯æ˜è¯¥ç¢°ç¢°æ¡ä¸æ˜¯åœ¨åŒ—è¾¹å°±æ˜¯åœ¨å—è¾¹å®¹å™¨
+            //å› ä¸ºåªæœ‰åŒ—éƒ¨ã€å—éƒ¨é¢æ¿æ˜¯ä¸“é—¨å­˜å‚¨åˆå¹¶ç¢°ç¢°æ¡çš„
+            //ä¸­é—´å®¹å™¨æ˜¯ä¸“é—¨å­˜å‚¨å±•å¼€é¢æ¿çš„
+            //æ­¤å¤„çš„ifã€elseè¯­å¥åˆ¤æ–­å¤„ç†çš„ç›®çš„åªæœ‰ä¸€ä¸ªï¼š
+            //é‚£å°±æ˜¯ç¡®å®šæ‰€æœ‰ç¢°ç¢°æ¡æŒ‰é’®æ¥ä¸‹æ¥æ˜¯è¦æ”¾åˆ°åŒ—éƒ¨ã€è¿˜æ˜¯å—éƒ¨ï¼Œè¿˜æœ‰ä»–ä»¬çš„çŠ¶æ€æ˜¯æ‰“å¼€ï¼Ÿ
+            //è¿˜æ˜¯æ”¶ç¼©ï¼Œæ­¤å¤„çš„åˆ¤æ–­å¹¶ä¸ä¼šå†³å®šä¸­é—´å®¹å™¨æ”¾çš„å†…å®¹
             if (touchBarJButtonStatusIntArray[i] == 0) {
                 if (hasAddCenter) {
-                	//µÚÒ»´ÎÑ­»·£¬±¾ÅĞ¶Ï²»»áÖ´ĞĞ£¨ÒòÎªÄ¬ÈÏÊÇfalse£©£¬µÚÒ»´Î»áÖ±½ÓÖ´ĞĞÏÂ¸öÅĞ¶Ï
-                	//µÚ¶ş´ÎÑ­»·¿ªÊ¼Ö´ĞĞ£¬Èç¹û±¾´ÎÖ®Ç°ÒÑ¾­ÕÒµ½ÁËÒªÕ¹¿ªµÄºÏ²¢ÅöÅöÌõ£¬²¢ÇÒÒÑ¾­·Åµ½ÁËÖĞ¼äÈİÆ÷
-                	//ÄÇÃ´Ê£ÏÂµÄºÏ²¢ÅöÅöÌõ£¬È«²¿ÒÆ¶¯µ½ÄÏ²¿Ãæ°å
+                	//ç¬¬ä¸€æ¬¡å¾ªç¯ï¼Œæœ¬åˆ¤æ–­ä¸ä¼šæ‰§è¡Œï¼ˆå› ä¸ºé»˜è®¤æ˜¯falseï¼‰ï¼Œç¬¬ä¸€æ¬¡ä¼šç›´æ¥æ‰§è¡Œä¸‹ä¸ªåˆ¤æ–­
+                	//ç¬¬äºŒæ¬¡å¾ªç¯å¼€å§‹æ‰§è¡Œï¼Œå¦‚æœæœ¬æ¬¡ä¹‹å‰å·²ç»æ‰¾åˆ°äº†è¦å±•å¼€çš„åˆå¹¶ç¢°ç¢°æ¡ï¼Œå¹¶ä¸”å·²ç»æ”¾åˆ°äº†ä¸­é—´å®¹å™¨
+                	//é‚£ä¹ˆå‰©ä¸‹çš„åˆå¹¶ç¢°ç¢°æ¡ï¼Œå…¨éƒ¨ç§»åŠ¨åˆ°å—éƒ¨é¢æ¿
                 	navigationJPanel_South.add(component);
                 } else if (component == currentClickTouchBarJButton) {
-                	//Èç¹ûµã»÷µÄÅöÅöÌõ°´Å¥ÊÇºÏ²¢×´Ì¬µÄ£¬ÄÇÃ´ÎŞÂÛËü´ËÊ±ÊÇÔÚÄÏ²¿¡¢»¹ÊÇ±±²¿£¬
-                	//½ÓÏÂÀ´£¬Ò»¶¨»á°ÑËüµ½±±²¿ÈİÆ÷£¬ÒòÎªËüµÄÄÚÈİÒªÔÚÖĞ¼äÏÔÊ¾£¬ËùÒÔ±êÌâ°´Å¥±ØĞë·ÅÔÚ±±²¿ÈİÆ÷
+                	//å¦‚æœç‚¹å‡»çš„ç¢°ç¢°æ¡æŒ‰é’®æ˜¯åˆå¹¶çŠ¶æ€çš„ï¼Œé‚£ä¹ˆæ— è®ºå®ƒæ­¤æ—¶æ˜¯åœ¨å—éƒ¨ã€è¿˜æ˜¯åŒ—éƒ¨ï¼Œ
+                	//æ¥ä¸‹æ¥ï¼Œä¸€å®šä¼šæŠŠå®ƒåˆ°åŒ—éƒ¨å®¹å™¨ï¼Œå› ä¸ºå®ƒçš„å†…å®¹è¦åœ¨ä¸­é—´æ˜¾ç¤ºï¼Œæ‰€ä»¥æ ‡é¢˜æŒ‰é’®å¿…é¡»æ”¾åœ¨åŒ—éƒ¨å®¹å™¨
                 	navigationJPanel_North.add(component);
-                    //È»ºó°Ñµ±Ç°µã»÷µÄÅöÅöÌõ×´Ì¬ÖÃÎª1£¬¾ÍÊÇÒÑ¾­´ò¿ª
+                    //ç„¶åæŠŠå½“å‰ç‚¹å‡»çš„ç¢°ç¢°æ¡çŠ¶æ€ç½®ä¸º1ï¼Œå°±æ˜¯å·²ç»æ‰“å¼€
                     touchBarJButtonStatusIntArray[i] = 1;
-                    //¼ÇÂ¼ÏÂµ±Ç°µã»÷µÄÅöÅöÌõÎ»ÓÚËùÓĞÅöÅöÌõArrayListÖĞµÄµÚ¼¸¸ö
+                    //è®°å½•ä¸‹å½“å‰ç‚¹å‡»çš„ç¢°ç¢°æ¡ä½äºæ‰€æœ‰ç¢°ç¢°æ¡ArrayListä¸­çš„ç¬¬å‡ ä¸ª
                     num = i + 1;
-                    //±ê¼Çµ±Ç°ÅöÅöÌõµÄÄÚÈİÒÑ¾­¶ÀÕ¼ÁËÖĞ¼äÈİÆ÷£¬²»ÔÊĞíÆäËû°´Å¥ÔÙÕ¼ÓĞÖĞ¼äÈİÆ÷
+                    //æ ‡è®°å½“å‰ç¢°ç¢°æ¡çš„å†…å®¹å·²ç»ç‹¬å äº†ä¸­é—´å®¹å™¨ï¼Œä¸å…è®¸å…¶ä»–æŒ‰é’®å†å æœ‰ä¸­é—´å®¹å™¨
                     hasAddCenter = true;
                 } else {
-                	//Èç¹û±éÀúµ½µÄµ±Ç°ÅöÅöÌõ£¬²»ÊÇÒªÕ¹¿ªµÄÅöÅöÌõ£¬Ôò°ÑËü·Åµ½±±²¿Ãæ°å
+                	//å¦‚æœéå†åˆ°çš„å½“å‰ç¢°ç¢°æ¡ï¼Œä¸æ˜¯è¦å±•å¼€çš„ç¢°ç¢°æ¡ï¼Œåˆ™æŠŠå®ƒæ”¾åˆ°åŒ—éƒ¨é¢æ¿
                 	navigationJPanel_North.add(component);
                 }
-            } else {//±éÀúµ½Õ¹¿ªÅöÅöÌõµÄÊ±ºò£¬Ö¤Ã÷µ½ÁËÖĞ¼äÈİÆ÷
+            } else {//éå†åˆ°å±•å¼€ç¢°ç¢°æ¡çš„æ—¶å€™ï¼Œè¯æ˜åˆ°äº†ä¸­é—´å®¹å™¨
             	
-            	//Èç¹ûµ±Ç°ÖĞ¼äÈİÆ÷ÖĞµÄÅöÅöÌõ£¬²»µÈÓÚnull£¬¾Í¹Ø±Õ£¬È»ºóÖÃÎªnull¶ÔÏó
+            	//å¦‚æœå½“å‰ä¸­é—´å®¹å™¨ä¸­çš„ç¢°ç¢°æ¡ï¼Œä¸ç­‰äºnullï¼Œå°±å…³é—­ï¼Œç„¶åç½®ä¸ºnullå¯¹è±¡
                 if (activeTouchBarJButton != null) {
-                	//ÎŞÂÛµ±Ç°µã»÷µÄÊÇ·ñÊÇÕıÔÚÕ¹¿ªµÄ°´Å¥£¬
-                	//µ±Ç°ÕıÔÚÕ¹¿ªµÄ°´Å¥£¬¶¼Òª¹Ø±Õ£¬µã»÷ËüÊÇÒª¹Ø±ÕËü£¬
-                	//µã»÷ÆäËü°´Å¥Ò²ÊÇÒª¹Ø±ÕËü£¬Òò´Ë´Ë´¦Ö»ÓĞ¹Ø±ÕÒ»¸ö¶¯×÷
+                	//æ— è®ºå½“å‰ç‚¹å‡»çš„æ˜¯å¦æ˜¯æ­£åœ¨å±•å¼€çš„æŒ‰é’®ï¼Œ
+                	//å½“å‰æ­£åœ¨å±•å¼€çš„æŒ‰é’®ï¼Œéƒ½è¦å…³é—­ï¼Œç‚¹å‡»å®ƒæ˜¯è¦å…³é—­å®ƒï¼Œ
+                	//ç‚¹å‡»å…¶å®ƒæŒ‰é’®ä¹Ÿæ˜¯è¦å…³é—­å®ƒï¼Œå› æ­¤æ­¤å¤„åªæœ‰å…³é—­ä¸€ä¸ªåŠ¨ä½œ
                 	//menuItemJPanel_Center.removeAll();
                 	activeTouchBarJButton = null;
                 }
                 
-                //Èç¹û±éÀúµ½µÄÕ¹¿ªÅöÅöÌõ£¬ÕıÊÇµ±Ç°µã»÷µÄÅöÅöÌõ°´Å¥
+                //å¦‚æœéå†åˆ°çš„å±•å¼€ç¢°ç¢°æ¡ï¼Œæ­£æ˜¯å½“å‰ç‚¹å‡»çš„ç¢°ç¢°æ¡æŒ‰é’®
                 if (component == currentClickTouchBarJButton) {
                 	navigationJPanel_North.add(component);
                 } else if (num == 0) {
-                	//Èç¹ûµã»÷µÄÊÇÄÏ²¿µÄÅöÅöÌõ£¬ÄÇÃ´µ±±éÀúµ½Õ¹¿ªµÄÅöÅöÌõÊ±ºò£¬numÒ»¶¨µÈÓÚ0£¬Òò´Ë·Åµ½±±²¿Ãæ°å
+                	//å¦‚æœç‚¹å‡»çš„æ˜¯å—éƒ¨çš„ç¢°ç¢°æ¡ï¼Œé‚£ä¹ˆå½“éå†åˆ°å±•å¼€çš„ç¢°ç¢°æ¡æ—¶å€™ï¼Œnumä¸€å®šç­‰äº0ï¼Œå› æ­¤æ”¾åˆ°åŒ—éƒ¨é¢æ¿
                 	navigationJPanel_North.add(component);
-                }else {//Ö¤Ã÷µ±Ç°µã»÷µÄÊÇ±±²¿µÄÅöÅöÌõ£¬Òò´Ë°ÑÕ¹¿ªµÄÅöÅöÌõ·Åµ½ÄÏ²¿
+                }else {//è¯æ˜å½“å‰ç‚¹å‡»çš„æ˜¯åŒ—éƒ¨çš„ç¢°ç¢°æ¡ï¼Œå› æ­¤æŠŠå±•å¼€çš„ç¢°ç¢°æ¡æ”¾åˆ°å—éƒ¨
                 	navigationJPanel_South.add(component);
                 }
-                //°ÑÖ¸¶¨µÄÅöÅöÌõÉèÖÃÎª¹Ø±Õ×´Ì¬
+                //æŠŠæŒ‡å®šçš„ç¢°ç¢°æ¡è®¾ç½®ä¸ºå…³é—­çŠ¶æ€
                 touchBarJButtonStatusIntArray[i] = 0;
             }
         }
         
-        //ÉÏËßÅĞ¶ÏÈ·¶¨ÁËËùÓĞÅöÅöÌõ°´Å¥½ÓÏÂÀ´ÊÇÒª·Åµ½±±²¿¡¢»¹ÊÇÄÏ²¿£¬»¹ÓĞËûÃÇµÄ×´Ì¬ÊÇ´ò¿ª»¹ÊÇÊÕËõ
-        //½ÓÏÂÀ´È·¶¨£¬ÔÚÖĞ¼äÈİÆ÷ÄÚ·ÅÈëÊ²Ã´ÄÚÈİ
+        //ä¸Šè¯‰åˆ¤æ–­ç¡®å®šäº†æ‰€æœ‰ç¢°ç¢°æ¡æŒ‰é’®æ¥ä¸‹æ¥æ˜¯è¦æ”¾åˆ°åŒ—éƒ¨ã€è¿˜æ˜¯å—éƒ¨ï¼Œè¿˜æœ‰ä»–ä»¬çš„çŠ¶æ€æ˜¯æ‰“å¼€è¿˜æ˜¯æ”¶ç¼©
+        //æ¥ä¸‹æ¥ç¡®å®šï¼Œåœ¨ä¸­é—´å®¹å™¨å†…æ”¾å…¥ä»€ä¹ˆå†…å®¹
         for (int i = 0; i < allTouchBarJButtonArrayList.size(); i++) {
             Component component = (Component) allTouchBarJButtonArrayList.get(i);
-            //Èç¹ûÖ¸¶¨µÄÅöÅöÌõ£¬ÒÑ¾­±»ÖÃÎªÕ¹¿ª×´Ì¬£¬Ôò°Ñ¸ÃÅöÅöÌõ·ÅÖÃµ½¼¤»îÅöÅöÌõ¶ÔÏóÖĞ£¬Í¬Ê±´ò¿ª
+            //å¦‚æœæŒ‡å®šçš„ç¢°ç¢°æ¡ï¼Œå·²ç»è¢«ç½®ä¸ºå±•å¼€çŠ¶æ€ï¼Œåˆ™æŠŠè¯¥ç¢°ç¢°æ¡æ”¾ç½®åˆ°æ¿€æ´»ç¢°ç¢°æ¡å¯¹è±¡ä¸­ï¼ŒåŒæ—¶æ‰“å¼€
             if (component == currentClickTouchBarJButton && touchBarJButtonStatusIntArray[i] == 1) {
             	activeTouchBarJButton = currentClickTouchBarJButton;
-            	//°ÑÖ¸¶¨µÄÒªÕ¹¿ªÅöÅöÌõ°´Å¥¶ÔÓ¦µÄÅöÅöÌõÊ÷¸³Öµµ½ÖĞ¼äÈİÆ÷
+            	//æŠŠæŒ‡å®šçš„è¦å±•å¼€ç¢°ç¢°æ¡æŒ‰é’®å¯¹åº”çš„ç¢°ç¢°æ¡æ ‘èµ‹å€¼åˆ°ä¸­é—´å®¹å™¨
             	addMenuItemToMenuItemJPanelCenter(touchBarJTreeArray[i]);
             }
         }
  
-        //±±¡¢ÖĞ¡¢ÄÏÈı¸öÅöÅöÌõÈİÆ÷£¬ÒÀ´ÎÖØĞÂ²¼¾Ö
+        //åŒ—ã€ä¸­ã€å—ä¸‰ä¸ªç¢°ç¢°æ¡å®¹å™¨ï¼Œä¾æ¬¡é‡æ–°å¸ƒå±€
         navigationJPanel_North.doLayout();
         menuItemJPanel_Center.doLayout();
         navigationJPanel_South.doLayout();
@@ -243,21 +242,21 @@ public class LeftNavigationJPanel extends JPanel {
     }
 	public  JTree getTree()
 	{
-		//´´½¨¸ù½ÚµãºÍ×Ó½Úµã
+		//åˆ›å»ºæ ¹èŠ‚ç‚¹å’Œå­èŠ‚ç‚¹
 		DefaultMutableTreeNode rootDefaultMutableTreeNode = new DefaultMutableTreeNode("root");
 		DefaultTreeModel defaultTreeModel = new DefaultTreeModel(rootDefaultMutableTreeNode);
-		DefaultMutableTreeNode studentDefaultMutableTreeNode = new DefaultMutableTreeNode("Ñ§Éú¹ÜÀí");
+		DefaultMutableTreeNode studentDefaultMutableTreeNode = new DefaultMutableTreeNode("å­¦ç”Ÿç®¡ç†");
 		
 		defaultTreeModel.insertNodeInto(studentDefaultMutableTreeNode,rootDefaultMutableTreeNode,rootDefaultMutableTreeNode.getChildCount());
 
-		//´´½¨Ê÷¶ÔÏó
+		//åˆ›å»ºæ ‘å¯¹è±¡
 		JTree tree = new JTree(defaultTreeModel);
-		//ÉèÖÃTreeµÄÑ¡ÔñÎªÒ»´ÎÖ»ÄÜÑ¡ÔñÒ»¸ö½Úµã
+		//è®¾ç½®Treeçš„é€‰æ‹©ä¸ºä¸€æ¬¡åªèƒ½é€‰æ‹©ä¸€ä¸ªèŠ‚ç‚¹
 		tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-		//×¢²á¼àÌıÆ÷
+		//æ³¨å†Œç›‘å¬å™¨
 		tree.addTreeSelectionListener((TreeSelectionListener) menuItemJPanel_Center);
 		tree.addMouseListener((MouseListener) menuItemJPanel_Center);
-		//Ê÷µÄ¸ù½Úµã²»ÏÔÊ¾
+		//æ ‘çš„æ ¹èŠ‚ç‚¹ä¸æ˜¾ç¤º
 		tree.setRootVisible(false);
 		
 		return tree;
