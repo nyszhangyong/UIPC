@@ -39,6 +39,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import com.swing.base.BaseInfo;
+
 public class TabbedPane extends JPanel {
 	
 	private static final long serialVersionUID = -9007068462231539973L;
@@ -75,10 +77,11 @@ public class TabbedPane extends JPanel {
 			}
 		};
 		pane.addChangeListener(changeListener);
-		URL url = TabbedPane.class.getResource("close_white.png");
-		closeInactiveButtonIcon = new ImageIcon(url);
-		url = TabbedPane.class.getResource("close_dark.png");
-		closeActiveButtonIcon = new ImageIcon(url);
+		URL close_whiteUrl=TabbedPane.class.getClassLoader().getResource(BaseInfo.imagesPath+"close_white.png");
+		closeInactiveButtonIcon = new ImageIcon(close_whiteUrl);
+		
+		URL close_darkUrl=TabbedPane.class.getClassLoader().getResource(BaseInfo.imagesPath+"close_dark.png");
+		closeActiveButtonIcon = new ImageIcon(close_darkUrl);
 
 	}
 	

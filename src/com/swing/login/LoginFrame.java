@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.swing.base.BaseInfo;
 import com.swing.util.StringUtil;
 import com.swing.vo.User;
 
@@ -36,8 +37,9 @@ public class LoginFrame extends JFrame {
     private int backgroundImageHeight;
     
     public LoginFrame() {
-    	//加载背景图片
-        backgroundImageIcon = new ImageIcon("./src/com/swing/login/images/background.gif");
+    	//加载背景图片    	
+    	URL backgroundUrl=LoginFrame.class.getClassLoader().getResource(BaseInfo.imagesPath+"background.gif");
+        backgroundImageIcon = new ImageIcon(backgroundUrl);
         //获取背景图片宽度像素
         backgroundImageWidth=backgroundImageIcon.getIconWidth();
         //获取背景图片高度像素
@@ -55,7 +57,8 @@ public class LoginFrame extends JFrame {
         //设置窗口相对于父类JFrame的相对位置（距离JFrame左边、上边、自己的宽高等位置）
         this.setBounds(0, 0,backgroundImageWidth,backgroundImageHeight);
         //设置窗口的标题图标
-        this.setIconImage(new ImageIcon("./src/com/swing/login/images/prodlogo.gif").getImage());
+        URL prodlogoUrl=LoginFrame.class.getClassLoader().getResource(BaseInfo.imagesPath+"prodlogo.gif");
+        this.setIconImage(new ImageIcon(prodlogoUrl).getImage());
         //设置窗口是否可以调整大小，参数为布尔值
         this.setResizable(false);
         //设置窗口相对于电脑显示器屏幕左上角的相对位置（null即是位于屏幕中央）
