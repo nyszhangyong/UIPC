@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
-import com.swing.base.BaseInfo;
+import com.base.BaseInfo;
 
 
 public class MainFrame  extends JFrame {

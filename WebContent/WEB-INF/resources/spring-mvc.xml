@@ -25,7 +25,7 @@
 
     <!-- 配置handler -->
     <!-- 自动扫描且只扫描@Controller -->
-    <context:component-scan base-package="com.steelb2b" use-default-filters="false">
+    <context:component-scan base-package="com.server" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
     
@@ -41,15 +41,15 @@
             <mvc:mapping path="/sysMenu/**"/>
             <mvc:mapping path="/sysRole/**"/>
             <mvc:mapping path="/sysUser/**"/>
-            <bean class="com.steelb2b.interceptor.AdminAuthInterceptor"/>
+            <bean class="com.server.interceptor.AdminAuthInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.steelb2b.interceptor.RequestInterceptor"/>
+            <bean class="com.server.interceptor.RequestInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/api/**"/>
-            <bean class="com.steelb2b.interceptor.CostTimeInterceptor"/>
+            <mvc:mapping path="/server/**"/>
+            <bean class="com.server.interceptor.CostTimeInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>    
     <!-- 一般实现拦截器主要是为了权限管理，主要是拦截一些url请求，所以不对静态资源进行拦截。-->

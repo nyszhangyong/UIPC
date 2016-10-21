@@ -2,10 +2,6 @@ package com.swing.login;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -17,9 +13,11 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import com.swing.base.BaseInfo;
-import com.swing.util.StringUtil;
-import com.swing.vo.User;
+import com.base.BaseInfo;
+import com.util.HttpAccessServer;
+import com.util.StringUtil;
+import com.vo.User;
+
 
 public class LoginFrame extends JFrame {
 
@@ -164,41 +162,35 @@ public class LoginFrame extends JFrame {
 		}
 		User user = new User(userName, password);
 		accessServerByHttpURLConnection(user);
-
 		this.dispose();
 		new MainFrame();
 	}
 
 	private void accessServerByHttpURLConnection(User user){
 		try {
-			URL url = new URL("http://127.0.0.1:8080/easerver/myServlet");
-			HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-			//使用HttpURLConnection连接进行输入
-			httpURLConnection.setDoInput(true);
-			//使用HttpURLConnection连接进行输出
-			httpURLConnection.setDoOutput(true);
-			//设置HttpURLConnection的连接超时时间
-			//httpURLConnection.setConnectTimeout(5 * 1000);
-			//设置HttpURLConnection的读取超时时间
-			//httpURLConnection.setReadTimeout(10 * 1000);
-		    //设置HttpURLConnection的请求方式为POST
-			httpURLConnection.setRequestMethod("POST");
-			//创建HttpURLConnection连接的对象输出流
-			ObjectOutputStream objectOutputStream =new ObjectOutputStream(httpURLConnection.getOutputStream());
-			//对象输出流开始向tomcat服务端的servlet发送数据流
-			objectOutputStream.writeObject(user);
-			//创建HttpURLConnection连接的对象输入流
-			ObjectInputStream objectInputStream = new ObjectInputStream(httpURLConnection.getInputStream());
-			//对象输入流开始开始读取返回的数据
-	        User user1 = (User) objectInputStream.readObject();
-	        System.out.println("客户端得到返回密码是：" + user1.getUserName());
-	        System.out.println("客户端得到返回用户名是： "+ user1.getPassword());
+			//普通表单请求-单一字符串形式
+			String contentType_form="application/x-www-form-urlencoded;";
+			String accessController = new String("http://127.0.0.1:8080/UI_SWING/server/controller/authenticationController");
+
+	    	//访问Server的输入输出参数对象
+	    	String requestParamString=null;
+	    	String responseResultStrig=null;
+
+	    	//把多个参数用&和=拼接成字符串，然后用POST方式提交到服务器
+			StringBuffer paramStringBuffer=new StringBuffer();
+			paramStringBuffer.append("phoneNo=" + "13526687281");
+			paramStringBuffer.append("&password=" + "111111");	
+			requestParamString=paramStringBuffer.toString();
+			URL url=new URL(accessController+"/loginConfirmation");
+			
+			HttpAccessServer httpAccessServer=new HttpAccessServer();
+			responseResultStrig=httpAccessServer.sendStringData(url, contentType_form, requestParamString);
+			System.out.println("server端返回的响应结果：");
+			System.out.println(responseResultStrig);
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		}  catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

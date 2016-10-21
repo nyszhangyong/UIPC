@@ -39,7 +39,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.swing.base.BaseInfo;
+import com.base.BaseInfo;
 
 public class TabbedPane extends JPanel {
 	
