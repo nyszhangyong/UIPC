@@ -17,6 +17,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
+/**主界面的左边导航菜单树*/
 public class LeftNavigationJPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;

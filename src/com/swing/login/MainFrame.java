@@ -17,7 +17,7 @@ import javax.swing.JSplitPane;
 import com.base.BaseInfo;
 import com.swing.tab.TabbedPane;
 
-
+/**登陆之后进入的主界面*/
 public class MainFrame  extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JSplitPane mainJSplitPane;
