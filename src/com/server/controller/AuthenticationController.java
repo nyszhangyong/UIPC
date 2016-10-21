@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("server/controller/authenticationController")
 public class AuthenticationController extends BaseController{
 
-
 	/**登陆账号、密码验证*/
 	@RequestMapping(value="/loginConfirmation", method = RequestMethod.POST)
-    public String loginConfirmation(HttpServletRequest request, Page page){
+    public String loginConfirmation(HttpServletRequest request){
 		return "ok";
     }
 
-	    
 }

@@ -2,7 +2,7 @@ package com.swing.login;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.MalformedURLException;
+import java.net.ConnectException;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,6 +22,9 @@ import com.vo.User;
 public class LoginFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private static final String contentType_form="application/x-www-form-urlencoded;";
+	private static final String urlPrefix="http://127.0.0.1:8080/UIPC/server/controller/authenticationController";
+	private static final String accessController = new String(urlPrefix+"/loginConfirmation");
     private JTextField userJTextField;
     private JPasswordField passwordJPasswordField;
     private JLabel companyNameJLabel;
@@ -160,39 +163,44 @@ public class LoginFrame extends JFrame {
 			JOptionPane.showMessageDialog(null, "密码必须填写");
 			return;
 		}
-		User user = new User(userName, password);
-		accessServerByHttpURLConnection(user);
-		this.dispose();
-		new MainFrame();
+		User user = new User(userName, password,null);
+		try{
+			accessServerByHttpURLConnection(user);
+			this.dispose();
+			new MainFrame();
+		} catch (ConnectException e) {
+			e.printStackTrace();
+			String message=e.getMessage()+ ",访问服务器异常！访问地址："+accessController;
+			String title="信息弹窗";
+			int messageType=JOptionPane.ERROR_MESSAGE;
+			JOptionPane.showMessageDialog(null,message,title,messageType);
+		} catch (Exception e) {
+			e.printStackTrace();
+			String message=e.getMessage()+ ",访问服务器异常！访问地址："+accessController;
+			String title="信息弹窗";
+			int messageType=JOptionPane.ERROR_MESSAGE;
+			JOptionPane.showMessageDialog(null,message,title,messageType);
+		}
 	}
 
-	private void accessServerByHttpURLConnection(User user){
-		try {
-			//普通表单请求-单一字符串形式
-			String contentType_form="application/x-www-form-urlencoded;";
-			String accessController = new String("http://127.0.0.1:8080/UI_SWING/server/controller/authenticationController");
+	private void accessServerByHttpURLConnection(User user) throws Exception{
+		
+        //访问Server的输入输出参数对象
+    	String requestParamString=null;
+    	String responseResultStrig=null;
 
-	    	//访问Server的输入输出参数对象
-	    	String requestParamString=null;
-	    	String responseResultStrig=null;
+    	//把多个参数用&和=拼接成字符串，然后用POST方式提交到服务器
+		StringBuffer paramStringBuffer=new StringBuffer();
+		paramStringBuffer.append("phoneNo=" + "13526687281");
+		paramStringBuffer.append("&password=" + "111111");	
+		requestParamString=paramStringBuffer.toString();
+		URL url=new URL(accessController);
+		
+		HttpAccessServer httpAccessServer=new HttpAccessServer();
+		responseResultStrig=httpAccessServer.sendStringData(url, contentType_form, requestParamString);
+		System.out.println("server端返回的响应结果：");
+		System.out.println(responseResultStrig);
 
-	    	//把多个参数用&和=拼接成字符串，然后用POST方式提交到服务器
-			StringBuffer paramStringBuffer=new StringBuffer();
-			paramStringBuffer.append("phoneNo=" + "13526687281");
-			paramStringBuffer.append("&password=" + "111111");	
-			requestParamString=paramStringBuffer.toString();
-			URL url=new URL(accessController+"/loginConfirmation");
-			
-			HttpAccessServer httpAccessServer=new HttpAccessServer();
-			responseResultStrig=httpAccessServer.sendStringData(url, contentType_form, requestParamString);
-			System.out.println("server端返回的响应结果：");
-			System.out.println(responseResultStrig);
-
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}  catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	private void logoutJButtonActionPerformed(ActionEvent evt) {
 		this.dispose();
