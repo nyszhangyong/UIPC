@@ -16,12 +16,12 @@
 			<th colspan="6">表单类</th>
 		</tr>
 		<tr>
-			<td><a href="jsp/login_001.jsp" target="_blank">登录表单(001)</a></td>
+			<td><a href="jsp/demo_form_001_login.jsp" target="_blank">001、登录表单</a></td>
 			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
-			<td></td>			
+			<td></td>
 		</tr>
 		<tr>
 			<td></td>
