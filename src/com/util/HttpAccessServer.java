@@ -183,7 +183,7 @@ public class HttpAccessServer {
 
 	}
 	
-	/**对包含中文的字符串进行转码，此为UTF-8。服务器那边要进行一次解码*/
+	/**对包含中文的字符串进行转码，例如UTF-8。服务器那边要进行一次解码*/
     private String encode(String value) throws Exception{
     	return URLEncoder.encode(value, charsetName);
     }
