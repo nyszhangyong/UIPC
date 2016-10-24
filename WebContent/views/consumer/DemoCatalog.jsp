@@ -13,10 +13,10 @@
 			<th colspan="6">HTML5+CSS3+JQUERY 演示例子 一览表</th>
 		</tr>
 		<tr>
-			<th colspan="6">表单类</th>
+			<th colspan="6">表单类例子</th>
 		</tr>
 		<tr>
-			<td><a href="jsp/demo_form_001_login.jsp" target="_blank">001、登录表单</a></td>
+			<td><a href="jsp/demo_form_login.jsp" target="_blank">登录表单</a></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -32,10 +32,10 @@
 			<td></td>				
 		</tr>
 		<tr>
-			<th colspan="6">列表类</th>
+			<th colspan="6">查询类例子</th>
 		</tr>		
 		<tr>
-			<td></td>
+			<td><a href="jsp/demo_query_simple.jsp" target="_blank">简单查询</a></td>
 			<td></td>
 			<td></td>
 			<td></td>

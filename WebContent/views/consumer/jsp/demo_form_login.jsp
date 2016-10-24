@@ -3,10 +3,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登录表单(001)</title>
-<link rel="stylesheet" type="text/css" href="../css/demo_form_001_login.css">
+<title>登录表单</title>
+<link rel="stylesheet" type="text/css" href="../css/demo_form_login.css">
 <script type="text/javascript" src="../js_jquery/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="../js_self/demo_form_001_login.js"></script>
+<script type="text/javascript" src="../js_self/demo_form_login.js"></script>
 </head>
 <body>
     <br/><br/><br/>

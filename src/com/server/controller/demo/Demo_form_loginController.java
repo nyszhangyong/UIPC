@@ -11,9 +11,9 @@ import com.server.controller.BaseController;
 import com.vo.User;
 
 /**身份验证*/
-@RestController("demo_form_001_loginController")
-@RequestMapping("server/controller/demo_form_001_loginController")
-public class Demo_form_001_loginController extends BaseController{
+@RestController("demo_form_loginController")
+@RequestMapping("server/controller/demo_form_loginController")
+public class Demo_form_loginController extends BaseController{
 
 	/**登陆账号、密码验证*/
 	@RequestMapping(value="/loginConfirmation", method = RequestMethod.POST)
