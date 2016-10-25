@@ -28,6 +28,11 @@
     <context:component-scan base-package="com.server" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean>    
     
     <!-- 拦截器 -->
     <!-- 跨站 HTTP请求(Cross-site HTTP request) -->
@@ -55,7 +60,12 @@
     <!-- 一般实现拦截器主要是为了权限管理，主要是拦截一些url请求，所以不对静态资源进行拦截。-->
     <!-- 此处要过滤掉静态资源js、css、图片等静态资源文件 -->
     <mvc:default-servlet-handler />
-    
+    <!-- 重定向 -->
+    <mvc:view-controller path="/" view-name="redirect:/index" />
+    <!--@ResponseBody方法异常处理-->
+    <bean class="com.util.ResponseBodyHandlerExceptionResolver">
+        <property name="messageConverter" ref="mappingJackson2HttpMessageConverter"/>
+    </bean>
     <!-- 配置MultipartResolver 用于文件上传 使用spring的CommosMultipartResolver -->  
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
         <!--1024*10240即200k-->  
