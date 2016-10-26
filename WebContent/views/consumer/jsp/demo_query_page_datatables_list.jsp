@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>简单查询</title>
+	<title>查询分页列表(datatables)</title>
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/media/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/examples/resources/syntax/shCore.css">

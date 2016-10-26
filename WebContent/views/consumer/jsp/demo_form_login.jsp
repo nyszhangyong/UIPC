@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登录表单</title>
+<title>简单登录</title>
 <link rel="stylesheet" type="text/css" href="../css/demo_form_login.css">
 <script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../js/js_self/demo_form_login.js"></script>
