@@ -36,7 +36,7 @@
 		</tr>		
 		<tr>
 			<td><a href="jsp/demo_query_simple.jsp" target="_blank">简单查询</a></td>
-			<td><a href="jsp/demo_query_page_list.jsp" target="_blank">查询分页列表</a></td>
+			<td><a href="jsp/demo_query_page_list.jsp" target="_blank">查询分页列表(全部加载)</a></td>
 			<td></td>
 			<td></td>
 			<td></td>
