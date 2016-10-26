@@ -1,12 +1,10 @@
 package com.server.controller.demo;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.server.controller.BaseController;
 
 /**身份验证*/
