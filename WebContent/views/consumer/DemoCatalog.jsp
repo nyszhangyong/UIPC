@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>演示目录</title>
-<link rel="Stylesheet" type="text/css" href="css/DemoCatalog.css" />
+<link rel="Stylesheet" type="text/css" href="css/demoCatalog.css" />
 </head>
 <body>
 <div id="MostOutsideDiv">
@@ -36,9 +36,9 @@
 		</tr>		
 		<tr>
 			<td><a href="jsp/demo_query_simple.jsp" target="_blank">简单查询</a></td>
-			<td><a href="jsp/demo_query_page_datatable_list.jsp" target="_blank">查询分页列表(datatable)</a></td>
+			<td><a href="jsp/demo_query_page_datatables_list.jsp" target="_blank">查询分页列表(datatables)</a></td>
 			<td><a href="jsp/demo_query_page_jqGrid_list.jsp" target="_blank">查询分页列表(jqGrid)</a></td>
-			<td></td>
+			<td><a href="jsp/demo_query_page_custom_list.jsp" target="_blank">查询分页列表(custom)</a></td>
 			<td></td>
 			<td></td>
 		</tr>

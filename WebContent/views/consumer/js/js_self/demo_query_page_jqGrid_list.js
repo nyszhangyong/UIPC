@@ -3,7 +3,7 @@ $(document).ready(function () {
 		$("#jqGrid").jqGrid({
 		url: '/UIPC/views/consumer/js/js_self/demo_query_page_jqGrid_list.json',
 		datatype: "json",
-		 colModel: [
+		colModel: [
 			{ label: 'Category Name', name: 'CategoryName', width: 75 },
 			{ label: 'Product Name', name: 'ProductName', width: 90 },
 			{ label: 'Country', name: 'Country', width: 100 },
