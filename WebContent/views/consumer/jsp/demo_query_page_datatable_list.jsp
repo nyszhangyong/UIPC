@@ -4,14 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>简单查询</title>
-	<script type="text/javascript" src="../js_jquery/jquery-1.11.3.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../js_dataTables-1.10.12/media/css/jquery.dataTables.css">
-	<link rel="stylesheet" type="text/css" href="../js_dataTables-1.10.12/examples/resources/syntax/shCore.css">
-	<link rel="stylesheet" type="text/css" href="../js_dataTables-1.10.12/examples/resources/demo.css">
+	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/examples/resources/syntax/shCore.css">
+	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/examples/resources/demo.css">
 	<style type="text/css" class="init"></style>
-	<script type="text/javascript" src="../js_dataTables-1.10.12/media/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="../js_dataTables-1.10.12/examples/resources/syntax/shCore.js"></script>
-	<script type="text/javascript" src="../js_dataTables-1.10.12/examples/resources/demo.js"></script>
+	<script type="text/javascript" src="../js/js_dataTables-1.10.12/media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="../js/js_dataTables-1.10.12/examples/resources/syntax/shCore.js"></script>
+	<script type="text/javascript" src="../js/js_dataTables-1.10.12/examples/resources/demo.js"></script>
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
 			$('#example').DataTable();
