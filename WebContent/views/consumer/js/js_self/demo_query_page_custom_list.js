@@ -1,11 +1,22 @@
+//要查询的页码
+var page = 1;
+//要查询的页大小
+var pagesize = 5;
+//查询关键词
+var queryKeywords;
 //页面初次加载的时候，首次执行查询方法，参数为空
-$(query_list_custom());
+$(function(){
+	queryKeywords = "";
+	page = 1;	
+    query_list_custom(queryKeywords,page,pagesize);	
+});
+
 //查询执行方法
-function query_list_custom(){
+function query_list_custom(queryKeywords,page,pagesize){
 	$.ajax({ 
 		type: "post", 
 		url: "/UIPC/views/consumer/js/js_self/demo_query_page_custom_list.json", 
-		data: "",//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
+		data: "page="+page+",pagesize="+pagesize,//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
 		success: function(returnMessage) {
 			//alert("success");
 			$.each(returnMessage.rows, function(i, userInfo) {
@@ -59,14 +70,32 @@ function query_list_custom(){
 }
 function goFirstPage(){
 	alert("首页");
+	page = 1;
+	query_list_custom("",page,pagesize)
 };
 function goPrePage(){
 	alert("上页");
+	page = page-1<= 0 ? 1 : page-1;
+	query_list_custom("",page,pagesize)
 };
 function goCurrentPage(){
 	var event = event||window.event;  
     if (event.keyCode == 13){
     	alert("当前页");
+        var page_goto = $("#currentPage").val();
+        if (isNaN(page_goto)) {
+            alert("请输入数字!");
+        }else {
+            var tempPageIndex = page;
+            page = parseInt($("#currentPage").val());
+            if (page < 0 || page >parseInt($("#totalPage").text())) {
+                page = tempPageIndex;
+                alert("请输入有效的页面范围!");
+            }
+            else {
+            	query_list_custom("",page,pagesize)
+            }
+        }
     }
 };
 function goSinglePageRecord(){
@@ -107,7 +136,13 @@ function checkInvalidNumber(){
 }
 function goNextPage(){
 	alert("下页");
+    if (page + 1 <= parseInt($("#totalPage").text())) {
+        page=page+1;
+    }
+    query_list_custom("",page,pagesize)
 };
 function goEndPage(){
 	alert("尾页");
+	page = parseInt($("#totalPage").text());
+	query_list_custom("",page,pagesize)
 };
