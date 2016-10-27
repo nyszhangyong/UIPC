@@ -9,7 +9,9 @@
 <script type="text/javascript" src="../js/js_self/demo_query_page_custom_list.js"></script>
 </head>
 <body>
-      <table id="customTable"></table>
-      <div id="customPagination"></div>
+	<div id="MostOutsideDiv">
+	      <table id="customTable"></table>
+	      <div id="customPagination"></div>
+	</div>
 </body>
 </html>

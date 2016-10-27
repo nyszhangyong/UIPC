@@ -1,4 +1,7 @@
 body{background:#DCDCDC;margin:0 auto;}
+#MostOutsideDiv{  
+	margin:0 auto;
+}
 table {
 	width:100%;
 	height:100%;
