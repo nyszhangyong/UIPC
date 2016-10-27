@@ -18,7 +18,6 @@ function query_list_custom(queryKeywords,page,pagesize){
 		url: "/UIPC/views/consumer/js/js_self/demo_query_page_custom_list.json", 
 		data: "page="+page+",pagesize="+pagesize,//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
 		success: function(returnMessage) {
-			//alert("success");
 			$.each(returnMessage.rows, function(i, userInfo) {
 				$("#customTable").append(
 				      function(){
@@ -62,6 +61,12 @@ function query_list_custom(queryKeywords,page,pagesize){
 				    	  return pagerInfo;
 				      }
 			);
+			var totalRecord=returnMessage.totalRecord;
+			var totalPage=Math.ceil(totalRecord/pagesize);
+			$("#totalRecord").text(totalRecord);
+			$("#totalPage").text(totalPage);
+			$("#currentPage").val(page);
+			$("#singlePageRecord").val(pagesize);
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert("返回失败！");
