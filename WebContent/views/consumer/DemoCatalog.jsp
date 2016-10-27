@@ -17,7 +17,7 @@
 		</tr>
 		<tr>
 			<td><a href="jsp/demo_form_login.jsp" target="_blank">简单登录</a></td>
-			<td></td>
+			<td><a href="#" target="_blank">动态增加行表单</a></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -36,7 +36,7 @@
 		</tr>		
 		<tr>
 			<td><a href="jsp/demo_query_simple.jsp" target="_blank">简单查询</a></td>
-			<td><a href="jsp/demo_query_page_datatables_list.jsp" target="_blank">查询分页列表(datatables)</a></td>
+			<td><a href="jsp/demo_query_page_datatables_list.jsp" target="_blank">查询分页列表(dataTables)</a></td>
 			<td><a href="jsp/demo_query_page_jqGrid_list.jsp" target="_blank">查询分页列表(jqGrid)</a></td>
 			<td><a href="jsp/demo_query_page_custom_list.jsp" target="_blank">查询分页列表(custom)</a></td>
 			<td></td>
