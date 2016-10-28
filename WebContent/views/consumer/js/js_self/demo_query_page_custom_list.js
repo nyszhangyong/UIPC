@@ -117,7 +117,32 @@ function goPageNumber(){
 function goPagesize(){
 
 };
+function checkPageNumberAndPageSize(){
+    var pageNumber_temp = $("#pageNumber").val();
+    var pagesize_temp = $("#pagesize").val();
+    if(!pageNumber_temp){
+    	alert("请输入页码！");
+    }else if(!pagesize_temp){
+    	alert("请输入每页显示数量！");
+    }else{
+        if (isNaN(pageNumber_temp)) {
+            alert("页码请输入数字!");
+        }else if (isNaN(pagesize_temp)) {
+            alert("每页显示数量请输入数字!");
+        }else {
+            var tempPageIndex = pageNumber;
+            pageNumber = parseInt(pageNumber_temp);
+            if (pageNumber < 0 || pageNumber >parseInt($("#totalPage").text())) {
+                pageNumber = tempPageIndex;
+                alert("没有此页码，请输入正确的页码!");
+            }
+            else {
+            	//query_list_custom("",pageNumber,pagesize)
+            }
+        }
+    }
 
+};
 function checkPageNumberInvalidNumber(){
     if(checkInvalidNumber()==false){
     	var temp=$("#pageNumber").val();
