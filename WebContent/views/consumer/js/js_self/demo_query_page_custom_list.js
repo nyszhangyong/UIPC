@@ -1,57 +1,70 @@
 //要查询的页码
-var page = 1;
+var pageNumber = 1;
 //要查询的页大小
 var pagesize = 5;
+//总记录数
+var totalRecord=0;
 //查询关键词
 var queryKeywords;
+
 //页面初次加载的时候，首次执行查询方法，参数为空
 $(function(){
 	queryKeywords = "";
-	page = 1;	
-    query_list_custom(queryKeywords,page,pagesize);	
+	pageNumber = 1;	
+    query_list_custom(queryKeywords,pageNumber,pagesize);	
 });
 
 //查询执行方法
-function query_list_custom(queryKeywords,page,pagesize){
+function query_list_custom(queryKeywords,pageNumber,pagesize){
 	$.ajax({ 
 		type: "post", 
-		url: "/UIPC/views/consumer/js/js_self/demo_query_page_custom_list.json", 
-		data: "page="+page+",pagesize="+pagesize,//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
+		url: "/UIPC/server/controller/demo_query_page_custom_list/queryUserList", 
+		data: "pageNumber="+pageNumber+"&pagesize="+pagesize,//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
 		success: function(returnMessage) {
-			$.each(returnMessage.rows, function(i, userInfo) {
+			//要查询的页码
+			pageNumber = returnMessage.page.pageNumber;
+			//要查询的页大小
+			pagesize = returnMessage.page.pagesize;
+			//总记录数
+			totalRecord=returnMessage.page.totalRecord;
+			//先清除分页表格中的历史数据
+			$("#customTable *").remove();
+			//循环返回对象列表
+			$.each(returnMessage.data, function(i, userInfo) {
+				
 				$("#customTable").append(
 				      function(){
 				    	  var trInfo="<tr>";
-				    	  trInfo+="<td>"+userInfo.CategoryName+"</td>";
-				    	  trInfo+="<td>"+userInfo.ProductName+"</td>";
-				    	  trInfo+="<td>"+userInfo.Country+"</td>";
-				    	  trInfo+="<td>"+userInfo.Price+"</td>";
-				    	  trInfo+="<td>"+userInfo.Quantity+"</td>";
+				    	  trInfo+="<td>"+userInfo.userName+"</td>";
+				    	  trInfo+="<td>"+userInfo.password+"</td>";
 				    	  trInfo+="</tr>";
 				    	  return trInfo;
 				      }
 				);
 	        });
+			//先清除分页条中的历史数据
+			$("#customPagination *").remove();
+			//生成分页条
 			$("#customPagination").append(
 				      function(){
 				    	  var pagerInfo="";
 				    	  pagerInfo += "<a href='javascript:goFirstPage()' id='firstPage'>首页</a>";
 				    	  pagerInfo += "<a href='javascript:goPrePage()' id='prePage'>上页</a>";
 				    	  pagerInfo += "<span>";
-				    	  pagerInfo += "<input id='currentPage' type='text' size='1'";
+				    	  pagerInfo += "<input id='pageNumber' type='text' size='1'";
 				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onkeyup='checkCurrentPageInvalidNumber()'";
-				    	  pagerInfo += " onkeydown='javascript:goCurrentPage()'";
+				    	  pagerInfo += " onkeyup='checkPageNumberInvalidNumber()'";
+				    	  pagerInfo += " onkeydown='javascript:goPageNumber()'";
 				    	  pagerInfo += "/>";
 				    	  pagerInfo += "/";
 				    	  pagerInfo += "<span id='totalPage'></span>页";
 				    	  pagerInfo += "(";
 				    	  pagerInfo += "共<span id='totalRecord'></span>条,";
-				    	  pagerInfo += "单页";
-				    	  pagerInfo += "<input id='singlePageRecord' type='text' size='1'";
+				    	  pagerInfo += "每页";
+				    	  pagerInfo += "<input id='pagesize' type='text' size='1'";
 				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onkeyup='checkSinglePageRecordInvalidNumber()'";
-				    	  pagerInfo += " onkeydown='javascript:goSinglePageRecord()'";
+				    	  pagerInfo += " onkeyup='checkPagesizeInvalidNumber()'";
+				    	  pagerInfo += " onkeydown='javascript:goPagesize()'";
 				    	  pagerInfo += "/>";				    	  
 				    	  pagerInfo += "条";
 				    	  pagerInfo += ")";
@@ -61,64 +74,60 @@ function query_list_custom(queryKeywords,page,pagesize){
 				    	  return pagerInfo;
 				      }
 			);
-			var totalRecord=returnMessage.totalRecord;
+			//为分页条赋新值
 			var totalPage=Math.ceil(totalRecord/pagesize);
 			$("#totalRecord").text(totalRecord);
 			$("#totalPage").text(totalPage);
-			$("#currentPage").val(page);
-			$("#singlePageRecord").val(pagesize);
+			$("#pageNumber").val(pageNumber);
+			$("#pagesize").val(pagesize);
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert("返回失败！");
+			alert("查询用户分页列表，返回失败！");
 		}
 	}); 
 }
 function goFirstPage(){
-	alert("首页");
-	page = 1;
-	query_list_custom("",page,pagesize)
+	pageNumber = 1;
+	query_list_custom("",pageNumber,pagesize)
 };
 function goPrePage(){
-	alert("上页");
-	page = page-1<= 0 ? 1 : page-1;
-	query_list_custom("",page,pagesize)
+	pageNumber = pageNumber-1<= 0 ? 1 : pageNumber-1;
+	query_list_custom("",pageNumber,pagesize)
 };
-function goCurrentPage(){
+function goPageNumber(){
+	
 	var event = event||window.event;  
     if (event.keyCode == 13){
-    	alert("当前页");
-        var page_goto = $("#currentPage").val();
+        var page_goto = $("#pageNumber").val();
         if (isNaN(page_goto)) {
             alert("请输入数字!");
         }else {
-            var tempPageIndex = page;
-            page = parseInt($("#currentPage").val());
-            if (page < 0 || page >parseInt($("#totalPage").text())) {
-                page = tempPageIndex;
+            var tempPageIndex = pageNumber;
+            pageNumber = parseInt($("#pageNumber").val());
+            if (pageNumber < 0 || pageNumber >parseInt($("#totalPage").text())) {
+                pageNumber = tempPageIndex;
                 alert("请输入有效的页面范围!");
             }
             else {
-            	query_list_custom("",page,pagesize)
+            	query_list_custom("",pageNumber,pagesize)
             }
         }
     }
 };
-function goSinglePageRecord(){
-	var event = event||window.event;  
-    if (event.keyCode == 13){
-    	alert("单页");
-    }
+function goPagesize(){
+
 };
-function checkCurrentPageInvalidNumber(){
+
+function checkPageNumberInvalidNumber(){
     if(checkInvalidNumber()==false){
-    	var temp=$("#currentPage").val();
-    	$("#currentPage").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
+    	var temp=$("#pageNumber").val();
+    	$("#pageNumber").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
 }
-function checkSinglePageRecordInvalidNumber(){
+function checkPagesizeInvalidNumber(){
     if(checkInvalidNumber()==false){
-    	var temp=$("#currentPage").val();
-    	$("#currentPage").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
+    	var temp=$("#pageNumber").val();
+    	$("#pageNumber").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
 }
 function checkInvalidNumber(){
@@ -141,13 +150,13 @@ function checkInvalidNumber(){
 }
 function goNextPage(){
 	alert("下页");
-    if (page + 1 <= parseInt($("#totalPage").text())) {
-        page=page+1;
+    if (pageNumber + 1 <= parseInt($("#totalPage").text())) {
+        pageNumber=pageNumber+1;
     }
-    query_list_custom("",page,pagesize)
+    query_list_custom("",pageNumber,pagesize)
 };
 function goEndPage(){
 	alert("尾页");
-	page = parseInt($("#totalPage").text());
-	query_list_custom("",page,pagesize)
+	pageNumber = parseInt($("#totalPage").text());
+	query_list_custom("",pageNumber,pagesize)
 };

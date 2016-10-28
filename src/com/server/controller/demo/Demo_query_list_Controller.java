@@ -32,6 +32,6 @@ public class Demo_query_list_Controller extends BaseController{
 		List<User> userList=new ArrayList<User>();
 		userList.add(user1);
 		userList.add(user2);
-        return ObjectMessage.success("操作成功",userList);
+        return ObjectMessage.success("操作成功",userList,null);
     }
 }
