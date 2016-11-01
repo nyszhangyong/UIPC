@@ -71,7 +71,7 @@ public class HttpAccessClient {
 	}
 	
 	/**访问方式二：特殊访问，所有值放入Map对象中，Map<String, String>和Map<String, File>中，文件以流的形式传递，参数以表单数据的形式传递到后台*/
-	public byte[] send_multimediaData(URL url,String contentType) throws Exception {
+	public String send_multimediaData(URL url,String contentType) throws Exception {
 		//HttpURLConnection的一些必须设置
 		initConnection(url,contentType);
 	    //建立输出流，向指向的URL传入参数
@@ -91,7 +91,7 @@ public class HttpAccessClient {
 			byteArrayOutputStream.write(temp_int);
 		}
 		httpURLConnection.disconnect();
-		return byteArrayOutputStream.toByteArray();
+		return new String(byteArrayOutputStream.toByteArray(),charsetName);
 	}
 	
     /**HttpURLConnection访问基础参数设置*/
@@ -269,7 +269,7 @@ public class HttpAccessClient {
 		
 	    try {
 	    	//访问Server的输入输出参数对象
-	    	byte[] responseResultStrig=null;
+	    	String responseResultStrig=null;
 
 	    	//把多个参数用键值形式保存，然后用POST方式提交到服务器
 	    	baseHttpClient.addTextParameter("account", "admin");
@@ -280,7 +280,7 @@ public class HttpAccessClient {
 			
 			responseResultStrig=baseHttpClient.send_multimediaData(url, contentType_multipart);
 			System.out.println("server端返回的响应结果：");
-			System.out.println(responseResultStrig.toString());
+			System.out.println(responseResultStrig);
 			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
