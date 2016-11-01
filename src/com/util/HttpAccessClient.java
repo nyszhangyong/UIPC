@@ -21,7 +21,7 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
 /**HTTP协议访问工具类*/
-public class HttpAccessServer {
+public class HttpAccessClient {
 	
 	private Map<String, String> textParams = new HashMap<String, String>();
 	private Map<String, File> fileparams = new HashMap<String, File>();
@@ -230,7 +230,7 @@ public class HttpAccessServer {
 		String accessController="http://183.62.139.75:8080/StandardApiAction_login.action";
 		
 		//访问客户端
-		HttpAccessServer baseHttpClient=new HttpAccessServer();
+		HttpAccessClient baseHttpClient=new HttpAccessClient();
 		
 	    try {
 	    	//访问Server的输入输出参数对象
@@ -265,7 +265,7 @@ public class HttpAccessServer {
 		String accessController="http://183.62.139.75:8080/StandardApiAction_login.action";
 		
 		//访问客户端
-		HttpAccessServer baseHttpClient=new HttpAccessServer();
+		HttpAccessClient baseHttpClient=new HttpAccessClient();
 		
 	    try {
 	    	//访问Server的输入输出参数对象

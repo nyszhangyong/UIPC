@@ -14,7 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.base.BaseInfo;
-import com.util.HttpAccessServer;
+import com.util.HttpAccessClient;
 import com.util.StringUtil;
 import com.vo.User;
 
@@ -196,7 +196,7 @@ public class LoginFrame extends JFrame {
 		requestParamString=paramStringBuffer.toString();
 		URL url=new URL(accessController);
 		
-		HttpAccessServer httpAccessServer=new HttpAccessServer();
+		HttpAccessClient httpAccessServer=new HttpAccessClient();
 		responseResultStrig=httpAccessServer.sendStringData(url, contentType_form, requestParamString);
 		System.out.println("server端返回的响应结果：");
 		System.out.println(responseResultStrig);
