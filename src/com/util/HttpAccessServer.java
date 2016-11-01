@@ -38,8 +38,7 @@ public class HttpAccessServer {
 	//多媒体表单请求-多附件（图片、文件）
 	static String contentType_multipart="multipart/form-data;";
 	
-	/**访问方式一：正常访问，所有值拼接成？key=value加&形式字符串
-	 * @throws Exception */
+	/**访问方式一：正常访问，所有值拼接成？key=value加&形式字符串*/
 	public String sendStringData(URL url,String contentType,String requestParamString) throws Exception {
 	    String responseResultStrig=null;
 			//HttpURLConnection的一些必须设置
@@ -219,6 +218,7 @@ public class HttpAccessServer {
 		
 	}
 	
+	/**访问方式一DEMO：正常访问，所有值拼接成？key=value加&形式字符串*/
 	public static void sendStringDataDemo(){
 		//JSON格式请求
 		//String contentType_json="application/json;";
@@ -255,6 +255,7 @@ public class HttpAccessServer {
 		}
 	}
 	
+	/**访问方式二DEMO：特殊访问，所有值放入Map对象中，Map<String, String>和Map<String, File>中，文件以流的形式传递，参数以表单数据的形式传递到后台*/
 	public static void send_multimediaDataDemo(){
 		
 		//多附件（图片、文件）-数据格式请求
