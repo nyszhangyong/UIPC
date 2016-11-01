@@ -1,6 +1,5 @@
 package com.util;
 
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -10,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class HttpAccessServer {
 	
 	//多媒体表单请求-多附件（图片、文件）
 	static String contentType_multipart="multipart/form-data;";
-		
+	
 	/**访问方式一：正常访问，所有值拼接成？key=value加&形式字符串
 	 * @throws Exception */
 	public String sendStringData(URL url,String contentType,String requestParamString) throws Exception {
@@ -199,5 +199,92 @@ public class HttpAccessServer {
 		}
 		fileInputStream.close();
 		return byteArrayOutputStream.toByteArray();
+	}
+	
+	public static void main(String[] args){
+
+		//访问方式一：JSON格式请求
+		sendStringDataDemo();
+		//访问方式一：普通表单请求-单一字符串形式
+		sendStringDataDemo();
+		//访问方式一：多媒体表单请求-多附件（图片、文件）
+		sendStringDataDemo();
+
+		//访问方式二：JSON格式请求
+		send_multimediaDataDemo();
+		//访问方式二：普通表单请求-单一字符串形式
+		send_multimediaDataDemo();
+		//访问方式二：多媒体表单请求-多附件（图片、文件）
+		send_multimediaDataDemo();
+		
+	}
+	
+	public static void sendStringDataDemo(){
+		//JSON格式请求
+		//String contentType_json="application/json;";
+		
+		//普通表单-数据格式请求
+		String contentType_form="application/x-www-form-urlencoded;";
+				
+		//整个controller的URL
+		String accessController="http://183.62.139.75:8080/StandardApiAction_login.action";
+		
+		//访问客户端
+		HttpAccessServer baseHttpClient=new HttpAccessServer();
+		
+	    try {
+	    	//访问Server的输入输出参数对象
+	    	String requestParamString=null;
+	    	String responseResultStrig=null;
+
+	    	//把多个参数用&和=拼接成字符串，然后用POST方式提交到服务器
+			StringBuffer paramStringBuffer=new StringBuffer();
+			paramStringBuffer.append("account=" + "admin");
+			paramStringBuffer.append("&password=" + "admin");	
+			requestParamString=paramStringBuffer.toString();
+			URL url=new URL(accessController);
+			
+			responseResultStrig=baseHttpClient.sendStringData(url, contentType_form, requestParamString);
+			System.out.println("server端返回的响应结果：");
+			System.out.println(responseResultStrig);
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void send_multimediaDataDemo(){
+		
+		//多附件（图片、文件）-数据格式请求
+		String contentType_multipart="multipart/form-data;";
+		
+		//整个controller的URL
+		String accessController="http://183.62.139.75:8080/StandardApiAction_login.action";
+		
+		//访问客户端
+		HttpAccessServer baseHttpClient=new HttpAccessServer();
+		
+	    try {
+	    	//访问Server的输入输出参数对象
+	    	byte[] responseResultStrig=null;
+
+	    	//把多个参数用键值形式保存，然后用POST方式提交到服务器
+	    	baseHttpClient.addTextParameter("account", "admin");
+	    	baseHttpClient.addTextParameter("password", "admin");
+    	    //baseHttpClient.addFileParameter("payment_pic_m", new File("D:\\zhangyong.jpg"));
+
+			URL url=new URL(accessController);
+			
+			responseResultStrig=baseHttpClient.send_multimediaData(url, contentType_multipart);
+			System.out.println("server端返回的响应结果：");
+			System.out.println(responseResultStrig.toString());
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
