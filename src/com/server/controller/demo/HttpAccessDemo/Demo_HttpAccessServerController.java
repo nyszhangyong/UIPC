@@ -17,39 +17,31 @@ import com.vo.User;
 @RequestMapping("server/controller/demo_HttpAccessServerController")
 public class Demo_HttpAccessServerController extends BaseController{
 
+	/**访问方式一DEMO：普通FORM表单请求,对象格式返回*/
+	@RequestMapping(value="/methodOne_f2o_jsonDataExchange", method = RequestMethod.POST)	
+    public ObjectMessage methodOne_f2o_jsonDataExchange(User user,HttpServletRequest request){
+		return ObjectMessage.success("成功", user, null);
+    }
+	
 	/**访问方式一DEMO：普通FORM表单请求,然后JSON格式返回*/
 	@RequestMapping(value="/methodOne_f2j_jsonDataExchange", method = RequestMethod.POST)	
     public @ResponseBody ObjectMessage methodOne_f2j_jsonDataExchange(User user,HttpServletRequest request){
-		//setUploadFile(request,user);
 		return ObjectMessage.success("成功", user, null);
     }
 	
 	/**访问方式一DEMO：JSON格式请求,并且JSON格式返回*/
-	@RequestMapping(value="/methodOne_jsonDataExchange", method = RequestMethod.POST)	
-    public @ResponseBody ObjectMessage methodOne_jsonDataExchange(@RequestBody User user,HttpServletRequest request){
-		setUploadFile(request,user);
+	@RequestMapping(value="/methodOne_j2j_jsonDataExchange", method = RequestMethod.POST)	
+    public @ResponseBody ObjectMessage methodOne_j2j_jsonDataExchange(@RequestBody User user,HttpServletRequest request){
 		return ObjectMessage.success("成功", user, null);
     }
 
-	/**访问方式一DEMO：普通表单请求-单一字符串形式*/
-	@RequestMapping(value="/methodOne_formDataExchange", method = RequestMethod.POST)	
-    public String methodOne_formDataExchange(User user,HttpServletRequest request){
-		String userName=user.getUserName();
-		String password=user.getPassword();
+	/**访问方式二DEMO：普通FORM表单请求,对象格式返回*/
+	@RequestMapping(value="/methodTwo_f2o_jsonDataExchange", method = RequestMethod.POST)	
+    public ObjectMessage methodTwo_f2o_jsonDataExchange(User user,HttpServletRequest request){
 		setUploadFile(request,user);
-		return "{\"userName\":\""+userName+"\",\"password\":\""+password+"\"} ";
+		return ObjectMessage.success("成功", user, null);
     }
 	
-	/**访问方式一DEMO：多媒体表单请求-多附件（图片、文件）*/
-	@RequestMapping(value="/methodOne_multipartFormDataExchange", method = RequestMethod.POST)	
-    public String methodOne_multipartFormDataExchange(User user,HttpServletRequest request){
-		String userName=user.getUserName();
-		String password=user.getPassword();
-		setUploadFile(request,user);
-		return "{\"userName\":\""+userName+"\",\"password\":\""+password+"\"} ";
-    }
-	
-	/**访问方式二DEMO：JSON格式请求*/
 	/**访问方式二DEMO：普通表单请求-单一字符串形式*/
 	/**访问方式二DEMO：多媒体表单请求-多附件（图片、文件）*/
     private void setUploadFile(HttpServletRequest request,User user){

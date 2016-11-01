@@ -20,7 +20,7 @@
             <ref bean="mappingJackson2HttpMessageConverter" />
         </mvc:message-converters>
     </mvc:annotation-driven>
-    <!-- 用于解析注解@RequestBody -->
+    <!-- 用于解析注解@RequestBody和@ResponseBody -->
     <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
 
     <!-- 配置handler -->
