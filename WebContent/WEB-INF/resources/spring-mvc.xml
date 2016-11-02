@@ -68,9 +68,15 @@
     </bean>
     <!-- 配置MultipartResolver 用于文件上传 使用spring的CommosMultipartResolver -->  
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
-        <!--1024*10240即200k-->  
-        <property name="maxUploadSize" value="10485760"/>  
-        <!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常-->  
+        <!--resolveLazily=延迟加载，属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常-->  
         <property name="resolveLazily" value="true"/>    
+        <!-- defaultEncoding=默认编码 -->  
+        <property name="defaultEncoding" value="utf-8" />    
+        <!-- maxUploadSize=-文件大小最大值：单位是字节 -->  
+        <property name="maxUploadSize" value="10485760" />    
+        <!-- maxInMemorySIze=内存中的最大值：单位是字节（1B（byte字节）= 8 bit） -->  
+        <!-- maxInMemorySIze 是文件上传的时候写到内存中的最大值，默认是10240字节，如果这里写大了，那么小于这个参数的文件则不会创建临时文件。 后台会报如下异常：-->
+        <!-- \work\Catalina\localhost\UIPC\upload_a7baf6ff_0e74_4003_b979_31acb3214738_00000000.tmp (系统找不到指定的文件。) -->
+        <property name="maxInMemorySize" value="1" />    
     </bean>
 </beans>

@@ -11,7 +11,7 @@ import java.util.Date;
 public class FilesUtils {
     public static String saveFile(HttpServletRequest request, MultipartFile multipartFile) throws IOException {
         String exname = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf(".")).toLowerCase();
-        String path = request.getSession().getServletContext().getRealPath("upload");
+        String path = request.getSession().getServletContext().getRealPath("upload_hq");
         SimpleDateFormat pathFormat = new SimpleDateFormat("/yyyy-MM/dd/");
         String abPath = pathFormat.format(new Date());
         String fileName = UUIDFactory.getUUID() + exname;
