@@ -16,7 +16,7 @@ import com.util.ObjectMessage;
 import com.util.Page;
 import com.vo.User;
 
-/**查询用户*/
+/**查询用户,作者：张勇(Mark Smith)*/
 @RestController("demo_query_page_custom_list")
 @RequestMapping("server/controller/demo_query_page_custom_list")
 public class Demo_query_page_custom_list extends BaseController{

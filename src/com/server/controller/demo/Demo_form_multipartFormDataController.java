@@ -7,7 +7,7 @@ import com.server.controller.BaseController;
 import com.vo.User;
 import com.vo.UserInfo;
 
-/**接收多文件和数组数据*/
+/**接收多文件和数组数据,作者：张勇(Mark Smith)*/
 @RestController("demo_form_multipartFormDataController")
 @RequestMapping("server/controller/demo_form_multipartFormDataController")
 public class Demo_form_multipartFormDataController extends BaseController{

@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>查询分页列表(jqGrid)</title>
+	<!-- 作者：张勇(Mark Smith) -->
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="../js/js_self/demo_query_page_jqGrid_list.js"></script>
 	<script type="text/ecmascript" src="../js/js_guriddo_jqGrid_JS_5.1.1/js/i18n/grid.locale-en.js"></script>

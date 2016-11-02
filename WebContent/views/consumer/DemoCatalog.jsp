@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>演示目录</title>
-<link rel="Stylesheet" type="text/css" href="css/demoCatalog.css" />
+	<meta charset="UTF-8">
+	<title>演示目录</title>
+	<!-- 作者：张勇(Mark Smith) -->
+	<link rel="Stylesheet" type="text/css" href="css/demoCatalog.css" />
 </head>
 <body>
 <div id="MostOutsideDiv">

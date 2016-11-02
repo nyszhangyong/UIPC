@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.server.controller.BaseController;
 
-/**身份验证*/
+/**身份验证,作者：张勇(Mark Smith)*/
 @RestController("demo_query_loginController")
 @RequestMapping("server/controller/demo_query_loginController")
 public class Demo_query_loginController extends BaseController{

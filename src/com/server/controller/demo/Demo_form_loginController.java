@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.server.controller.BaseController;
 import com.vo.User;
 
-/**身份验证*/
+/**身份验证,作者：张勇(Mark Smith)*/
 @RestController("demo_form_loginController")
 @RequestMapping("server/controller/demo_form_loginController")
 public class Demo_form_loginController extends BaseController{

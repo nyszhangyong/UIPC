@@ -13,7 +13,7 @@ import com.util.ObjectMessage;
 import com.vo.User;
 import com.vo.UserInfo;
 
-/**HTTP协议数据交互演示样例*/
+/**HTTP协议数据交互演示样例,作者：张勇(Mark Smith)*/
 @RestController("demo_HttpAccessServerController")
 @RequestMapping("server/controller/demo_HttpAccessServerController")
 public class Demo_HttpAccessServerController extends BaseController{

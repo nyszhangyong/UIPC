@@ -15,7 +15,7 @@ import com.server.controller.BaseController;
 import com.util.ObjectMessage;
 import com.vo.User;
 
-/**查询用户*/
+/**查询用户,作者：张勇(Mark Smith)*/
 @RestController("demo_query_list_Controller")
 @RequestMapping("server/controller/demo_query_list_Controller")
 public class Demo_query_list_Controller extends BaseController{

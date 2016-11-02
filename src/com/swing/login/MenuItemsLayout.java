@@ -7,7 +7,7 @@ import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.io.Serializable;
 
-/**菜单项面板布局管理器*/
+/**菜单项面板布局管理器,作者：张勇(Mark Smith)*/
 public class MenuItemsLayout implements LayoutManager,Serializable {
 	
 	private static final long serialVersionUID = 1L;

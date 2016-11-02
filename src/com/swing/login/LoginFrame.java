@@ -18,7 +18,7 @@ import com.util.HttpAccessClient;
 import com.util.StringUtil;
 import com.vo.User;
 
-/**登陆界面*/
+/**登陆界面,作者：张勇(Mark Smith)*/
 public class LoginFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
