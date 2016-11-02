@@ -11,6 +11,7 @@ import com.server.controller.BaseController;
 import com.util.FilesUtils;
 import com.util.ObjectMessage;
 import com.vo.User;
+import com.vo.UserInfo;
 
 /**HTTP协议数据交互演示样例*/
 @RestController("demo_HttpAccessServerController")
@@ -42,7 +43,15 @@ public class Demo_HttpAccessServerController extends BaseController{
 		return ObjectMessage.success("成功", user, null);
     }
 	
+	/**访问方式二DEMO：普通FORM数组表单请求,对象格式返回*/
+	@RequestMapping(value="/methodTwo_f2o_arrayDataExchange", method = RequestMethod.POST)	
+    public ObjectMessage methodTwo_f2o_arrayDataExchange(UserInfo user,HttpServletRequest request){
+		//setUploadFile(request,user);
+		return ObjectMessage.success("成功", user, null);
+    }
+	
 	/**访问方式二DEMO：普通表单请求-单一字符串形式*/
+	
 	/**访问方式二DEMO：多媒体表单请求-多附件（图片、文件）*/
     private void setUploadFile(HttpServletRequest request,User user){
 		try {

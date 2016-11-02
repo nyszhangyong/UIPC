@@ -8,6 +8,12 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:spring-mvc.xml</param-value>
     </init-param>
+    <multipart-config>  
+        <location>/uploadtemp</location>  
+        <max-file-size>5242880</max-file-size><!--5MB-->  
+        <max-request-size>20971520</max-request-size><!--20MB-->  
+        <file-size-threshold>0</file-size-threshold>  
+    </multipart-config> 
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>

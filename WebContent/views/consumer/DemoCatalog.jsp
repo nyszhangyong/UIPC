@@ -17,9 +17,9 @@
 		</tr>
 		<tr>
 			<td><a href="jsp/demo_form_login.jsp" target="_blank">简单登录</a></td>
-			<td><a href="#" target="_blank">动态增加行表单</a></td>
-			<td></td>
-			<td></td>
+			<td><a href="jsp/demo_form_picture.jsp" target="_blank">多图片提交</a></td>
+			<td><a href="jsp/demo_form_noAjaxMultipartFormData.jsp" target="_blank">提交多文件和数组数据(非AJAX)</a></td>
+			<td><a href="jsp/demo_form_ajaxMultipartFormData.jsp" target="_blank">提交多文件和数组数据(AJAX)</a></td>
 			<td></td>
 			<td></td>
 		</tr>

@@ -32,15 +32,4 @@ public class FilesUtils {
             return false;
         }
     }
-    public static boolean isAppFile(MultipartFile multipartFile)
-    {
-        String exname = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf(".")).toLowerCase();
-        if (exname.equals(".ipa") || exname.equals(".apk")) {
-            return  true;
-        }else {
-            return false;
-        }
-    }
-
-
 }

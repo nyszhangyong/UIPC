@@ -19,9 +19,52 @@ public class Demo_HttpAccessServerController_HttpClient{
 		//访问方式一DEMO：普通FORM表单请求,对象格式返回	
 	    //methodOne_f2o_jsonDataExchange();
 		//访问方式二DEMO：普通FORM表单请求,对象格式返回	
-	    methodTwo_f2o_jsonDataExchange();
+	    //methodTwo_f2o_jsonDataExchange();
+		//访问方式二DEMO：普通FORM数组表单请求,对象格式返回	
+	    methodTwo_f2o_arrayDataExchange();
 	}
 	
+	/**访问方式二DEMO：普通FORM数组表单请求,对象格式返回*/	
+    public static void methodTwo_f2o_arrayDataExchange(){
+    	//JSON格式请求
+    	//String contentType_json="application/json;";
+    	
+    	//普通表单请求-单一字符串形式
+    	//String contentType_form="application/x-www-form-urlencoded;";
+    	
+    	//多媒体表单请求-多附件（图片、文件）
+    	//String contentType_multipart="multipart/form-data;";
+		
+		//整个controller的URL
+		String accessController="http://127.0.0.1:8080/UIPC/server/controller/demo_HttpAccessServerController";
+		//URL url=new URL(accessController+"/methodTwo_f2o_jsonDataExchange");
+
+	    try {
+			//访问客户端
+			HttpPostUtil baseHttpClient=new HttpPostUtil(accessController+"/methodTwo_f2o_arrayDataExchange");
+	    	//访问Server的输入输出参数对象
+	    	String responseResultStrig=null;
+
+	    	//把多个参数用键值形式保存，然后用POST方式提交到服务器
+	    	baseHttpClient.addTextParameter("userName", "admin3");
+	    	baseHttpClient.addTextParameter("password", "admin3");
+    	    baseHttpClient.addFileParameter("headPhotoFile", new File("D:\\zhangyong.jpg"));
+	    	baseHttpClient.addTextParameter("userName", "admin33");
+	    	baseHttpClient.addTextParameter("password", "admin33");
+    	    baseHttpClient.addFileParameter("headPhotoFile", new File("D:\\zhangyong.jpg"));
+			
+			
+			responseResultStrig=baseHttpClient.send();
+			System.out.println("server端返回的响应结果：");
+			System.out.println(responseResultStrig);
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
 	/**访问方式二DEMO：普通FORM表单请求,对象格式返回*/	
     public static void methodTwo_f2o_jsonDataExchange(){
     	//JSON格式请求
