@@ -7,12 +7,13 @@
 	<!-- 作者：张勇(Mark Smith) -->
 	<link rel="stylesheet" type="text/css" href="../css/demo_form_ajaxMultipartFormData.css">
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/js_jquery/js_jquery_form3.46/jquery.form.js"></script>
 	<script type="text/javascript" src="../js/js_self/demo_form_ajaxMultipartFormData.js"></script>
 </head>
 <body>
     <br/><br/><br/>
 	<div id="MostOutsideDiv">
-		<form id="userInfoForm"  method="post" enctype="multipart/form-data">
+		<form id="userInfoForm">
 			<table>
 				<tr>
 					<td>头像：</td>
