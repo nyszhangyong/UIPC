@@ -12,7 +12,7 @@
 <body>
     <br/><br/><br/>
 	<div id="MostOutsideDiv">
-		<form id="userInfoForm">
+		<form id="userInfoForm"  method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<td>头像：</td>
