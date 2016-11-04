@@ -1,8 +1,19 @@
-body{background:#DCDCDC;margin-top:0 auto;}
+body{background:#FFFFFF;margin:0 auto;}
 #MostOutsideDiv{  
 	margin:0 auto;
     width:1100px; /*宽度必须指定 */  
     /*height:768px;*//*高度根据内容自动填充 */  
-    background-color:#DCDCDC;  
+    background-color:#FFFFFF;  
 }  
 .examples {padding-left: 10px;}
+#demoFrame{
+	width: 800px; 
+	height: 600px; 
+	border-width: 1px;
+	border-color:#87CEFA;
+}
+#accordion{
+	font-size: 75%; 
+	height: 600px; 
+	width: 240px;
+}

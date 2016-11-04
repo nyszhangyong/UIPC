@@ -15,13 +15,14 @@
 </head>
 <body>
 	<div id="MostOutsideDiv">
-     	<h3 style="text-align: center;">HTML5+CSS3+JQUERY+JAVA 演示例子</h3>
+	    <br/>
+     	<h3 style="text-align: center;">HTML5+CSS3+JQUERY+JAVA 例子</h3>
 	    <form id="Form1">
 	        <div id="wrap">
 	            <table cellspacing="10" cellpadding="10">
 	                <tbody><tr>
 	                    <td width="250px" style="vertical-align: top">
-	                        <div id="accordion" style="font-size: 75%; height: 600px; width: 240px;" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+	                        <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-0" aria-controls="ui-accordion-accordion-panel-0" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><a href="#">表单类例子</a></h3>
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-accordion-panel-0" aria-labelledby="ui-accordion-accordion-header-0" role="tabpanel" aria-hidden="false" style="display: block; height: 309px;">
 	                                <ul class="examples">
@@ -41,7 +42,7 @@
 	                        </div>
 	                    </td>
 	                    <td width="800px" valign="top">
-	                        <iframe id="demoFrame" name="demoFrame" style="width: 800px; height: 600px; border-width: 0;" src="./test_files/index.html"></iframe>
+	                        <iframe id="demoFrame" name="demoFrame" src="./test_files/index.html"></iframe>
 	                    </td>
 	                </tr>
 	            </tbody></table>
