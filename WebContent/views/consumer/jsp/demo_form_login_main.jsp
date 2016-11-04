@@ -8,19 +8,33 @@
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
     <link   href="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
+	
+	<link rel="stylesheet" href="../js/codeFomat/codemirror-5.20.2/lib/codemirror.css">
+	<script src="../js/codeFomat/codemirror-5.20.2/lib/codemirror.js"></script>
+	<script src="../js/codeFomat/codemirror-5.20.2/addon/selection/active-line.js"></script>
+    <style type="text/css">
+      .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+    </style>
 	<script>
-	  $(function() {
+	  $(function(){
 	    $( "#tabs" ).tabs();
 	    $("#jsppage").load("/UIPC/views/consumer/jsp/demo_form_login.jsp");
 	    $.ajax({
-	        url: "/UIPC/views/consumer/jsp/demo_form_login.jsp", //这里是静态页的地址
-	        type: "GET", //静态页用get方法，否则服务器会抛出405错误
+	        url: "/UIPC/views/consumer/jsp/demo_form_login.jsp",
+	        type: "GET",
 	        success: function(data){
-	            $("#tabs-1").text(data);
+	            $("#codeHTML").val(data);
+	    		var editor = CodeMirror.fromTextArea(document.getElementById("codeHTML"), {
+	  			  mode: "application/xml",
+	  			  styleActiveLine: true,
+	  			  lineNumbers: true,
+	  			  lineWrapping: true
+	  			});
 	        }
 	    });
 	  });
 	</script>
+
 </head>
 <body>
     <div id="jsppage"></div>
@@ -31,8 +45,7 @@
 		    <li><a href="#tabs-3">JAVASCRIPT</a></li>
 		    <li><a href="#tabs-4">JAVA</a></li>
 		  </ul>
-		  <div id="tabs-1">
-		  </div>
+		  <div id="tabs-1"><form><textarea id="codeHTML" name="codeHTML"></textarea></form></div>
 		  <div id="tabs-2">
 		  </div>
 		  <div id="tabs-3">
