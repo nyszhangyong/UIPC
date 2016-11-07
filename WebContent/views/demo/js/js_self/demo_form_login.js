@@ -1,8 +1,10 @@
 $(function(){
+   var location = (window.location+'').split('/'); 
+   var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
    $("#loginbtn").on('click',function(){
 		$.ajax({ 
 			type: "post", 
-			url: "/UIPC/server/controller/demo_form_loginController/loginConfirmation", 
+			url: basePath+"/server/controller/demo_form_loginController/loginConfirmation", 
 			data: $("#loginForm").serialize(),//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
 			success: function(returnMessage) {
 				//alert(returnMessage);

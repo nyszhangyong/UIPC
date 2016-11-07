@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8"%>
+<%@ include file="jsp/common/common.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>演示目录</title>
+	<title>E快速开发之样例云集</title>
 	<!-- 作者：张勇(Mark Smith) -->
-	<!-- 此功能JQUERY引用 -->
+	<!-- 以下JQUERY功能引用 -->
     <script src="js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
     <link   href="js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
-    <!-- 此功能私有引用 -->
-    <script src="js/js_self/DemoCatalog.js" type="text/javascript"></script>
+    <!-- 以下私有功能引用 -->
+    <script src="js/js_self/demoCatalog.js" type="text/javascript"></script>
     <link   href="css/demoCatalog.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
 	<div id="MostOutsideDiv">
 	    <br/>
-     	<h3 style="text-align: center;">HTML5+CSS3+JQUERY+JAVA 例子</h3>
+     	<h3 style="text-align: center;">E快速开发之样例云集</h3>
 	    <form id="Form1">
 	        <div id="wrap">
 	            <table cellspacing="10" cellpadding="10">

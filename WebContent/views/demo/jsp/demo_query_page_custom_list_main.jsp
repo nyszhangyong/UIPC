@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>简单登录</title>
+	<title>查询分页列表(custom)</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -23,8 +23,8 @@
 	<script src="../js/codeFomat/codemirror-5.20.2/mode/css/css.js"></script>
 	<script src="../js/codeFomat/codemirror-5.20.2/mode/htmlmixed/htmlmixed.js"></script>
 	<!-- 以下私有功能引用 -->
-	<script src="../js/js_self/demo_form_login_main.js" type="text/javascript"></script>
-    <link   href="../css/demo_form_login_main.css" type="text/css" rel="stylesheet" media="screen">
+	<script src="../js/js_self/demo_query_page_custom_list_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_query_page_custom_list_main.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div id="jsppage"></div>

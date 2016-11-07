@@ -1,10 +1,4 @@
-body{background:#FFFFFF;margin:0 auto;}
-#MostOutsideDiv{  
-	margin:0 auto;
-    width:1100px; /*宽度必须指定 */  
-    /*height:768px;*//*高度根据内容自动填充 */  
-    background-color:#FFFFFF;  
-}  
+
 .examples {padding-left: 10px;}
 #demoFrame{
 	width: 800px; 

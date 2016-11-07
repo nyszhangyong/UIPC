@@ -5,9 +5,11 @@
 	<meta charset="UTF-8">
 	<title>简单登录</title>
 	<!-- 作者：张勇(Mark Smith) -->
-	<link rel="stylesheet" type="text/css" href="../css/demo_form_login.css">
-	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="../js/js_self/demo_form_login.js"></script>
+	<!-- 以下JQUERY功能引用 -->
+    <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <!-- 以下私有功能引用 -->
+	<script src="../js/js_self/demo_form_login.js" type="text/javascript" ></script>
+	<link href="../css/demo_form_login.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
     <br/><br/><br/>
@@ -15,7 +17,7 @@
 		<form id="loginForm" method="post">
 				<table>
 				<tr>
-					<td>用户名：</td>
+					<td>用户名1：</td>
 					<td><input type="text" name="userName" id="userName"></td>
 				</tr>
 				<tr>
