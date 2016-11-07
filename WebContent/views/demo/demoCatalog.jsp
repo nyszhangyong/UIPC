@@ -27,17 +27,19 @@
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-0" aria-controls="ui-accordion-accordion-panel-0" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><a href="#">表单类例子</a></h3>
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-accordion-panel-0" aria-labelledby="ui-accordion-accordion-header-0" role="tabpanel" aria-hidden="false" style="display: block; height: 309px;">
 	                                <ul class="examples">
-	                                    <li>
-	                                    <a href="jsp/demo_form_login_main.jsp" target="demoFrame">简单登录</a>                                        
-	                                    </li>
+	                                    <li><a href="jsp/demo_form_login_main.jsp" target="demoFrame">简单登录</a></li>
+	                                    <li><a href="jsp/demo_form_picture_main.jsp" target="demoFrame">多图片提交</a></li>
+	                                    <li><a href="jsp/demo_form_noAjaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(非AJAX)</a></li>
+	                                    <li><a href="jsp/demo_form_ajaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(AJAX)</a></li>                                  
 	                                </ul>
 	                            </div>
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-5" aria-controls="ui-accordion-accordion-panel-5" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="#">查询类例子</a></h3>
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-accordion-panel-5" aria-labelledby="ui-accordion-accordion-header-5" role="tabpanel" aria-hidden="true" style="display: none; height: 309px;">
 	                                <ul class="examples">
-	                                    <li>
-	                                       <a href="./test_files/index.html" target="demoFrame">Paging on the server</a>
-	                                    </li>
+	                                    <li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">简单查询</a></li>
+	                                    <li><a href="jsp/demo_query_page_datatables_list_main.jsp" target="demoFrame">查询分页列表(dataTables)</a></li>
+	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询分页列表(jqGrid)</a></li>
+	                                    <li><a href="jsp/demo_query_page_custom_list_main.jsp" target="demoFrame">查询分页列表(custom)</a></li>
 	                                </ul>
 	                            </div>
 	                        </div>

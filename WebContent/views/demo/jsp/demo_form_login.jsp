@@ -17,7 +17,7 @@
 		<form id="loginForm" method="post">
 				<table>
 				<tr>
-					<td>用户名1：</td>
+					<td>用户名：</td>
 					<td><input type="text" name="userName" id="userName"></td>
 				</tr>
 				<tr>
