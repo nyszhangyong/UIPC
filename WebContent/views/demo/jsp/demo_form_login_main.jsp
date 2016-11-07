@@ -11,17 +11,19 @@
     <script src="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
     <link   href="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
 	<!-- 以下CODEMIRROR功能引用 -->
-	<link href="../js/codeFomat/codemirror-5.20.2/doc/docs.css" rel=stylesheet>
-	<link href="../js/codeFomat/codemirror-5.20.2/lib/codemirror.css" rel=stylesheet>
-	<link href="../js/codeFomat/codemirror-5.20.2/addon/hint/show-hint.css" rel=stylesheet>
-	<script src="../js/codeFomat/codemirror-5.20.2/lib/codemirror.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/addon/hint/show-hint.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/addon/hint/xml-hint.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/addon/hint/html-hint.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/mode/javascript/javascript.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/mode/css/css.js"></script>
-	<script src="../js/codeFomat/codemirror-5.20.2/mode/htmlmixed/htmlmixed.js"></script>
+  <link   href="../js/codeFomat/codemirror-5.20.2/doc/docs.css" rel="stylesheet"/>
+  <link   href="../js/codeFomat/codemirror-5.20.2/lib/codemirror.css" rel="stylesheet"/>
+  <link   href="../js/codeFomat/codemirror-5.20.2/addon/fold/foldgutter.css" rel="stylesheet"/>
+  <script src="../js/codeFomat/codemirror-5.20.2/lib/codemirror.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/foldcode.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/foldgutter.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/brace-fold.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/xml-fold.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/markdown-fold.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/comment-fold.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/mode/javascript/javascript.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
+  <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>
 	<!-- 以下私有功能引用 -->
 	<script src="../js/js_self/demo_form_login_main.js" type="text/javascript"></script>
     <link   href="../css/demo_form_login_main.css" type="text/css" rel="stylesheet" media="screen">
@@ -33,14 +35,66 @@
 		    <li><a href="#tabsHTML">HTML</a></li>
 		    <li><a href="#tabsCSS">CSS</a></li>
 		    <li><a href="#tabsJAVASCRIPT">JAVASCRIPT</a></li>
-		    <li><a href="#tabsJSON">JSON</a></li>
-		    <li><a href="#tabsJAVA">JAVA</a></li>
 		  </ul>
-		  <div id="tabsHTML"></div>
-		  <div id="tabsCSS"></div>
-		  <div id="tabsJAVASCRIPT"></div>
-		  <div id="tabsJSON"></div>		
-		  <div id="tabsJAVA"></div>		  
+		  	<div id="tabsHTML"  style="max-width: 50em; margin-bottom: 1em">
+		  	     <br>
+		         <textarea id="code-html" name="code-html"></textarea>
+		    </div>
+			<div id="tabsCSS" style="max-width: 50em; margin-bottom: 1em">
+			     <br>
+		         <textarea id="code-css" name="code-css"></textarea>
+		    </div>
+		    <div id="tabsJAVASCRIPT" style="max-width: 50em">
+		         <br>
+		         <textarea id="code-javascript" name="code-javascript"></textarea>
+		    </div>  
 	</div> 
+	  <script id="script">
+/*
+ * Demonstration of code folding
+ */
+window.onload = function() {
+  
+  var code_html = document.getElementById("code-html");
+  code_html.value = document.documentElement.innerHTML;
+  window.editor_code_html = CodeMirror.fromTextArea(code_html, {
+	    mode: "text/html",
+	    lineNumbers: true,
+	    lineWrapping: true,
+	    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+	    foldGutter: true,
+	    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+	  });
+  editor_code_html.foldCode(CodeMirror.Pos(0, 0));
+  editor_code_html.foldCode(CodeMirror.Pos(21, 0));
+  
+
+  var code_javascript = document.getElementById("code-javascript");
+  code_javascript.value = code_javascript.val();
+  window.editor_code_javascript = CodeMirror.fromTextArea(code_javascript, {
+    mode: "javascript",
+    lineNumbers: true,
+    lineWrapping: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+  editor_code_javascript.foldCode(CodeMirror.Pos(0, 0));
+  editor_code_javascript.foldCode(CodeMirror.Pos(21, 0));
+  
+  var code_css = document.getElementById("code-css");
+  code_css.value = code_css.val();
+  window.editor_code_css = CodeMirror.fromTextArea(code_css, {
+    mode: "markdown",
+    lineNumbers: true,
+    lineWrapping: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+  editor_code_css.foldCode(CodeMirror.Pos(0, 0));
+  editor_code_css.foldCode(CodeMirror.Pos(21, 0));
+};
+  </script>
 </body>
 </html>

@@ -8,12 +8,21 @@ $(function(){
         url: basePath+"/views/demo/jsp/demo_form_login.jsp",
         type: "GET",
         success: function(data){
-            $("#tabsHTML").val(data);
-            editor = CodeMirror(document.getElementById("tabsHTML"), {
-                mode: "text/html",
-                extraKeys: {"Ctrl-Space": "autocomplete"},
-                value: document.documentElement.innerHTML
-              });
+            $("#code-html").val(data);
         }
     });
+    $.ajax({
+        url: basePath+"/views/demo/css/demo_form_login_main.css",
+        type: "GET",
+        success: function(data){
+            $("#code-css").val(data);
+        }
+    });   
+    $.ajax({
+        url: basePath+"/views/demo/js/js_self/demo_form_login_main.js",
+        type: "GET",
+        success: function(data){
+            $("#code-javascript").val(data);
+        }
+    });        
 });
