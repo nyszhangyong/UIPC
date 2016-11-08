@@ -37,7 +37,7 @@ $(function(){
               gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
             });
         }
-    });   
+    });
     $.ajax({
         url: basePath+"/views/demo/js/js_self/demo_form_login_main.js",
         type: "GET",

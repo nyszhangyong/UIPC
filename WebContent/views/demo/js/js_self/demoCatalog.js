@@ -1,4 +1,4 @@
 jQuery(document).ready(function () {
     $("#accordion").accordion();
-    $("#demoFrame").attr("src", "./jsp/demo_form_login_main.jsp");
+    $("#demoFrame").attr("src", "./jsp/demo_form_simple_login_main.jsp");
 });

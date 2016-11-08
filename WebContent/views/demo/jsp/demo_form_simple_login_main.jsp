@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>简单登录</title>
+	<title>测试</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -23,31 +23,32 @@
     <script src="../js/codeFomat/codemirror-5.20.2/addon/fold/comment-fold.js"></script>
     <script src="../js/codeFomat/codemirror-5.20.2/mode/javascript/javascript.js"></script>
     <script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
-    <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>
-	<!-- 以下私有功能引用 -->
-	<script src="../js/js_self/demo_form_login_main.js" type="text/javascript"></script>
-    <link   href="../css/demo_form_login_main.css" type="text/css" rel="stylesheet" media="screen">
+    <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>   
+	<!-- 以下私有功能引用 --> 
+	<script src="../js/js_self/demo_form_simple_login_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_form_simple_login_main.css" type="text/css" rel="stylesheet" media="screen">   
 </head>
+
 <body>
-    <div id="jsppage"></div>
+	<div id="jsppage"></div>
 	<div id="tabs">
 		  <ul>
 		    <li><a href="#tabsHTML">HTML</a></li>
 		    <li><a href="#tabsCSS">CSS</a></li>
 		    <li><a href="#tabsJAVASCRIPT">JAVASCRIPT</a></li>
 		  </ul>
-		  	<div id="tabsHTML"  style="max-width: 50em; margin-bottom: 1em">
-		  	     <br>
-		         <textarea id="code-html" name="code-html"></textarea>
-		    </div>
-			<div id="tabsCSS" style="max-width: 50em; margin-bottom: 1em">
-			     <br>
-		         <textarea id="code-css" name="code-css"></textarea>
-		    </div>
-		    <div id="tabsJAVASCRIPT" style="max-width: 50em">
-		         <br>
-		         <textarea id="code-javascript" name="code-javascript"></textarea>
-		    </div>  
-	</div> 
+		  <div id="tabsHTML"  style="max-width: 50em; margin-bottom: 1em">
+		       <br>
+		       <textarea id="code-html" name="code-html"></textarea>
+		  </div>
+		  <div id="tabsCSS" style="max-width: 50em; margin-bottom: 1em">
+		       <br>
+		       <textarea id="code-markdown" name="code-markdown"></textarea>
+		  </div>
+		  <div id="tabsJAVASCRIPT" style="max-width: 50em">
+		       <br>
+		       <textarea id="code_javascript" name="code_javascript"></textarea>
+		  </div>
+	</div>		  
 </body>
 </html>
