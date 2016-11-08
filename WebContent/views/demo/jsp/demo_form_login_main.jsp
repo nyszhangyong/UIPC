@@ -49,52 +49,5 @@
 		         <textarea id="code-javascript" name="code-javascript"></textarea>
 		    </div>  
 	</div> 
-	  <script id="script">
-/*
- * Demonstration of code folding
- */
-window.onload = function() {
-  
-  var code_html = document.getElementById("code-html");
-  code_html.value = document.documentElement.innerHTML;
-  window.editor_code_html = CodeMirror.fromTextArea(code_html, {
-	    mode: "text/html",
-	    lineNumbers: true,
-	    lineWrapping: true,
-	    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
-	    foldGutter: true,
-	    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
-	  });
-  editor_code_html.foldCode(CodeMirror.Pos(0, 0));
-  editor_code_html.foldCode(CodeMirror.Pos(21, 0));
-  
-
-  var code_javascript = document.getElementById("code-javascript");
-  code_javascript.value = code_javascript.val();
-  window.editor_code_javascript = CodeMirror.fromTextArea(code_javascript, {
-    mode: "javascript",
-    lineNumbers: true,
-    lineWrapping: true,
-    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
-    foldGutter: true,
-    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
-  });
-  editor_code_javascript.foldCode(CodeMirror.Pos(0, 0));
-  editor_code_javascript.foldCode(CodeMirror.Pos(21, 0));
-  
-  var code_css = document.getElementById("code-css");
-  code_css.value = code_css.val();
-  window.editor_code_css = CodeMirror.fromTextArea(code_css, {
-    mode: "markdown",
-    lineNumbers: true,
-    lineWrapping: true,
-    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
-    foldGutter: true,
-    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
-  });
-  editor_code_css.foldCode(CodeMirror.Pos(0, 0));
-  editor_code_css.foldCode(CodeMirror.Pos(21, 0));
-};
-  </script>
 </body>
 </html>
