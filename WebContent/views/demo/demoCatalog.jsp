@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>E快速开发之样例云集</title>
+	<title>E快速开发之样例集</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
     <script src="js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -17,7 +17,7 @@
 <body>
 	<div id="MostOutsideDiv">
 	    <br/>
-     	<h3 style="text-align: center;">E快速开发之样例云集</h3>
+     	<h3 style="text-align: center;">E快速开发之样例集</h3>
 	    <form id="Form1">
 	        <div id="wrap">
 	            <table cellspacing="10" cellpadding="10">
