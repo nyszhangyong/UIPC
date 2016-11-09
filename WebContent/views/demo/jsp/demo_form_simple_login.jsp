@@ -8,8 +8,8 @@
 	<!-- 以下JQUERY功能引用 -->
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
     <!-- 以下私有功能引用 -->
-	<script src="../js/js_self/demo_form_login.js" type="text/javascript" ></script>
-	<link href="../css/demo_form_login.css" rel="stylesheet" type="text/css" >
+	<script src="../js/js_self/demo_form_simple_login.js" type="text/javascript" ></script>
+	<link href="../css/demo_form_simple_login.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
     <br/><br/><br/>
