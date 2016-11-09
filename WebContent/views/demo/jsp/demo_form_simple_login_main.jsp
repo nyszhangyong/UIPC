@@ -39,11 +39,11 @@
 		  </ul>
 		  <div id="tabsHTML"  style="max-width: 50em; margin-bottom: 1em">
 		       <br>
-		       <textarea id="code-html" name="code-html"></textarea>
+		       <textarea id="code_html" name="code_html"></textarea>
 		  </div>
 		  <div id="tabsCSS" style="max-width: 50em; margin-bottom: 1em">
 		       <br>
-		       <textarea id="code-markdown" name="code-markdown"></textarea>
+		       <textarea id="code_css" name="code_css"></textarea>
 		  </div>
 		  <div id="tabsJAVASCRIPT" style="max-width: 50em">
 		       <br>
