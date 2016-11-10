@@ -12,7 +12,7 @@
 	<link href="../css/demo_form_simple_login.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-    <br/><br/><br/>
+    <h1>简单登录</h1>
 	<div id="MostOutsideDiv">
 		<form id="loginForm" method="post">
 				<table>

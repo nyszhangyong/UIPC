@@ -5,12 +5,16 @@
 	<meta charset="UTF-8">
 	<title>简单查询</title>
 	<!-- 作者：张勇(Mark Smith) -->
-	<link rel="stylesheet" type="text/css" href="../css/demo_query_simple.css">
+	<!-- 以下JQUERY功能引用 -->
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
+	<!-- 以下私有功能引用 -->	
 	<script type="text/javascript" src="../js/js_self/demo_query_simple.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/demo_query_simple.css">
+	
+	
 </head>
 <body>
-    <br/><br/><br/>
+    <h1>简单查询</h1>
 	<div id="MostOutsideDiv">
 		<form id="loginForm" method="post">
 				<table>

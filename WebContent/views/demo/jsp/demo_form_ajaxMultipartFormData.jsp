@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../css/demo_form_ajaxMultipartFormData.css">
 </head>
 <body>
-    <br/><br/><br/>
+    <h1>提交多文件和数组数据(AJAX)</h1>
 	<div id="MostOutsideDiv">
 		<form id="userInfoForm">
 			<table>

@@ -3,9 +3,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>查询分页列表(datatables)</title>
+	<title>查询分页列表(DATATABLES)</title>
 	<!-- 作者：张勇(Mark Smith) -->
+	<!-- 以下JQUERY功能引用 -->
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
+	<!-- 以下私有功能引用 -->
+	
 	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/media/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/examples/resources/syntax/shCore.css">
 	<link rel="stylesheet" type="text/css" href="../js/js_dataTables-1.10.12/examples/resources/demo.css">
@@ -20,6 +23,7 @@
 	</script>
 </head>
 <body>
+    <h1>查询分页列表(DATATABLES)</h1>
 	<table id="example" class="display">
 		<thead>
 			<tr>
