@@ -1,6 +1,7 @@
 package com.util;
 
 import com.github.miemiedev.mybatis.paginator.domain.Order;
+import com.github.miemiedev.mybatis.paginator.domain.Order.Direction;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,15 +19,15 @@ public class Page {
     //总记录数
     private int totalRecord=0;
     
-    private String sort;
-    private String order;
+    private String sortString;
+    private String orderString;
 
-    public String getOrder() {
-        return order;
+    public String getOrderString() {
+        return orderString;
     }
 
-    public void setOrder(String order) {
-        this.order = order;
+    public void setOrderString(String orderString) {
+        this.orderString = orderString;
     }
 
     private Map<String,String> orderExprs = new HashMap<String, String>();
@@ -55,14 +56,14 @@ public class Page {
 		this.totalRecord = totalRecord;
 	}
 
-	public String getSort() {
+	public String getSortString() {
         /**
          * 由于easyUI前台传递的字段名称为Entity类中的属性名称，而不是数据库字段名
          * shopName，其实对应的字段为shop_name才正确，这里处理下，使排序功能正常
          */
-        if(StringUtils.isNotEmpty(sort))
+        if(StringUtils.isNotEmpty(sortString))
         {
-            StringBuffer sb=new StringBuffer(sort);
+            StringBuffer sb=new StringBuffer(sortString);
             for(int i=0;i< sb.length();i++)
             {
                 char c= 0;
@@ -79,11 +80,11 @@ public class Page {
             }
             return sb.toString().toLowerCase();
         }
-        return sort;
+        return sortString;
     }
 
-    public void setSort(String sort) {
-        this.sort = sort;
+    public void setSortString(String sortString) {
+        this.sortString = sortString;
     }
 
     public void addOrderExpr(String property, String expr){
@@ -91,18 +92,20 @@ public class Page {
     }
 
     public PageBounds toPageBounds(){
-        List<Order> orders=new ArrayList<Order>();
-        if(sort!=null&&sort.indexOf(",")<0)
-        {//单个列排序的逻辑封装
-            orders.add(0,new Order(getSort(), Order.Direction.fromString(getOrder()),null));
-            return new PageBounds(pageNumber, pageSize, orders);
-        }else
-        {//多列复合排序的封装name.desc,type.asc 这样的需求
-            orders = Order.formString(getSort());
-            for (int i = 0; i < orders.size(); i++) {
-                Order order =  orders.get(i);
+        List<Order> ordersList=new ArrayList<Order>();
+        if(sortString!=null&&sortString.indexOf(",")<0){
+        	//单个列排序的逻辑封装
+        	Direction direction=Order.Direction.fromString(getOrderString());
+        	Order element=new Order(getSortString(),direction ,null);
+        	ordersList.add(0,element);
+            return new PageBounds(pageNumber, pageSize, ordersList);
+        }else{
+        	//多列复合排序的封装name.desc,type.asc 这样的需求
+        	ordersList = Order.formString(getSortString());
+            for (int i = 0; i < ordersList.size(); i++) {
+                Order order =  ordersList.get(i);
                 if(orderExprs.get(order.getProperty()) != null){
-                    orders.set(i, new Order(
+                	ordersList.set(i, new Order(
                             order.getProperty(),
                             order.getDirection(),
                             orderExprs.get(order.getProperty()))
@@ -110,6 +113,6 @@ public class Page {
                 }
             }
         }
-        return new PageBounds(pageNumber, pageSize, orders);
+        return new PageBounds(pageNumber, pageSize, ordersList);
     }
 }
