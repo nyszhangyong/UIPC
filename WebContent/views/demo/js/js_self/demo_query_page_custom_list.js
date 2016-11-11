@@ -95,65 +95,38 @@ function goPrePage(){
 	query_list_custom("",pageNumber,pagesize)
 };
 function goPageNumber(){
-	
 	var event = event||window.event;  
     if (event.keyCode == 13){
-        var page_goto = $("#pageNumber").val();
-        if (isNaN(page_goto)) {
-            alert("请输入数字!");
-        }else {
-            var tempPageIndex = pageNumber;
-            pageNumber = parseInt($("#pageNumber").val());
-            if (pageNumber < 0 || pageNumber >parseInt($("#totalPage").text())) {
-                pageNumber = tempPageIndex;
-                alert("请输入有效的页面范围!");
-            }
-            else {
-            	query_list_custom("",pageNumber,pagesize)
-            }
-        }
+        query_list_custom("",pageNumber,pagesize)
     }
 };
 function goPagesize(){
-
-};
-function checkPageNumberAndPageSize(){
-    var pageNumber_temp = $("#pageNumber").val();
-    var pagesize_temp = $("#pagesize").val();
-    if(!pageNumber_temp){
-    	alert("请输入页码！");
-    }else if(!pagesize_temp){
-    	alert("请输入每页显示数量！");
-    }else{
-        if (isNaN(pageNumber_temp)) {
-            alert("页码请输入数字!");
-        }else if (isNaN(pagesize_temp)) {
-            alert("每页显示数量请输入数字!");
-        }else {
-            var tempPageIndex = pageNumber;
-            pageNumber = parseInt(pageNumber_temp);
-            if (pageNumber < 0 || pageNumber >parseInt($("#totalPage").text())) {
-                pageNumber = tempPageIndex;
-                alert("没有此页码，请输入正确的页码!");
-            }
-            else {
-            	//query_list_custom("",pageNumber,pagesize)
-            }
-        }
+	var event = event||window.event;  
+    if (event.keyCode == 13){
+        query_list_custom("",pageNumber,pagesize)
     }
-
 };
 function checkPageNumberInvalidNumber(){
+	var newPageCode=$("#pageNumber").val();
+	//判断输入的页码是否是数字，如果不是，则替换掉非数字
     if(checkInvalidNumber()==false){
-    	var temp=$("#pageNumber").val();
-    	$("#pageNumber").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
+    	$("#pageNumber").val(newPageCode.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
+    //判断页码是否在总页数范围内
+    if (newPageCode < 0 || newPageCode >parseInt($("#totalPage").text())) {
+        alert("共"+$("#totalPage").text()+"页，您输入的页码是"+newPageCode+"!,请输入有效的页面范围!");
+    }
+    //立刻更新要查询的页码
+    pageNumber =$("#pageNumber").val();
 }
 function checkPagesizeInvalidNumber(){
+	//判断输入的记录数是否是数字，如果不是，则替换掉非数字
     if(checkInvalidNumber()==false){
-    	var temp=$("#pageNumber").val();
-    	$("#pageNumber").val(temp.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
+    	var newPageSize=$("#pagesize").val();
+    	$("#pagesize").val(newPageSize.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
+    //立刻更新要查询的页大小
+    pagesize = $("#pagesize").val();    
 }
 function checkInvalidNumber(){
 	var event = event||window.event;
@@ -169,7 +142,7 @@ function checkInvalidNumber(){
 	ifInvalid=ifInvalid||event.keyCode==56||event.keyCode==104;//8
 	ifInvalid=ifInvalid||event.keyCode==57||event.keyCode==105;//9	
     if(ifInvalid==false){
-    	alert("请您输入数字!");
+    	alert("您输入了非数字，请您输入数字!");
     }
 	return ifInvalid;
 }

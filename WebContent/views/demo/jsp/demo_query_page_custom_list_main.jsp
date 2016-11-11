@@ -25,7 +25,7 @@
     <script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
     <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>   
 	<!-- 以下私有功能引用 --> 
-	<script src="../js/js_self/demo_form_simple_login_main.js" type="text/javascript"></script>
+	<script src="../js/js_self/demo_query_page_custom_list_main.js" type="text/javascript"></script>
     <link   href="../css/demo_query_page_custom_list_main.css" type="text/css" rel="stylesheet" media="screen">   
 </head>
 

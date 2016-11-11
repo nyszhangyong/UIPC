@@ -37,9 +37,9 @@
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-accordion-panel-5" aria-labelledby="ui-accordion-accordion-header-5" role="tabpanel" aria-hidden="true" style="display: none; height: 309px;">
 	                                <ul class="examples">
 	                                    <li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">简单查询</a></li>
-	                                    <li><a href="jsp/demo_query_page_datatables_list_main.jsp" target="demoFrame">查询分页列表(dataTables)</a></li>
-	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询分页列表(jqGrid)</a></li>
 	                                    <li><a href="jsp/demo_query_page_custom_list_main.jsp" target="demoFrame">查询分页列表(custom)</a></li>
+	                                    <li><a href="jsp/demo_query_page_datatables_list_main.jsp" target="demoFrame">查询分页列表(dataTables)</a></li>
+	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询分页列表(jqGrid)</a></li>                                   
 	                                </ul>
 	                            </div>
 	                        </div>
