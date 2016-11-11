@@ -14,9 +14,10 @@ public class Page {
 	//要查询的页码
     private int pageNumber = 1;
     //要查询的页大小
-    private int pagesize = 20;
+    private int pageSize = 20;
     //总记录数
     private int totalRecord=0;
+    
     private String sort;
     private String order;
 
@@ -38,12 +39,12 @@ public class Page {
 		this.pageNumber = pageNumber;
 	}
 
-	public int getPagesize() {
-		return pagesize;
+	public int getPageSize() {
+		return pageSize;
 	}
 
-	public void setPagesize(int pagesize) {
-		this.pagesize = pagesize;
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public int getTotalRecord() {
@@ -94,7 +95,7 @@ public class Page {
         if(sort!=null&&sort.indexOf(",")<0)
         {//单个列排序的逻辑封装
             orders.add(0,new Order(getSort(), Order.Direction.fromString(getOrder()),null));
-            return new PageBounds(pageNumber, pagesize, orders);
+            return new PageBounds(pageNumber, pageSize, orders);
         }else
         {//多列复合排序的封装name.desc,type.asc 这样的需求
             orders = Order.formString(getSort());
@@ -109,6 +110,6 @@ public class Page {
                 }
             }
         }
-        return new PageBounds(pageNumber, pagesize, orders);
+        return new PageBounds(pageNumber, pageSize, orders);
     }
 }

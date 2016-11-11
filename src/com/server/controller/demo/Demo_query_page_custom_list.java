@@ -26,7 +26,7 @@ public class Demo_query_page_custom_list extends BaseController{
     public @ResponseBody ObjectMessage queryUserList(User user, Page page,HttpServletRequest request){
 		List<User> userList=new ArrayList<User>();
 		int pageNumber=page.getPageNumber();
-        int pageSize=page.getPagesize();
+        int pageSize=page.getPageSize();
         page.setTotalRecord(986);
         for(int i=1;i<=pageSize;i++){
     		User userTemp=new User();
