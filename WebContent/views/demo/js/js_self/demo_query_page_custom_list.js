@@ -31,16 +31,26 @@ function query_list_custom(queryKeywords,pageNumber,pagesize){
 			$("#customTable *").remove();
 			//循环返回对象列表
 			$.each(returnMessage.data, function(i, userInfo) {
-				
-				$("#customTable").append(
-				      function(){
-				    	  var trInfo="<tr>";
+				$("#customTable").append(function(){
+					//初始化表头变量
+					var trInfo="";
+					if(i==0){
+				    	  trInfo+="<tr>";
+				    	  trInfo+="<td>用户名</td>";
+				    	  trInfo+="<td>密码</td>";
+				    	  trInfo+="</tr>";
+				    	  trInfo+="<tr>";
 				    	  trInfo+="<td>"+userInfo.userName+"</td>";
 				    	  trInfo+="<td>"+userInfo.password+"</td>";
 				    	  trInfo+="</tr>";
+					}else{
+				    	  trInfo+="<tr>";
+				    	  trInfo+="<td>"+userInfo.userName+"</td>";
+				    	  trInfo+="<td>"+userInfo.password+"</td>";
+				    	  trInfo+="</tr>";
+					}
 				    	  return trInfo;
-				      }
-				);
+				 });
 	        });
 			//先清除分页条中的历史数据
 			$("#customPagination *").remove();
@@ -53,7 +63,7 @@ function query_list_custom(queryKeywords,pageNumber,pagesize){
 				    	  pagerInfo += "<span>";
 				    	  pagerInfo += "<input id='pageNumber' type='text' size='1'";
 				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onkeyup='checkPageNumberInvalidNumber()'";
+				    	  pagerInfo += " onblur='checkPageNumberInvalidNumber()'";
 				    	  pagerInfo += " onkeydown='javascript:goPageNumber()'";
 				    	  pagerInfo += "/>";
 				    	  pagerInfo += "/";
@@ -63,7 +73,7 @@ function query_list_custom(queryKeywords,pageNumber,pagesize){
 				    	  pagerInfo += "每页";
 				    	  pagerInfo += "<input id='pagesize' type='text' size='1'";
 				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onkeyup='checkPagesizeInvalidNumber()'";
+				    	  pagerInfo += " onblur='checkPagesizeInvalidNumber()'";
 				    	  pagerInfo += " onkeydown='javascript:goPagesize()'";
 				    	  pagerInfo += "/>";				    	  
 				    	  pagerInfo += "条";
@@ -97,13 +107,13 @@ function goPrePage(){
 function goPageNumber(){
 	var event = event||window.event;  
     if (event.keyCode == 13){
-        query_list_custom("",pageNumber,pagesize)
+       query_list_custom("",pageNumber,pagesize);
     }
 };
 function goPagesize(){
 	var event = event||window.event;  
     if (event.keyCode == 13){
-        query_list_custom("",pageNumber,pagesize)
+        query_list_custom("",pageNumber,pagesize);
     }
 };
 function checkPageNumberInvalidNumber(){
@@ -112,12 +122,17 @@ function checkPageNumberInvalidNumber(){
     if(checkInvalidNumber()==false){
     	$("#pageNumber").val(newPageCode.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
+	//判断是否输入了页码
+    if($("#pageNumber").val().length < 1){
+    	$("#pageNumber").val("1");
+    }
     //判断页码是否在总页数范围内
     if (newPageCode < 0 || newPageCode >parseInt($("#totalPage").text())) {
         alert("共"+$("#totalPage").text()+"页，您输入的页码是"+newPageCode+"!,请输入有效的页面范围!");
     }
     //立刻更新要查询的页码
     pageNumber =$("#pageNumber").val();
+
 }
 function checkPagesizeInvalidNumber(){
 	//判断输入的记录数是否是数字，如果不是，则替换掉非数字
@@ -125,8 +140,12 @@ function checkPagesizeInvalidNumber(){
     	var newPageSize=$("#pagesize").val();
     	$("#pagesize").val(newPageSize.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
+	//判断是否输入了页大小
+    if($("#pagesize").val().length < 1){
+    	$("#pagesize").val("5");
+    }
     //立刻更新要查询的页大小
-    pagesize = $("#pagesize").val();    
+    pagesize = $("#pagesize").val(); 
 }
 function checkInvalidNumber(){
 	var event = event||window.event;
@@ -142,19 +161,17 @@ function checkInvalidNumber(){
 	ifInvalid=ifInvalid||event.keyCode==56||event.keyCode==104;//8
 	ifInvalid=ifInvalid||event.keyCode==57||event.keyCode==105;//9	
     if(ifInvalid==false){
-    	alert("您输入了非数字，请您输入数字!");
+    	alert("请您输入数字!");
     }
 	return ifInvalid;
 }
 function goNextPage(){
-	alert("下页");
     if (pageNumber + 1 <= parseInt($("#totalPage").text())) {
         pageNumber=pageNumber+1;
     }
     query_list_custom("",pageNumber,pagesize)
 };
 function goEndPage(){
-	alert("尾页");
 	pageNumber = parseInt($("#totalPage").text());
 	query_list_custom("",pageNumber,pagesize)
 };
