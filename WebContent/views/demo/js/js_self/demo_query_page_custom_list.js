@@ -9,13 +9,12 @@ var queryKeywords;
 
 //页面初次加载的时候，首次执行查询方法，参数为空
 $(function(){
-	queryKeywords = "";
 	pageNumber = 1;	
-    query_list_custom(queryKeywords,pageNumber,pagesize);	
+    query_list_custom(pageNumber,pagesize);	
 });
 
 //查询执行方法
-function query_list_custom(queryKeywords,pageNumber,pagesize){
+function query_list_custom(pageNumber,pagesize){
 	$.ajax({ 
 		type: "post", 
 		url: "/UIPC/server/controller/demo_query_page_custom_list/queryUserList", 
@@ -36,8 +35,8 @@ function query_list_custom(queryKeywords,pageNumber,pagesize){
 					var trInfo="";
 					if(i==0){
 				    	  trInfo+="<tr>";
-				    	  trInfo+="<td>用户名</td>";
-				    	  trInfo+="<td>密码</td>";
+				    	  trInfo+="<th>用户名</th>";
+				    	  trInfo+="<th>密码</th>";
 				    	  trInfo+="</tr>";
 				    	  trInfo+="<tr>";
 				    	  trInfo+="<td>"+userInfo.userName+"</td>";
@@ -52,68 +51,73 @@ function query_list_custom(queryKeywords,pageNumber,pagesize){
 				    	  return trInfo;
 				 });
 	        });
-			//先清除分页条中的历史数据
-			$("#customPagination *").remove();
-			//生成分页条
-			$("#customPagination").append(
-				      function(){
-				    	  var pagerInfo="";
-				    	  pagerInfo += "<a href='javascript:goFirstPage()' id='firstPage'>首页</a>";
-				    	  pagerInfo += "<a href='javascript:goPrePage()' id='prePage'>上页</a>";
-				    	  pagerInfo += "<span>";
-				    	  pagerInfo += "<input id='pageNumber' type='text' size='1'";
-				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onblur='checkPageNumberInvalidNumber()'";
-				    	  pagerInfo += " onkeydown='javascript:goPageNumber()'";
-				    	  pagerInfo += "/>";
-				    	  pagerInfo += "/";
-				    	  pagerInfo += "<span id='totalPage'></span>页";
-				    	  pagerInfo += "(";
-				    	  pagerInfo += "共<span id='totalRecord'></span>条,";
-				    	  pagerInfo += "每页";
-				    	  pagerInfo += "<input id='pagesize' type='text' size='1'";
-				    	  pagerInfo += " maxlength='11'";
-				    	  pagerInfo += " onblur='checkPagesizeInvalidNumber()'";
-				    	  pagerInfo += " onkeydown='javascript:goPagesize()'";
-				    	  pagerInfo += "/>";				    	  
-				    	  pagerInfo += "条";
-				    	  pagerInfo += ")";
-				    	  pagerInfo += "</span>";
-				    	  pagerInfo += "<a href='javascript:goNextPage()' id='nextPage'>下页</a>";
-				    	  pagerInfo += "<a href='javascript:goEndPage()' id='endPage'>尾页</a>";	    	  
-				    	  return pagerInfo;
-				      }
-			);
-			//为分页条赋新值
-			var totalPage=Math.ceil(totalRecord/pagesize);
-			$("#totalRecord").text(totalRecord);
-			$("#totalPage").text(totalPage);
-			$("#pageNumber").val(pageNumber);
-			$("#pagesize").val(pagesize);
+			generatePageBar();
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert("查询用户分页列表，返回失败！");
 		}
 	}); 
 }
+function generatePageBar(){
+	//先清除分页条中的历史数据
+	$("#customPagination *").remove();
+	//生成分页条
+	$("#customPagination").append(
+		      function(){
+		    	  var pagerInfo="";
+		    	  pagerInfo += "<a href='javascript:goFirstPage()' id='firstPage'>&nbsp;&nbsp;首页&nbsp;&nbsp;</a>";
+		    	  pagerInfo += "<a href='javascript:goPrePage()' id='prePage'>&nbsp;&nbsp;上页&nbsp;&nbsp;</a>";
+		    	  pagerInfo += "<a href='javascript:goNextPage()' id='nextPage'>&nbsp;&nbsp;下页&nbsp;&nbsp;</a>";
+		    	  pagerInfo += "<a href='javascript:goEndPage()' id='endPage'>&nbsp;&nbsp;尾页&nbsp;&nbsp;</a>";	
+		    	  pagerInfo += "<span>";
+		    	  pagerInfo += "共";
+		    	  pagerInfo += "<span id='totalPage'></span>";
+		    	  pagerInfo += "页，";		
+		    	  pagerInfo += "跳到第";
+		    	  pagerInfo += "<input id='pageNumber' type='text' size='1'";
+		    	  pagerInfo += " maxlength='11'";
+		    	  pagerInfo += " onkeyup='checkPageNumberInvalidNumber()'";
+		    	  pagerInfo += " onkeydown='javascript:goPageNumber()'";
+		    	  pagerInfo += "/>";
+		    	  pagerInfo += "页，";
+		    	  pagerInfo += "共";
+		    	  pagerInfo += "<span id='totalRecord'></span>条，";
+		    	  pagerInfo += "每页";
+		    	  pagerInfo += "<input id='pagesize' type='text' size='1'";
+		    	  pagerInfo += " maxlength='11'";
+		    	  pagerInfo += " onkeyup='checkPagesizeInvalidNumber()'";
+		    	  pagerInfo += " onkeydown='javascript:goPagesize()'";
+		    	  pagerInfo += "/>";				    	  
+		    	  pagerInfo += "条";
+		    	  pagerInfo += "</span>";
+		    	  return pagerInfo;
+		      }
+	);
+	//为分页条赋新值
+	var totalPage=Math.ceil(totalRecord/pagesize);
+	$("#totalRecord").text(totalRecord);
+	$("#totalPage").text(totalPage);
+	$("#pageNumber").val(pageNumber);
+	$("#pagesize").val(pagesize);
+}
 function goFirstPage(){
 	pageNumber = 1;
-	query_list_custom("",pageNumber,pagesize)
+	query_list_custom(pageNumber,pagesize)
 };
 function goPrePage(){
 	pageNumber = pageNumber-1<= 0 ? 1 : pageNumber-1;
-	query_list_custom("",pageNumber,pagesize)
+	query_list_custom(pageNumber,pagesize)
 };
 function goPageNumber(){
 	var event = event||window.event;  
     if (event.keyCode == 13){
-       query_list_custom("",pageNumber,pagesize);
+       query_list_custom(pageNumber,pagesize);
     }
 };
 function goPagesize(){
 	var event = event||window.event;  
     if (event.keyCode == 13){
-        query_list_custom("",pageNumber,pagesize);
+        query_list_custom(pageNumber,pagesize);
     }
 };
 function checkPageNumberInvalidNumber(){
@@ -128,6 +132,7 @@ function checkPageNumberInvalidNumber(){
     }
     //判断页码是否在总页数范围内
     if (newPageCode < 0 || newPageCode >parseInt($("#totalPage").text())) {
+    	$("#pageNumber").val("1");
         alert("共"+$("#totalPage").text()+"页，您输入的页码是"+newPageCode+"!,请输入有效的页面范围!");
     }
     //立刻更新要查询的页码
@@ -135,15 +140,20 @@ function checkPageNumberInvalidNumber(){
 
 }
 function checkPagesizeInvalidNumber(){
+	var newPageSize=$("#pagesize").val();
 	//判断输入的记录数是否是数字，如果不是，则替换掉非数字
     if(checkInvalidNumber()==false){
-    	var newPageSize=$("#pagesize").val();
     	$("#pagesize").val(newPageSize.replace(/[^1-9]{1}[^0-9]*/g,""));//替换首位0和其它非数字字符
     }
 	//判断是否输入了页大小
     if($("#pagesize").val().length < 1){
     	$("#pagesize").val("5");
     }
+    //判断页大小是否在最大范围内
+    if (newPageSize < 0 || newPageSize >100) {
+    	$("#pagesize").val("5");
+        alert("您输入的是"+newPageSize+",为了提高查询性能,请输入小于100的数字！");
+    }    
     //立刻更新要查询的页大小
     pagesize = $("#pagesize").val(); 
 }
@@ -169,9 +179,9 @@ function goNextPage(){
     if (pageNumber + 1 <= parseInt($("#totalPage").text())) {
         pageNumber=pageNumber+1;
     }
-    query_list_custom("",pageNumber,pagesize)
+    query_list_custom(pageNumber,pagesize)
 };
 function goEndPage(){
 	pageNumber = parseInt($("#totalPage").text());
-	query_list_custom("",pageNumber,pagesize)
+	query_list_custom(pageNumber,pagesize)
 };
