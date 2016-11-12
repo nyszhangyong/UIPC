@@ -8,10 +8,6 @@
 	<!-- 以下JQUERY功能引用 -->
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="../js/js_jquery/js_jquery_form3.46/jquery.form.js"></script>
-	<!-- 以下jQuery File Upload功能引用 -->
-	<script src="../js/jQuery-File-Upload-9.14.0/js/vendor/jquery.ui.widget.js"></script>
-	<script src="../js/jQuery-File-Upload-9.14.0/js/jquery.iframe-transport.js"></script>
-	<script src="../js/jQuery-File-Upload-9.14.0/js/jquery.fileupload.js"></script>
     <!-- 以下私有功能引用 -->
     <script type="text/javascript" src="../js/js_self/demo_form_ajaxMultipartFormData.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/demo_form_ajaxMultipartFormData.css">

@@ -14,6 +14,4 @@ public class UserInfo{
 		this.userList = userList;
 	}
 
-	
-
 }
