@@ -1,8 +1,10 @@
 $(function(){
+   var location = (window.location+'').split('/'); 
+   var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
    $("#loginbtn").on('click',function(){
 		$.ajax({ 
 			type: "post", 
-			url: "/UIPC/server/controller/demo_query_loginController/loginConfirmation", 
+			url: basePath+"/server/controller/demo_query_loginController/loginConfirmation", 
 			data: "userName="+$("#userName").val(),
 			success: function(returnMessage) {
 				//alert(returnMessage);

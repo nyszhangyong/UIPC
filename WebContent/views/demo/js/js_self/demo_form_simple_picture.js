@@ -1,4 +1,6 @@
 $(function() {
+  var location = (window.location+'').split('/'); 
+  var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
   $("#pic").click(function () {
      $("#upload").click();
      $("#upload").on("change",function(){

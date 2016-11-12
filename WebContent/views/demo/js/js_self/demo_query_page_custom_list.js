@@ -15,9 +15,11 @@ $(function(){
 
 //查询执行方法
 function query_list_custom(pageNumber,pageSize){
+	var location = (window.location+'').split('/'); 
+	var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
 	$.ajax({ 
 		type: "post", 
-		url: "/UIPC/server/controller/demo_query_page_custom_list/queryUserList", 
+		url: basePath+"/server/controller/demo_query_page_custom_list/queryUserList", 
 		data: "pageNumber="+pageNumber+"&pageSize="+pageSize,//serialize方式，表单中的DOM元素的属性必须要有name属性，仅有ID不行
 		success: function(returnMessage) {
 			//要查询的页码

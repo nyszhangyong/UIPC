@@ -1,8 +1,10 @@
 $(function(){
+   var location = (window.location+'').split('/'); 
+   var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
    $("#userInfoButton").on('click',function(){
 	   var opt={
                 type:"POST",
-				url: "/UIPC/server/controller/demo_form_multipartFormDataController/receiveUserInfo", 
+				url: basePath+"/server/controller/demo_form_multipartFormDataController/receiveUserInfo", 
 				contentType:"multipart/form-data",
 				success: function(returnMessage) {
 					alert("成功！");

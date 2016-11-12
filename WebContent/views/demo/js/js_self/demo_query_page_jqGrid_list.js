@@ -1,7 +1,8 @@
 $(document).ready(function () {
-
-		$("#jqGrid").jqGrid({
-		url: '/UIPC/views/consumer/js/js_self/demo_query_page_jqGrid_list.json',
+	var location = (window.location+'').split('/'); 
+	var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
+	$("#jqGrid").jqGrid({
+		url: basePath+"/views/demo/js/js_self/demo_query_page_jqGrid_list.json",
 		datatype: "json",
 		colModel: [
 			{ label: 'Category Name', name: 'CategoryName', width: 75 },
