@@ -31,7 +31,11 @@ public class Demo_query_page_custom_list extends BaseController{
         for(int i=1;i<=pageSize;i++){
     		User userTemp=new User();
     		userTemp.setUserName("李"+(pageSize*(pageNumber-1)+i));
-    		userTemp.setPassword("123");
+    		userTemp.setPassword("m"+(pageSize*(pageNumber-1)+i));
+    		userTemp.setMobile("13528897653");
+    		userTemp.setDateOfBirth("1963-01-01");
+    		userTemp.setSex("男");
+    		userTemp.setAddress("银河系地球中国");
     		userList.add(userTemp);
         }
         return ObjectMessage.success("操作成功",userList,page);

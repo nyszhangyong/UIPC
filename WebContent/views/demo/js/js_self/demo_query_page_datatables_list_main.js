@@ -59,9 +59,9 @@ $(function(){
             //alert("选项卡内容即将加载");  
         } 
     });
-    $("#jsppage").load(basePath+"/views/demo/jsp/demo_form_simple_login.jsp");
+    $("#jsppage").load(basePath+"/views/demo/jsp/demo_query_page_datatables_list.jsp");
     $.ajax({
-        url: basePath+"/views/demo/jsp/demo_form_simple_login.jsp",
+        url: basePath+"/views/demo/jsp/demo_query_page_datatables_list.jsp",
         type: "GET",
         success: function(data){
             $("#code_html").val(data);
@@ -78,7 +78,7 @@ $(function(){
         }
     });
     $.ajax({
-        url: basePath+"/views/demo/css/demo_form_simple_login.css",
+        url: basePath+"/views/demo/css/demo_query_page_datatables_list.css",
         type: "GET",
         success: function(data){
             $("#code_css").val(data);
@@ -99,7 +99,7 @@ $(function(){
         }
     });
     $.ajax({
-        url: basePath+"/views/demo/js/js_self/demo_form_simple_login.js",
+        url: basePath+"/views/demo/js/js_self/demo_query_page_datatables_list.js",
         type: "GET",
         success: function(data){
             $("#code_javascript").val(data);

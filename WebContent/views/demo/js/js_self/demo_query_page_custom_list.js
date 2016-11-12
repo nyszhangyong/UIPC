@@ -37,15 +37,27 @@ function query_list_custom(pageNumber,pageSize){
 				    	  trInfo+="<tr>";
 				    	  trInfo+="<th>用户名</th>";
 				    	  trInfo+="<th>密码</th>";
+				    	  trInfo+="<th>手机</th>";
+				    	  trInfo+="<th>出生日期</th>";
+				    	  trInfo+="<th>性别</th>";
+				    	  trInfo+="<th>地址</th>";		    	  
 				    	  trInfo+="</tr>";
 				    	  trInfo+="<tr>";
 				    	  trInfo+="<td>"+userInfo.userName+"</td>";
 				    	  trInfo+="<td>"+userInfo.password+"</td>";
+				    	  trInfo+="<td>"+userInfo.mobile+"</td>";
+				    	  trInfo+="<td>"+userInfo.dateOfBirth+"</td>";
+				    	  trInfo+="<td>"+userInfo.sex+"</td>";
+				    	  trInfo+="<td>"+userInfo.address+"</td>";				    	  
 				    	  trInfo+="</tr>";
 					}else{
 				    	  trInfo+="<tr>";
 				    	  trInfo+="<td>"+userInfo.userName+"</td>";
 				    	  trInfo+="<td>"+userInfo.password+"</td>";
+				    	  trInfo+="<td>"+userInfo.mobile+"</td>";
+				    	  trInfo+="<td>"+userInfo.dateOfBirth+"</td>";
+				    	  trInfo+="<td>"+userInfo.sex+"</td>";
+				    	  trInfo+="<td>"+userInfo.address+"</td>";
 				    	  trInfo+="</tr>";
 					}
 				    	  return trInfo;
