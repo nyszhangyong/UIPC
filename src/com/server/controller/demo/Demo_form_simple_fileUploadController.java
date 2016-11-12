@@ -6,7 +6,6 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,4 +29,18 @@ public class Demo_form_simple_fileUploadController extends BaseController{
             return "fileuploaddone";    
   
     }  
+	
+	@RequestMapping(value = "/uploadPicture",method = RequestMethod.POST)  
+    public @ResponseBody String uploadPicture(MultipartFile fileupload) {  
+  
+            File f=new File("/temp_"+fileupload.getOriginalFilename());  
+            try {  
+                FileUtils.copyInputStreamToFile(fileupload.getInputStream(),f );  
+            } catch (IOException e) {  
+                e.printStackTrace();  
+            }  
+               
+            return "fileuploaddone";    
+  
+    }
 }

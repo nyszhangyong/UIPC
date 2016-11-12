@@ -59,9 +59,9 @@ $(function(){
             //alert("选项卡内容即将加载");  
         } 
     });
-    $("#jsppage").load(basePath+"/views/demo/jsp/demo_form_simple_fileUpload.jsp");
+    $("#jsppage").load(basePath+"/views/demo/jsp/demo_form_simple_picture.jsp");
     $.ajax({
-        url: basePath+"/views/demo/jsp/demo_form_simple_fileUpload.jsp",
+        url: basePath+"/views/demo/jsp/demo_form_simple_picture.jsp",
         type: "GET",
         success: function(data){
             $("#code_html").val(data);
@@ -78,7 +78,7 @@ $(function(){
         }
     });
     $.ajax({
-        url: basePath+"/views/demo/css/demo_form_simple_fileUpload.css",
+        url: basePath+"/views/demo/css/demo_form_simple_picture.css",
         type: "GET",
         success: function(data){
             $("#code_css").val(data);
@@ -99,7 +99,7 @@ $(function(){
         }
     });
     $.ajax({
-        url: basePath+"/views/demo/js/js_self/demo_form_simple_fileUpload.js",
+        url: basePath+"/views/demo/js/js_self/demo_form_simple_picture.js",
         type: "GET",
         success: function(data){
             $("#code_javascript").val(data);
