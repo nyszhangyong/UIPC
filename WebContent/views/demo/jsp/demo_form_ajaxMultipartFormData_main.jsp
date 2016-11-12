@@ -38,13 +38,13 @@
 		    <li><a href="#tabsJAVASCRIPT">JAVASCRIPT</a></li>
 		  </ul>
 		  <div id="tabsHTML"  style="max-width: 50em; margin-bottom: 1em">
-		       <br><textarea id="code_html" name="code_html"></textarea>
+		       <br>HTML<textarea id="code_html" name="code_html"></textarea>
 		  </div>
 		  <div id="tabsCSS" style="max-width: 50em; margin-bottom: 1em">
-		       <br><textarea id="code_css" name="code_css"></textarea>
+		       <br>CSS<textarea id="code_css" name="code_css"></textarea>
 		  </div>
 		  <div id="tabsJAVASCRIPT" style="max-width: 50em">
-		       <br><textarea id="code_javascript" name="code_javascript"></textarea>
+		       <br>JAVASCRIPT<textarea id="code_javascript" name="code_javascript"></textarea>
 		  </div>
 	</div>		  
 </body>

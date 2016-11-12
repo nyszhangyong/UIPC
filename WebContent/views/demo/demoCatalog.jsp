@@ -39,14 +39,13 @@
 	                                <ul class="examples">
 	                                    <li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">简单查询</a></li>
 	                                    <li><a href="jsp/demo_query_page_custom_list_main.jsp" target="demoFrame">查询分页列表(custom)</a></li>
-	                                    <li><a href="jsp/demo_query_page_datatables_list_main.jsp" target="demoFrame">查询分页列表(dataTables)</a></li>
 	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询分页列表(jqGrid)</a></li>                                   
 	                                </ul>
 	                            </div>
 	                        </div>
 	                    </td>
 	                    <td width="800px" valign="top">
-	                        <iframe id="demoFrame" name="demoFrame"></iframe>
+	                        <iframe id="demoFrame" name="demoFrame"  scrolling="no" onload="changeFrameHeight()" frameborder="0"></iframe>
 	                    </td>
 	                </tr>
 	            </tbody></table>

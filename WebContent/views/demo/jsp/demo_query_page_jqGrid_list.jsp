@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" />
 	<!-- 以下私有功能引用 -->	
 	<script type="text/javascript" src="../js/js_self/demo_query_page_jqGrid_list.js"></script>
-
+    <link href="../css/demo_query_page_jqGrid_list.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
     <h1>查询分页列表(jqGrid)</h1>

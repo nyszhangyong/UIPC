@@ -6,12 +6,10 @@
 	<title>简单查询</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
-	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
+	<script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
 	<!-- 以下私有功能引用 -->	
-	<script type="text/javascript" src="../js/js_self/demo_query_simple.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/demo_query_simple.css">
-	
-	
+	<script src="../js/js_self/demo_query_simple.js" type="text/javascript"></script>
+	<link href="../css/demo_query_simple.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h1>简单查询</h1>

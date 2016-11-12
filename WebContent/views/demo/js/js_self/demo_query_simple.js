@@ -7,7 +7,6 @@ $(function(){
 			url: basePath+"/server/controller/demo_query_loginController/loginConfirmation", 
 			data: "userName="+$("#userName").val(),
 			success: function(returnMessage) {
-				//alert(returnMessage);
 				var obj = jQuery.parseJSON(returnMessage)
 				$("#userName").val(obj.userName);
 				$("#password").val(obj.password);
