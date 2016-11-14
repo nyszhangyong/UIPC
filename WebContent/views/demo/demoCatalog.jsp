@@ -29,7 +29,6 @@
 	                                <ul class="examples">
 	                                    <li><a href="jsp/demo_form_simple_login_main.jsp" target="demoFrame">简单登录</a></li>
 	                                    <li><a href="jsp/demo_form_simple_picture_preview_main.jsp" target="demoFrame">简单图片预览</a></li>
-	                                    <li><a href="jsp/demo_form_simple_fileUpload_ajax_main.jsp" target="demoFrame">简单文件上传(AJAX)</a></li>
 	                                    <li><a href="jsp/demo_form_multipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据</a></li>
 	                                    <li><a href="jsp/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">提交多文件和数组数据(AJAX)</a></li>                                  
 	                                </ul>
