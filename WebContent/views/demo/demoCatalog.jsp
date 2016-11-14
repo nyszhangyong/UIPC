@@ -28,7 +28,7 @@
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-accordion-panel-0" aria-labelledby="ui-accordion-accordion-header-0" role="tabpanel" aria-hidden="false" style="display: block; height: 309px;">
 	                                <ul class="examples">
 	                                    <li><a href="jsp/demo_form_simple_login_main.jsp" target="demoFrame">简单登录</a></li>
-	                                    <li><a href="jsp/demo_form_simple_picture_main.jsp" target="demoFrame">简单图片上传（预览）</a></li>
+	                                    <li><a href="jsp/demo_form_simple_picture_preview_main.jsp" target="demoFrame">简单图片预览</a></li>
 	                                    <li><a href="jsp/demo_form_simple_fileUpload_main.jsp" target="demoFrame">简单文件上传</a></li>
 	                                    <li><a href="jsp/demo_form_noAjaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(非AJAX)</a></li>
 	                                    <li><a href="jsp/demo_form_ajaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(AJAX)</a></li>                                  
