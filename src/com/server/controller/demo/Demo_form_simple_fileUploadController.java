@@ -30,17 +30,4 @@ public class Demo_form_simple_fileUploadController extends BaseController{
   
     }  
 	
-	@RequestMapping(value = "/uploadPicture",method = RequestMethod.POST)  
-    public @ResponseBody String uploadPicture(MultipartFile fileupload) {  
-  
-            File f=new File("/temp_"+fileupload.getOriginalFilename());  
-            try {  
-                FileUtils.copyInputStreamToFile(fileupload.getInputStream(),f );  
-            } catch (IOException e) {  
-                e.printStackTrace();  
-            }  
-               
-            return "fileuploaddone";    
-  
-    }
 }

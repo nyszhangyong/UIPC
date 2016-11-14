@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>简单文件上传</title>
+	<title>简单文件上传(AJAX)</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -25,8 +25,8 @@
     <script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
     <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>   
 	<!-- 以下私有功能引用 --> 
-	<script src="../js/js_self/demo_form_simple_fileUpload_main.js" type="text/javascript"></script>
-    <link   href="../css/demo_form_simple_fileUpload_main.css" type="text/css" rel="stylesheet" media="screen">   
+	<script src="../js/js_self/demo_form_simple_fileUpload_ajax_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_form_simple_fileUpload_ajax_main.css" type="text/css" rel="stylesheet" media="screen">   
 </head>
 
 <body>

@@ -29,9 +29,9 @@
 	                                <ul class="examples">
 	                                    <li><a href="jsp/demo_form_simple_login_main.jsp" target="demoFrame">简单登录</a></li>
 	                                    <li><a href="jsp/demo_form_simple_picture_preview_main.jsp" target="demoFrame">简单图片预览</a></li>
-	                                    <li><a href="jsp/demo_form_simple_fileUpload_main.jsp" target="demoFrame">简单文件上传</a></li>
-	                                    <li><a href="jsp/demo_form_noAjaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(非AJAX)</a></li>
-	                                    <li><a href="jsp/demo_form_ajaxMultipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据(AJAX)</a></li>                                  
+	                                    <li><a href="jsp/demo_form_simple_fileUpload_ajax_main.jsp" target="demoFrame">简单文件上传(AJAX)</a></li>
+	                                    <li><a href="jsp/demo_form_multipartFormData_main.jsp" target="demoFrame">提交多文件和数组数据</a></li>
+	                                    <li><a href="jsp/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">提交多文件和数组数据(AJAX)</a></li>                                  
 	                                </ul>
 	                            </div>
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-5" aria-controls="ui-accordion-accordion-panel-5" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="#">查询类例子</a></h3>
