@@ -28,7 +28,6 @@
 	<script src="../js/js_self/demo_form_simple_fileUpload_ajax_main.js" type="text/javascript"></script>
     <link   href="../css/demo_form_simple_fileUpload_ajax_main.css" type="text/css" rel="stylesheet" media="screen">   
 </head>
-
 <body>
 	<div id="jsppage"></div>
 	<div id="tabs">
