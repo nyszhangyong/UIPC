@@ -45,7 +45,7 @@
 	                        </div>
 	                    </td>
 	                    <td width="800px" valign="top">
-	                        <iframe id="demoFrame" name="demoFrame"  scrolling="no" onload="changeFrameHeight()" frameborder="0"></iframe>
+	                        <iframe id="demoFrame" name="demoFrame"  scrolling="no" frameborder="0"></iframe>
 	                    </td>
 	                </tr>
 	            </tbody></table>

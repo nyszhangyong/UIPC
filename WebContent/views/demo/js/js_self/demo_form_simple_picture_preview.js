@@ -1,12 +1,6 @@
 $(function() {
   var location = (window.location+'').split('/'); 
   var basePath = location[0]+'//'+location[2]+'/'+location[3]; 
-  $("#upload").on("change",function(){
-      var objUrl = getObjectURL(this.files[0]) ;  
-      if (objUrl) {
-        $("#pic").attr("src", objUrl) ;      
-      }
-  });
   $("#pic").click(function () {
      $("#upload").click();
      $("#upload").on("change",function(){
