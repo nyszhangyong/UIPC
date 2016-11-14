@@ -12,7 +12,9 @@
 	<link href="../css/demo_form_simple_picture_preview.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-<img id="pic" src=""/>
-<input id="upload" name="file" accept="image/*" type="file" style="display: none"/>   
+<img id="pic" src="../images/demo_form_simple_picture_preview/preview_picture_small.jpg"/>
+<input id="upload" name="file" accept="image/*" type="file"/>   
+<!-- 如果不想显示选择图片的按钮，就采用下面的语句，把选择按钮隐藏-->
+<!--<input id="upload" name="file" accept="image/*" type="file" style="display: none"/> -->
 </body>
 </html>
