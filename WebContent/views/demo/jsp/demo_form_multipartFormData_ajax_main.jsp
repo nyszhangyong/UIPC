@@ -25,8 +25,8 @@
     <script src="../js/codeFomat/codemirror-5.20.2/mode/xml/xml.js"></script>
     <script src="../js/codeFomat/codemirror-5.20.2/mode/markdown/markdown.js"></script>   
 	<!-- 以下私有功能引用 --> 
-	<script src="../js/js_self/demo_form_ajaxMultipartFormData_main.js" type="text/javascript"></script>
-    <link   href="../css/demo_form_ajaxMultipartFormData_main.css" type="text/css" rel="stylesheet" media="screen">   
+	<script src="../js/js_self/demo_form_multipartFormData_ajax_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_form_multipartFormData_ajax_main.css" type="text/css" rel="stylesheet" media="screen">   
 </head>
 
 <body>

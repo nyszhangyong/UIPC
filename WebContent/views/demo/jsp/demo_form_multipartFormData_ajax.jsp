@@ -9,8 +9,8 @@
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="../js/js_jquery/js_jquery_form3.46/jquery.form.js"></script>
     <!-- 以下私有功能引用 -->
-    <script type="text/javascript" src="../js/js_self/demo_form_ajaxMultipartFormData.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/demo_form_ajaxMultipartFormData.css">
+    <script type="text/javascript" src="../js/js_self/demo_form_multipartFormData_ajax.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/demo_form_multipartFormData_ajax.css">
 </head>
 <body>
     <h1>提交多文件和数组数据(AJAX)</h1>

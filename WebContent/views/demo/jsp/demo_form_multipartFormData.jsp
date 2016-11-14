@@ -3,17 +3,17 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>提交多文件和数组数据(非AJAX)</title>
+	<title>提交多文件和数组数据</title>
 	<!-- 作者：张勇(Mark Smith) -->
 	<!-- 以下JQUERY功能引用 -->
 	<script type="text/javascript" src="../js/js_jquery/jquery-1.11.3.min.js"></script>
 	<!-- 以下私有功能引用 -->
-	<script type="text/javascript" src="../js/js_self/demo_form_noAjaxMultipartFormData.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/demo_form_noAjaxMultipartFormData.css">
+	<script type="text/javascript" src="../js/js_self/demo_form_multipartFormData.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/demo_form_multipartFormData.css">
 
 </head>
 <body>
-    <h1>提交多文件和数组数据(非AJAX)</h1>
+    <h1>提交多文件和数组数据</h1>
 	<div id="MostOutsideDiv">
 		<form id="userInfoForm"  method="post" enctype="multipart/form-data" action="/UIPC/server/controller/demo_form_multipartFormDataController/receiveUserInfo">
 			<table>
