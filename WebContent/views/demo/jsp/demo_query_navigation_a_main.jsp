@@ -10,9 +10,10 @@
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
     <link   href="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
-
-    <link href="../css/demo_query_navigation_a_main.css" rel="stylesheet" type="text/css">
-    <script src="../js/js_self/demo_query_navigation_a_main.js" type="text/javascript"></script>
+	<!-- 以下私有功能引用 --> 
+	<script src="../js/SuperSlide2/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+	<script src="../js/js_self/demo_query_navigation_a_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_query_navigation_a_main.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
 <!-- 代码 开始 -->
@@ -376,23 +377,5 @@
         </div> 
     </div>
 </div>
-
-<script type="text/javascript">
-$("#nav .tit").slide({
-	type:"menu",
-	titCell:".mod_cate",
-	targetCell:".mod_subcate",
-	delayTime:0,
-	triggerTime:10,
-	defaultPlay:false,
-	returnDefault:true
-});
-</script>
-<!-- 代码 结束 -->
-
-<div style="text-align:center;margin:5px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-<p>来源：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
-</div>
-
 </body>
 </html>

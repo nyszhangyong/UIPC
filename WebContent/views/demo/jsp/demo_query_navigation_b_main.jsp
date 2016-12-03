@@ -10,8 +10,9 @@
     <script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
     <link   href="../js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
-
-    <link rel="stylesheet" type="text/css" href="../css/demo_query_navigation_b_main.css">
+	<!-- 以下私有功能引用 --> 
+	<script src="../js/js_self/demo_query_navigation_b_main.js" type="text/javascript"></script>
+    <link   href="../css/demo_query_navigation_b_main.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
 <div class="header-wrap">
@@ -152,46 +153,5 @@
   </div>
  </div>
 </div>
-<script type="text/javascript">
-(function() {
-    var $subblock = $(".subpage"),
-    $head = $subblock.find('h2'),
-    $ul = $("#proinfo"),
-    $lis = $ul.find("li"),
-    inter = false;
-    $head.click(function(e) {
-        e.stopPropagation();
-        if (!inter) {
-            $ul.show();
-        } else {
-            $ul.hide();
-        }
-        inter = !inter;
-    });
-    $ul.click(function(event) {
-        event.stopPropagation();
-    });
-    $('body').click(function() {
-        $ul.hide();
-        inter = !inter;
-    });
-    $lis.hover(function() {
-        if (!$(this).hasClass('nochild')) {
-            $(this).addClass("prosahover");
-            $(this).find(".prosmore").removeClass('hide');
-        }
-    },
-    function() {
-        if (!$(this).hasClass('nochild')) {
-            if ($(this).hasClass("prosahover")) {
-                $(this).removeClass("prosahover");
-            }
-            $(this).find(".prosmore").addClass('hide');
-        }
-    });
-})();
-</script>
-<div style="text-align:center;">
-<p>来源：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
-</div>
+</body>
 </html>
