@@ -31,33 +31,29 @@
 	                                    <li><a href="jsp/demo_form_simple_picture_preview_main.jsp" target="demoFrame">表单：简单图片预览</a></li>
 	                                    <li><a href="jsp/demo_form_multipartFormData_main.jsp" target="demoFrame">表单：提交多文件和数组数据</a></li>
 	                                    <li><a href="jsp/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">表单：提交多文件和数组数据(AJAX)</a></li>
+	                                    
+	                                    
+	                                    <li><a href="#" target="demoFrame">查询：轮播图</a></li>
+	                                    <li><a href="#" target="demoFrame">查询：购物车</a></li>  
 	                                    <li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">查询：简单查询</a></li>
+	                                    <li><a href="jsp/demo_query_navigation_a_main.jsp" target="demoFrame">查询：商品导航目录（版本A）</a></li>
+	                                    <li><a href="jsp/demo_query_navigation_b_main.jsp" target="demoFrame">查询：商品导航目录（版本B）</a></li>
 	                                    <li><a href="jsp/demo_query_page_custom_list_main.jsp" target="demoFrame">查询：查询分页列表(custom)</a></li>
-	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询：查询分页列表(jqGrid)</a></li>                                    
+	                                    <li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询：查询分页列表(jqGrid)</a></li>
+
+                       
 	                                </ul>
 	                            </div>
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-5" aria-controls="ui-accordion-accordion-panel-5" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="#">BOOTSTRAP 3.X样例</a></h3>
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-accordion-panel-5" aria-labelledby="ui-accordion-accordion-header-5" role="tabpanel" aria-hidden="true" style="display: none; height: 309px;">
 	                                <ul class="examples">
-	                                    <li><a href="jsp/bootstrap/demo_form_simple_login_main.jsp" target="demoFrame">表单：简单登录</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_simple_picture_preview_main.jsp" target="demoFrame">表单：简单图片预览</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_multipartFormData_main.jsp" target="demoFrame">表单：提交多文件和数组数据</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">表单：提交多文件和数组数据(AJAX)</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_simple_main.jsp" target="demoFrame">查询：简单查询</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_page_custom_list_main.jsp" target="demoFrame">查询：查询分页列表(custom)</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询：查询分页列表(jqGrid)</a></li>                                    
+	                                    <li><a href="#" target="demoFrame">开发中...</a></li>                                   
 	                                </ul>
 	                            </div>
 	                            <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-accordion-header-5" aria-controls="ui-accordion-accordion-panel-5" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="#">EASYUI样例</a></h3>
 	                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-accordion-panel-5" aria-labelledby="ui-accordion-accordion-header-5" role="tabpanel" aria-hidden="true" style="display: none; height: 309px;">
 	                                <ul class="examples">
-	                                    <li><a href="jsp/bootstrap/demo_form_simple_login_main.jsp" target="demoFrame">表单：简单登录</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_simple_picture_preview_main.jsp" target="demoFrame">表单：简单图片预览</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_multipartFormData_main.jsp" target="demoFrame">表单：提交多文件和数组数据</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">表单：提交多文件和数组数据(AJAX)</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_simple_main.jsp" target="demoFrame">查询：简单查询</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_page_custom_list_main.jsp" target="demoFrame">查询：查询分页列表(custom)</a></li>
-	                                    <li><a href="jsp/bootstrap/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询：查询分页列表(jqGrid)</a></li>                                    
+	                                    <li><a href="#" target="demoFrame">开发中...</a></li>
 	                                </ul>
 	                            </div>	                            
 	                        </div>
