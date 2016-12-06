@@ -49,7 +49,7 @@
 											<li><a href="jsp/demo_form_multipartFormData_main.jsp" target="demoFrame">表单：提交多文件和数组数据</a></li>
 											<li><a href="jsp/demo_form_multipartFormData_ajax_main.jsp" target="demoFrame">表单：提交多文件和数组数据(AJAX)</a></li>
 
-											<li><a href="#" target="demoFrame">查询：轮播图</a></li>
+											<li><a href="jsp/demo_query_carousel_main.jsp" target="demoFrame">查询：轮播图</a></li>
 											<li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">查询：简单查询</a></li>
 											<li><a href="jsp/demo_query_navigation_a_main.jsp" target="demoFrame">查询：商品导航目录（版本A）</a></li>
 											<li><a href="jsp/demo_query_navigation_b_main.jsp" target="demoFrame">查询：商品导航目录（版本B）</a></li>
