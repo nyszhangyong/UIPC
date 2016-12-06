@@ -9,14 +9,11 @@
 <!-- 作者：张勇(Mark Smith) -->
 <!-- 以下JQUERY功能引用 -->
 <script src="js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js"
-	type="text/javascript"></script>
-<link href="js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css"
-	rel="stylesheet" media="screen">
+<script src="js/js_jquery/jquery-ui-1.11.3/jquery-ui.min.js" type="text/javascript"></script>
+<link href="js/js_jquery/jquery-ui-1.11.3/jquery-ui.css" type="text/css" rel="stylesheet" media="screen">
 <!-- 以下私有功能引用 -->
 <script src="js/js_self/demoCatalog.js" type="text/javascript"></script>
-<link href="css/demoCatalog.css" type="text/css" rel="stylesheet"
-	media="screen">
+<link href="css/demoCatalog.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
 	<div id="MostOutsideDiv">
@@ -51,8 +48,7 @@
 
 											<li><a href="jsp/demo_query_carousel_main.jsp" target="demoFrame">查询：轮播图</a></li>
 											<li><a href="jsp/demo_query_simple_main.jsp" target="demoFrame">查询：简单查询</a></li>
-											<li><a href="jsp/demo_query_navigation_a_main.jsp" target="demoFrame">查询：商品导航目录（版本A）</a></li>
-											<li><a href="jsp/demo_query_navigation_b_main.jsp" target="demoFrame">查询：商品导航目录（版本B）</a></li>
+											<li><a href="jsp/demo_query_navigation_main.jsp" target="demoFrame">查询：商品导航目录</a></li>
 											<li><a href="jsp/demo_query_page_custom_list_main.jsp" target="demoFrame">查询：查询分页列表(custom)</a></li>
 											<li><a href="jsp/demo_query_page_jqGrid_list_main.jsp" target="demoFrame">查询：查询分页列表(jqGrid)</a></li>
 										</ul>
