@@ -17,7 +17,6 @@
 		 <div class="navwrap">
 			  <div id="nav">
 					   <div class="navbar clearfix">
-						     <a class="navbt" href="#">团购地图</a>
 						     <a class="current" href="#">首页</a>
 						     <a class="" href="#">餐饮美食</a>
 						     <a class="" href="#">休闲娱乐</a>
