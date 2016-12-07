@@ -1,17 +1,620 @@
-#lto{ 
-	background-color:#F8F8FF; 
-	margin-left:auto; 
-	margin-right:auto; 
-	text-align:center;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
 }
-.opp{ background-color:White;}
-.even{ background-color:#E0EEEE}
-.totle{ float:right}
-table .amount{ width:20px} 
-table .thead{ text-align:center; color:Gray; background-color:#87cefa}
-table .tfoot .totle{ background-color:#FFE4B5;  }
-table .deleCls{ color:Red}
-table .img{ text-align:left; display:inline-block; float:left;}
-.detial{ text-align:left; font-size:smaller;}
-.selllink,.shoplink{ color:#4D4D4D; margin-left:5px; font-size:smaller;}
-.things{ color:#8B5A2B;}
+
+
+.container, .site-nav, .nav, .tbBar, .commodityColumn, .shopInfo, .commodityInfo, .commodityInfo ul {
+  *zoom: 1;
+}
+
+.container:after, .site-nav:after, .nav:after, .tbBar:after, .commodityColumn:after, .shopInfo:after, .commodityInfo:after, .commodityInfo ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-left, .nav-right, .nav-myTao-nav, .list ul, .switch-cart, .commodityInfo ul {
+  list-style: none;
+}
+
+.th-chk, .commodityInfo .td-chk, .th-inner, .commodityInfo .td-item, .th-space, .commodityInfo .td-info, .th-price, .th-amount, .commodityInfo .td-price, .commodityInfo .td-amount, .th-sum, .commodityInfo .td-sum, .th-operation, .commodityInfo .td-operation {
+  float: left;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 990px;
+  margin-bottom: 70px;
+}
+
+.tbBar {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.switch-cart {
+  height: 33px;
+}
+
+.btn-switch-cart {
+  cursor: pointer;
+  float: left;
+  font-weight: 700;
+  height: 18px;
+  line-height: 1.1;
+  margin-left: -1px;
+  padding: 0 0 15px;
+  text-align: center;
+}
+
+.switch-cart-0 {
+  padding-left: 15px;
+}
+
+.switch-cart-1, .switch-cart-2 {
+  padding-left: 25px;
+}
+
+.switch-cart-2 {
+  cursor: not-allowed;
+  padding-right: 25px;
+}
+.btn-switch-href {
+  text-decoration: none;
+  color: #FF4400;
+}
+.btn-switch-href em {
+  margin-right: 3px;
+  font-style: normal;
+}
+.btn-switch-href span.number {
+  color: #ff4400;
+  font-weight: normal;
+  font-size: 12px;
+}
+.btn-switch-href span.pipe {
+  width: 1px;
+  height: 12px;
+  display: inline-block;
+  margin-left: 20px;
+  background-color: #e8e8e8;
+}
+.btn-switch-href span.pipe.pipe-display {
+  display: none;
+}
+
+.btn-switch-color {
+  color: #3c3c3c;
+}
+
+.cart-sum {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  line-height: 25px;
+}
+
+.cart-sum .price {
+  color: #f40;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.cart-sum .total-symbol {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cart-sum .submit-btn {
+  text-decoration: none;
+  display: inline-block;
+  width: 55px;
+  text-align: center;
+  color: #fff;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.btn-common {
+  cursor: not-allowed;
+  background-color: #aaa;
+}
+.th-inner, .commodityInfo .td-item {
+  width: 302px;
+}
+
+.tbMain {
+  min-height: 210px;
+}
+
+.commodityColumn {
+  color: #3c3c3c;
+  height: 50px;
+  padding: 3px 0;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.th-chk, .commodityInfo .td-chk {
+  position: relative;
+  height: 50px;
+  width: 45px;
+}
+
+.selectAll {
+  position: absolute;
+  padding-left: 20px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.selectAll input {
+  cursor: pointer;
+}
+
+.selectAll label {
+  margin-top: -2px;
+  position: absolute;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.th-inner, .commodityInfo .td-item {
+  width: 302px;
+}
+.commodityMsg {
+  padding-left: 91px;
+}
+
+.commodityMsg div {
+  margin-top: -3px;
+}
+
+.th-space, .commodityInfo .td-info {
+  width: 172px;
+  padding-right: 20px;
+}
+
+.td-inner {
+  padding-left: 10px;
+  margin-top: -2px;
+}
+
+.td-inner input {
+  cursor: pointer;
+}
+
+.th-price, .th-amount, .commodityInfo .td-price, .commodityInfo .td-amount {
+  width: 120px;
+}
+
+.th-sum, .commodityInfo .td-sum {
+  width: 105px;
+}
+
+.th-sum .td-inner, .commodityInfo .td-sum .td-inner {
+  padding-left: 0;
+}
+
+.th-operation, .commodityInfo .td-operation {
+  width: 84px;
+  padding-left: 15px;
+}
+
+.th-operation .td-inner, .commodityInfo .td-operation .td-inner {
+  padding-left: 0;
+}
+
+.shopMsg {
+  line-height: 38px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.shopMsg .shopMsg-input {
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+  left: 5px;
+}
+
+.shopMsg label {
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.shopMsg a {
+  text-decoration: none;
+  color: #3c3c3c;
+}
+
+.shopMsg a:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+.stock {
+  display: none;
+}
+
+
+.outNum {
+  margin-top: -1px;
+  position: absolute;
+  display: none;
+  width: 78px;
+  padding: 5px 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #FFE1D3;
+  background-color: #FFF0E7;
+  color: #f40;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+.outNum em {
+  font-style: normal;
+}
+
+
+.commodityInfo .boyShoes, .commodityInfo .fashionClo, .commodityInfo .lining-bas, .commodityInfo .adidas, .commodityInfo .Nike, .commodityInfo .xuezi, .commodityInfo .zhangjunya, .commodityInfo .desImg {
+  display: inline-block;
+  float: left;
+}
+
+.commodityInfo {
+  border: 1px solid #ccc;
+  padding: 20px 0;
+  background-color: #FCFCFC;
+}
+
+.commodityInfo .td-chk {
+  width: 35px;
+  min-height: 79px;
+  padding-left: 10px;
+}
+
+.commodityInfo .td-item {
+  min-height: 79px;
+}
+
+.commodityInfo .item-info {
+  margin: -3px 0 0 91px;
+  padding-right: 15px;
+  min-height: 79px;
+}
+
+.commodityInfo .item-info a {
+  text-decoration: none;
+  color: #3c3c3c;
+}
+
+.commodityInfo .item-info a:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+
+.commodityInfo .item-other-space {
+  min-height: 26px;
+  overflow: hidden;
+}
+
+.commodityInfo .bandCard {
+  display: inline-block;
+  background-position: 0 -85px;
+  height: 11px;
+  width: 16px;
+}
+
+.commodityInfo .sevenDay {
+  display: inline-block;
+  margin: 0 2px;
+  background-position: 0 -562px;
+  height: 16px;
+  width: 16px;
+}
+
+.commodityInfo .guarantee {
+  display: inline-block;
+  background-position: 0 -271px;
+  height: 16px;
+  width: 14px;
+}
+
+.commodityInfo .td-info {
+  min-height: 79px;
+}
+
+.commodityInfo .td-info-msg {
+  min-height: 84px;
+}
+
+.commodityInfo .td-info-msg p {
+  margin: 0 5px 0 15px;
+  color: #9c9c9c;
+  padding-bottom: 3px;
+  margin-top: -2px;
+}
+
+.commodityInfo .td-price {
+  min-height: 79px;
+}
+
+.commodityInfo .td-price .non-discount {
+  font-size: 1em;
+  color: #9c9c9c;
+  text-decoration: line-through;
+}
+
+.commodityInfo .td-price .discount {
+  font-weight: 600;
+}
+
+.commodityInfo .td-price .discount span {
+  font-size: 1.2em;
+}
+
+.commodityInfo .td-price .promotion {
+  height: 23px;
+  line-height: 23px;
+  width: 65px;
+  border: 1px solid #FFE1D3;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #FFF0E7;
+  margin-left: -10px;
+  padding-right: 17px;
+  color: #FF4400;
+  font-size: 1.1em;
+  padding-left: 3px;
+}
+
+.commodityInfo .td-price .promotion:hover .promotionIcon {
+  position: absolute;
+  margin-top: 5px;
+  border-bottom-color: #f40;
+}
+
+.commodityInfo .td-price .promotionIcon {
+  position: absolute;
+  margin-top: 10px;
+  border-top-color: #f40;
+}
+
+.commodityInfo .proSlidedown {
+  width: 136px;
+  padding: 10px;
+  margin-left: -10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  -moz-box-shadow: 2px 2px 3px #f4f4f4;
+  -webkit-box-shadow: 2px 2px 3px #f4f4f4;
+  box-shadow: 2px 2px 3px #f4f4f4;
+}
+
+.commodityInfo .proSlidedown p {
+  color: #9c9c9c;
+}
+
+.commodityInfo .proSlidedown .newPro {
+  padding-bottom: 4px;
+}
+
+.commodityInfo .td-amount {
+  min-height: 79px;
+}
+
+.commodityInfo .item-amount {
+  height: 25px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.commodityInfo .item-amount a {
+  display: inline-block;
+  height: 23px;
+  line-height: 23px;
+  position: absolute;
+  top: 0;
+  border: 1px solid #e5e5e5;
+  width: 17px;
+  background-color: #f0f0f0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #444;
+}
+
+.commodityInfo .item-amount a:hover {
+  border: 1px solid #f60;
+}
+
+.commodityInfo .item-amount .amount-right {
+  border-left-color: #aaa;
+}
+
+.commodityInfo .item-amount .amount-color {
+  color: #444;
+}
+
+.commodityInfo .item-amount .amount-left {
+  border-right-color: #aaa;
+}
+
+.commodityInfo .item-amount input {
+  width: 39px;
+  height: 15px;
+  padding: 4px 1px;
+  line-height: 15px;
+  border: 1px solid #aaa;
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-left: 18px;
+  text-align: center;
+}
+
+.commodityInfo .td-sum {
+  min-height: 79px;
+  color: #f40;
+  font-weight: bold;
+}
+
+.commodityInfo .td-sum em {
+  font-style: normal;
+  font-size: 1.3em;
+}
+
+.commodityInfo .td-sum span {
+  font-size: 1.2em;
+}
+
+.commodityInfo .td-operation {
+  min-height: 79px;
+}
+
+.commodityInfo .td-operation a {
+  color: #3c3c3c;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.commodityInfo .td-operation a:hover {
+  color: #f40;
+  text-decoration: underline;
+}
+
+
+.footer {
+  width: 990px;
+  height: 50px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background-color: #E5E5E5;
+}
+
+.all-selected {
+  cursor: pointer;
+  float: left;
+  line-height: 50px;
+  padding-left: 5px;
+  width: 50px;
+}
+
+.all-selected input {
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+}
+
+.all-selected label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.operation {
+  float: left;
+  line-height: 50px;
+}
+
+.operation a {
+  margin-left: 25px;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+.operation a:hover {
+  text-decoration: underline;
+  color: #f40;
+}
+
+.float-bar-right {
+  float: right;
+  line-height: 50px;
+  padding-left: 20px;
+}
+
+.amount-sum {
+  cursor: pointer;
+  float: left;
+  padding-right: 20px;
+}
+
+.amount-sum em {
+  font-style: normal;
+  color: #f40;
+  font-size: 1.4em;
+}
+
+.price-sum {
+  float: left;
+  line-height: 44px;
+  padding-right: 20px;
+}
+.price-sum .moneySym {
+  color: #f40;
+}
+.price-sum .total-sum {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-style: normal;
+  color: #f40;
+}
+
+.btn-area {
+  float: left;
+  line-height: 50px;
+}
+.btn-area a {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  font-size: 1.8em;
+  font-family: "Lantinghei SC","Microsoft Yahei";
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+
+.deleteCom {
+  border: 2px solid #fff8d9;
+  height: 26px;
+  line-height: 26px;
+}
+
+.deleteCom p {
+  padding-left: 25px;
+  color: #404040;
+}
+
+.deleteCom em {
+  font-style: normal;
+  margin: 0 4px;
+  color: #404040;
+}
+
+.deleteCom a {
+  color: #404040;
+  text-decoration: none;
+}
+
+.deleteCom a:hover {
+  color: #f40;
+  text-decoration: underline;
+}
