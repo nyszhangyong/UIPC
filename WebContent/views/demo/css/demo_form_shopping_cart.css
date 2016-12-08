@@ -16,6 +16,9 @@
 .switch-cart, .commodityInfo ul {
   list-style: none;
 }
+.main {
+  width: 100%;
+}
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -41,6 +44,22 @@
   height: 33px;
 }
 /*---------------------------------购物车中的商品信息属性设置---------------------------------*/
+.th-chk, 
+.commodityInfo .td-chk, 
+.th-inner, 
+.commodityInfo .td-item, 
+.th-space, 
+.commodityInfo .td-info, 
+.th-price, 
+.commodityInfo .td-price, 
+.th-amount, 
+.commodityInfo .td-amount, 
+.th-sum, 
+.commodityInfo .td-sum, 
+.th-operation, 
+.commodityInfo .td-operation {
+  float: left;
+}
 .th-chk, /*标题：全选*/
 .commodityInfo .td-chk, /*内容：复选框*/
 .th-inner, /*标题：商品信息*/
@@ -204,7 +223,23 @@
   margin-top: 5px;
   border-bottom-color: #f40;
 }
-
+/*卖家促销收起、展开箭头*/
+.commodityInfo .td-price .promotion:hover .promotionIcon {
+  content: "";
+  border: 4px solid transparent;
+  border-bottom-color: #6c6c6c;
+  display: inline-block;
+  position: relative;
+  margin-left: 4px;
+}
+.commodityInfo .td-price .promotionIcon {
+  content: "";
+  border: 4px solid transparent;
+  border-top-color: #6c6c6c;
+  display: inline-block;
+  position: relative;
+  margin-left: 4px;
+}
 .commodityInfo .td-price .promotionIcon {
   position: absolute;
   margin-top: 10px;

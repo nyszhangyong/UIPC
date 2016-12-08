@@ -101,6 +101,20 @@ $(document).ready(function() {
 		}
 	});
 
+	//手工输入商品数量之后，立刻检查商品库存数量是否足够
+	function stock(that){
+		var $stock = parseInt(that.parent('.item-amount').siblings('.stock').text());
+		var thisNum = that.parent().find('input').val();
+		var thisOutNum = that.parent().siblings('.outNum');
+		var thisStockNum = thisOutNum.find('.stockNum');
+		if (parseInt(thisNum) > $stock) {
+			thisOutNum.show('fast');
+		} else {
+			thisOutNum.hide('fast');
+		}
+		thisStockNum.text($stock);
+	}
+	
 	//商品数量增加
 	$('body').on('click','.amount-right',function(event){
 		var $stock = parseInt($(this).parent('.item-amount').siblings('.stock').text());
@@ -307,4 +321,14 @@ $(document).ready(function() {
 	$('#btn-sum').click(function(event) {
 		return false;
 	});
+	//------------------------------------------------------促销按钮收起、展开操作------------------------------------------------
+	//促销按钮收起、展开列表
+	$('body').on('mouseenter mouseleave','.promotion',function(event){
+		if (event.type==='mouseenter') {
+			$(this).siblings('.proSlidedown').stop().show('fast');
+		} else {
+			$(this).siblings('.proSlidedown').stop().hide('fast');
+		}
+	});
+
 });

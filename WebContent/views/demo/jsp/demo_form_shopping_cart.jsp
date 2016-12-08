@@ -76,7 +76,7 @@
 									</li>
 									<li class='td-item'>
 										<div class="td-inner">
-											<a href="#" class='fashionClo'><img src="../images/demo_form_shopping_cart/fashionClo.png"/>
+											<a href="#" class='shoppicture'><img src="../images/demo_form_shopping_cart/fashionClo.png"/>
 											</a>
 											<div class="item-info">
 												<div class="item-basis-info">
@@ -88,13 +88,13 @@
 													<div class="item-other-space"></div>
 													<div class="item-other-list">
 														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"></div>
+															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
 														</a>
 														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"></div>
+															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
 														</a>
 														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"></div>
+															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
 														</a>
 													</div>
 												</div>
@@ -128,7 +128,7 @@
 											<a href="#" class="amount-right">+</a>
 										</div>
 										<div class="stock">
-											915
+											3
 										</div>
 										<div class="outNum">
 											<span class="instr">最多只能购买</span>
@@ -165,7 +165,7 @@
 									</li>
 									<li class='td-item'>
 										<div class="td-inner">
-											<a href="#" class='xuezi'><img src="../images/demo_form_shopping_cart/xuezi.png"/>
+											<a href="#" class='shoppicture'><img src="../images/demo_form_shopping_cart/xuezi.png"/>
 											</a>
 											<div class="item-info">
 												<div class="item-basis-info">
@@ -177,13 +177,13 @@
 													<div class="item-other-space"></div>
 													<div class="item-other-list">
 														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"></div>
+															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
 														</a>
 														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"></div>
+															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
 														</a>
 														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"></div>
+															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
 														</a>
 													</div>
 												</div>
@@ -217,7 +217,7 @@
 											<a href="#" class="amount-right">+</a>
 										</div>
 										<div class="stock">
-											169
+											3
 										</div>
 										<div class="outNum">
 											<span class="instr">最多只能购买</span>
@@ -253,7 +253,7 @@
 									</li>
 									<li class='td-item'>
 										<div class="td-inner">
-											<a href="#" class='adidas'><img src="../images/demo_form_shopping_cart/adidas.png"/>
+											<a href="#" class='shoppicture'><img src="../images/demo_form_shopping_cart/adidas.png"/>
 											</a>
 											<div class="item-info">
 												<div class="item-basis-info">
@@ -265,13 +265,13 @@
 													<div class="item-other-space"></div>
 													<div class="item-other-list">
 														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"></div>
+															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
 														</a>
 														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"></div>
+															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
 														</a>
 														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"></div>
+															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
 														</a>
 													</div>
 												</div>
@@ -300,7 +300,7 @@
 											<a href="#" class="amount-right">+</a>
 										</div>
 										<div class="stock">
-											18
+											3
 										</div>
 										<div class="outNum">
 											<span class="instr">最多只能购买</span>
