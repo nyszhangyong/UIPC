@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>购物车(仿淘宝)</title>
-<!-- 作者：张勇(Mark Smith) -->
-<!-- 以下JQUERY功能引用 -->
-<script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
-<!-- 以下私有功能引用 -->
-<script src="../js/js_self/demo_form_shopping_cart.js" type="text/javascript"></script>
-<link href="../css/demo_form_shopping_cart.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>购物车(仿淘宝)</title>
+	<!-- 作者：张勇(Mark Smith) -->
+	<!-- 以下JQUERY功能引用 -->
+	<script src="../js/js_jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<!-- 以下私有功能引用 -->
+	<script src="../js/js_self/demo_form_shopping_cart.js" type="text/javascript"></script>
+	<link href="../css/demo_form_shopping_cart.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class='main'>
@@ -63,9 +62,9 @@
 						<div class="mainCommodity">
 							<div class="shopInfo">
 								<div class="shopMsg">
-									<input type="checkbox" name="shopMsg" id='zhangjunyameimei' class='shopMsg-input' autocomplete="off">
-									<label for="zhangjunyameimei">店铺：</label>
-									<a href="#">张君雅小妹妹旗舰</a>
+									<input type="checkbox" name="shopMsg" id='fashionClo' class='shopMsg-input' autocomplete="off">
+									<label for="fashionClo">店铺：</label>
+									<a href="#">nixu服饰旗舰店</a>
 								</div>
 							</div>
 							<div class="commodityInfo">
@@ -77,25 +76,25 @@
 									</li>
 									<li class='td-item'>
 										<div class="td-inner">
-											<a href="#" class='zhangjunya'><img src="../images/demo_form_shopping_cart/zhangjunyameimei.png"/>
+											<a href="#" class='fashionClo'><img src="../images/demo_form_shopping_cart/fashionClo.png"/>
 											</a>
 											<div class="item-info">
 												<div class="item-basis-info">
 													<a href="#">
-														台湾进口零食张君雅小妹妹12包零食组合甜甜圈捏脆面点心面礼包
+														韩版中长款纯色休闲青年风衣英伦秋冬男毛呢料宽松外套时尚大衣
 													</a>
 												</div>
 												<div class="item-other-info">
 													<div class="item-other-space"></div>
 													<div class="item-other-list">
 														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
+															<div class="bandCard"></div>
 														</a>
 														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
+															<div class="sevenDay"></div>
 														</a>
 														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
+															<div class="guarantee"></div>
 														</a>
 													</div>
 												</div>
@@ -104,20 +103,21 @@
 									</li>
 									<li class='td-info'>
 										<div class="td-info-msg">
-											<p>口味：12包零食组合</p>
+											<p>颜色：卡其色有纽扣</p>
+											<p>尺码：L</p>
 										</div>
 									</li>
 									<li class='td-price'>
 										<div class="td-inner">
-											<p class='non-discount'>￥79.00</p>
-											<p class='discount'>￥<span>39.00</span></p>
+											<p class='non-discount'>￥416.00</p>
+											<p class='discount'>￥<span>208.00</span></p>
 											<div class="promotion">
 												卖家促销
 												<i class='promotionIcon'></i>
 											</div>
 											<div class="proSlidedown">
-												<p class='newPro'>卖家促销：9月狂欢购</p>
-												<p>优惠：￥40.00</p>
+												<p class='newPro'>卖家促销：新品优惠</p>
+												<p>优惠：￥208.00</p>
 											</div>
 										</div>
 									</li>
@@ -128,7 +128,7 @@
 											<a href="#" class="amount-right">+</a>
 										</div>
 										<div class="stock">
-											399
+											915
 										</div>
 										<div class="outNum">
 											<span class="instr">最多只能购买</span>
@@ -138,7 +138,96 @@
 		 							</li>
 									<li class='td-sum'>
 										<em>￥</em><!--
-										--><span>39.00</span>
+										--><span>208.00</span>
+									</li>
+									<li class='td-operation'>
+										<p><a href="#" class='delete'>删除</a></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="mainCommodity">
+							<div class="shopInfo">
+								<div class="shopMsg">
+									<input type="checkbox" name="shopMsg" id='xuezi' class='shopMsg-input' autocomplete="off">
+									<label for="xuezi">店铺：</label>
+									<a href="#">zsuo走索旗舰店</a>
+								</div>
+							</div>
+							<div class="commodityInfo">
+								<ul>
+									<li class='td-chk'>
+										<div class="td-inner">
+											<input type="checkbox" name='checkbox' autocomplete="off">
+										</div>
+									</li>
+									<li class='td-item'>
+										<div class="td-inner">
+											<a href="#" class='xuezi'><img src="../images/demo_form_shopping_cart/xuezi.png"/>
+											</a>
+											<div class="item-info">
+												<div class="item-basis-info">
+													<a href="#">
+														Z．Suo/走索男鞋马丁靴男秋冬户外靴子沙漠靴男军靴皮靴情侣款潮
+													</a>
+												</div>
+												<div class="item-other-info">
+													<div class="item-other-space"></div>
+													<div class="item-other-list">
+														<a href="#" title='支持信用卡支付'>
+															<div class="bandCard"></div>
+														</a>
+														<a href="#" class='sevenDay' title='7天无理由'>
+															<div class="sevenDay"></div>
+														</a>
+														<a href="#" title='消费者保障服务'>
+															<div class="guarantee"></div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class='td-info'>
+										<div class="td-info-msg">
+											<p>颜色分类：ZS988H黑色</p>
+											<p>尺码：42</p>
+										</div>
+									</li>
+									<li class='td-price'>
+										<div class="td-inner">
+											<p class='non-discount'>￥452.00</p>
+											<p class='discount'>￥<span>339.00</span></p>
+											<div class="promotion">
+												卖家促销
+												<i class='promotionIcon'></i>
+											</div>
+											<div class="proSlidedown">
+												<p class='newPro'>卖家促销：火热抢购中</p>
+												<p>优惠：￥113.00</p>
+											</div>
+										</div>
+									</li>
+									<li class='td-amount'>
+										<div class="item-amount">
+											<a href="#" class='amount-left amount-color'>-</a>
+											<input type="text" name='amountNum' value='1' autocomplete="off">
+											<a href="#" class="amount-right">+</a>
+										</div>
+										<div class="stock">
+											169
+										</div>
+										<div class="outNum">
+											<span class="instr">最多只能购买</span>
+											<span class='stockNum'></span>
+											<em>件</em>
+										</div>
+		 							</li>
+									<li class='td-sum'>
+										<em>￥</em><!--
+										--><span>339.00</span>
 									</li>
 									<li class='td-operation'>
 										<p><a href="#" class='delete'>删除</a></p>
@@ -150,9 +239,9 @@
 						<div class="mainCommodity">
 							<div class="shopInfo">
 								<div class="shopMsg">
-									<input type="checkbox" name="shopMsg" id='zhangjunyameimei' class='shopMsg-input' autocomplete="off">
-									<label for="zhangjunyameimei">店铺：</label>
-									<a href="#">张君雅小妹妹旗舰</a>
+									<input type="checkbox" name="shopMsg" id='adidas' class='shopMsg-input' autocomplete="off">
+									<label for="adidas">店铺：</label>
+									<a href="#">adidas官方旗舰店</a>
 								</div>
 							</div>
 							<div class="commodityInfo">
@@ -164,25 +253,25 @@
 									</li>
 									<li class='td-item'>
 										<div class="td-inner">
-											<a href="#" class='zhangjunya'><img src="../images/demo_form_shopping_cart/zhangjunyameimei.png"/>
+											<a href="#" class='adidas'><img src="../images/demo_form_shopping_cart/adidas.png"/>
 											</a>
 											<div class="item-info">
 												<div class="item-basis-info">
 													<a href="#">
-														台湾进口零食张君雅小妹妹12包零食组合甜甜圈捏脆面点心面礼包
+														adidas 阿迪达斯 篮球 男子 篮球鞋 Regulate
 													</a>
 												</div>
 												<div class="item-other-info">
 													<div class="item-other-space"></div>
 													<div class="item-other-list">
 														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
+															<div class="bandCard"></div>
 														</a>
 														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
+															<div class="sevenDay"></div>
 														</a>
 														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
+															<div class="guarantee"></div>
 														</a>
 													</div>
 												</div>
@@ -191,20 +280,16 @@
 									</li>
 									<li class='td-info'>
 										<div class="td-info-msg">
-											<p>口味：12包零食组合</p>
+											<p>颜色分类：银金属/深藏青蓝/红色</p>
+											<p>鞋码：43.5</p>
 										</div>
 									</li>
 									<li class='td-price'>
 										<div class="td-inner">
-											<p class='non-discount'>￥79.00</p>
-											<p class='discount'>￥<span>39.00</span></p>
-											<div class="promotion">
-												卖家促销
-												<i class='promotionIcon'></i>
-											</div>
+											<p class='discount'>￥<span>419.00</span></p>
 											<div class="proSlidedown">
-												<p class='newPro'>卖家促销：9月狂欢购</p>
-												<p>优惠：￥40.00</p>
+												<p class='newPro'>卖家促销：新品大特价</p>
+												<p>优惠：￥30.00</p>
 											</div>
 										</div>
 									</li>
@@ -215,7 +300,7 @@
 											<a href="#" class="amount-right">+</a>
 										</div>
 										<div class="stock">
-											399
+											18
 										</div>
 										<div class="outNum">
 											<span class="instr">最多只能购买</span>
@@ -225,94 +310,7 @@
 		 							</li>
 									<li class='td-sum'>
 										<em>￥</em><!--
-										--><span>39.00</span>
-									</li>
-									<li class='td-operation'>
-										<p><a href="#" class='delete'>删除</a></p>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="mainCommodity">
-							<div class="shopInfo">
-								<div class="shopMsg">
-									<input type="checkbox" name="shopMsg" id='zhangjunyameimei' class='shopMsg-input' autocomplete="off">
-									<label for="zhangjunyameimei">店铺：</label>
-									<a href="#">张君雅小妹妹旗舰</a>
-								</div>
-							</div>
-							<div class="commodityInfo">
-								<ul>
-									<li class='td-chk'>
-										<div class="td-inner">
-											<input type="checkbox" name='checkbox' autocomplete="off">
-										</div>
-									</li>
-									<li class='td-item'>
-										<div class="td-inner">
-											<a href="#" class='zhangjunya'><img src="../images/demo_form_shopping_cart/zhangjunyameimei.png"/>
-											</a>
-											<div class="item-info">
-												<div class="item-basis-info">
-													<a href="#">
-														台湾进口零食张君雅小妹妹12包零食组合甜甜圈捏脆面点心面礼包
-													</a>
-												</div>
-												<div class="item-other-info">
-													<div class="item-other-space"></div>
-													<div class="item-other-list">
-														<a href="#" title='支持信用卡支付'>
-															<div class="bandCard"><img src="../images/demo_form_shopping_cart/bankCard.png"/></div>
-														</a>
-														<a href="#" class='sevenDay' title='7天无理由'>
-															<div class="sevenDay"><img src="../images/demo_form_shopping_cart/sevenDay.png"/></div>
-														</a>
-														<a href="#" title='消费者保障服务'>
-															<div class="guarantee"><img src="../images/demo_form_shopping_cart/guarantee.png"/></div>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class='td-info'>
-										<div class="td-info-msg">
-											<p>口味：12包零食组合</p>
-										</div>
-									</li>
-									<li class='td-price'>
-										<div class="td-inner">
-											<p class='non-discount'>￥79.00</p>
-											<p class='discount'>￥<span>39.00</span></p>
-											<div class="promotion">
-												卖家促销
-												<i class='promotionIcon'></i>
-											</div>
-											<div class="proSlidedown">
-												<p class='newPro'>卖家促销：9月狂欢购</p>
-												<p>优惠：￥40.00</p>
-											</div>
-										</div>
-									</li>
-									<li class='td-amount'>
-										<div class="item-amount">
-											<a href="#" class='amount-left amount-color'>-</a>
-											<input type="text" name='amountNum' value='1' autocomplete="off">
-											<a href="#" class="amount-right">+</a>
-										</div>
-										<div class="stock">
-											399
-										</div>
-										<div class="outNum">
-											<span class="instr">最多只能购买</span>
-											<span class='stockNum'></span>
-											<em>件</em>
-										</div>
-		 							</li>
-									<li class='td-sum'>
-										<em>￥</em><!--
-										--><span>39.00</span>
+										--><span>419.00</span>
 									</li>
 									<li class='td-operation'>
 										<p><a href="#" class='delete'>删除</a></p>
